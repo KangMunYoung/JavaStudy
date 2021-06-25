@@ -3,7 +3,7 @@ package dataInfo;
 public class BookVO {
 	private String genre;	//장르
 	private String bookName;	//제목
-	private String bookStatus;	//대여상태
+	private String bookStatus = "보유중";	//대여상태
 	private int rentalFee;	//대여비용
 	private int rentalDate;	//대여가능일
 	
@@ -69,7 +69,7 @@ public class BookVO {
 		this.registrationDate = registrationDate;
 	}
 
-	public String isBookStatus() {
+	public String getBookStatus() {
 		return bookStatus;
 	}
 

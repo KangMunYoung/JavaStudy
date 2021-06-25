@@ -1,10 +1,9 @@
 package dataInfo;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class ProfileDataSet {
-	public static Map<String, ProfileVO> profileList = new HashMap<String, ProfileVO>();
+	public static HashMap<String, ProfileVO> profileList = new HashMap<String, ProfileVO>();
 	public ProfileDataSet() {}
 	
 	public static void basicProfileSet() {
