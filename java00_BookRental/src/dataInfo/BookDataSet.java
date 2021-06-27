@@ -7,16 +7,16 @@ public class BookDataSet {
 	public BookDataSet() {
 	}
 	
-	//Ã¥ µ¥ÀÌÅÍ ¼¼ÆÃ
+	//ì±… ë°ì´í„° ì„¸íŒ…
 	public static void basicBookSet() {
-		bookList.put("À½¾ÇÀÇÁı", new BookVO("À½¾ÇÀÇÁı", "¿¹¼ú", "º¸À¯Áß", 1000 ,3));
-		bookList.put("¸®¾óÁ¦ÁÖ", new BookVO("¸®¾óÁ¦ÁÖ", "¿©Çà", "º¸À¯Áß", 1500 ,3));
-		bookList.put("¹é³âÀÇµ¶¼­", new BookVO("¹é³âÀÇµ¶¼­", "ÀÎ¹®", "º¸À¯Áß", 1200 ,3));
-		bookList.put("¿¡½ºÄâÀÌ¾î", new BookVO("¿¡½ºÄâÀÌ¾î", "ÆĞ¼ÇÀâÁö", "º¸À¯Áß", 2000 ,5));
-		bookList.put("ÇØ¸®Æ÷ÅÍ", new BookVO("ÇØ¸®Æ÷ÅÍ", "Àå¸£¼Ò¼³", "º¸À¯Áß", 800 ,4));
+		bookList.put("ìŒì•…ì˜ì§‘", new BookVO("ìŒì•…ì˜ì§‘", "ì˜ˆìˆ ", "ë³´ìœ ì¤‘", 1000 ,3));
+		bookList.put("ë¦¬ì–¼ì œì£¼", new BookVO("ë¦¬ì–¼ì œì£¼", "ì—¬í–‰", "ë³´ìœ ì¤‘", 1500 ,3));
+		bookList.put("ë°±ë…„ì˜ë…ì„œ", new BookVO("ë°±ë…„ì˜ë…ì„œ", "ì¸ë¬¸", "ë³´ìœ ì¤‘", 1200 ,3));
+		bookList.put("ì—ìŠ¤ì½°ì´ì–´", new BookVO("ì—ìŠ¤ì½°ì´ì–´", "íŒ¨ì…˜ì¡ì§€", "ë³´ìœ ì¤‘", 2000 ,5));
+		bookList.put("í•´ë¦¬í¬í„°", new BookVO("í•´ë¦¬í¬í„°", "ì¥ë¥´ì†Œì„¤", "ë³´ìœ ì¤‘", 800 ,4));
 	}
 	
-	//Ã¥ ºô¸° ¸ñ·Ï
+	//ì±… ë¹Œë¦° ëª©ë¡
 	public static HashMap<String, BookVO> rentalBookList = new HashMap<String, BookVO>();
 	public static void rentalBookListSet() {
 		

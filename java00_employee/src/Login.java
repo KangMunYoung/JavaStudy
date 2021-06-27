@@ -4,13 +4,13 @@ public class Login {
 	private final String USERPWD = "1234";
 	public Login() {
 	}
-	//login check ±¸Çö(true : ·Î±×ÀÎ¼º°ø, false:·Î±×ÀÎ½ÇÆĞ)
+	//login check êµ¬í˜„(true : ë¡œê·¸ì¸ì„±ê³µ, false:ë¡œê·¸ì¸ì‹¤íŒ¨)
 	public boolean loginCheck(String userid, String userpwd) {
 		if(userid.equals(USERID) && userpwd.equals(USERPWD)) {
-			//·Î±×ÀÎ ¼º°ø
+			//ë¡œê·¸ì¸ ì„±ê³µ
 			return true;
 		}else {
-			//·Î±×ÀÎ ½ÇÆĞ
+			//ë¡œê·¸ì¸ ì‹¤íŒ¨
 			return false;
 		}
 	}

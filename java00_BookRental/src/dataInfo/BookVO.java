@@ -1,14 +1,14 @@
 package dataInfo;
 
 public class BookVO {
-	private String genre;	//Àå¸£
-	private String bookName;	//Á¦¸ñ
-	private String bookStatus = "º¸À¯Áß";	//´ë¿©»óÅÂ
-	private int rentalFee;	//´ë¿©ºñ¿ë
-	private int rentalDate;	//´ë¿©°¡´ÉÀÏ
+	private String genre;	//ì¥ë¥´
+	private String bookName;	//ì œëª©
+	private String bookStatus = "ë³´ìœ ì¤‘";	//ëŒ€ì—¬ìƒíƒœ
+	private int rentalFee;	//ëŒ€ì—¬ë¹„ìš©
+	private int rentalDate;	//ëŒ€ì—¬ê°€ëŠ¥ì¼
 	
-	private String registrationDate; //µî·Ï³¯Â¥
-	private String writer;	//ÀÛ°¡
+	private String registrationDate; //ë“±ë¡ë‚ ì§œ
+	private String writer;	//ì‘ê°€
 	
 	public BookVO(String bookName, String genre, String bookStatus, int rentalFee, int rentalDate) {
 		this.bookName = bookName;
@@ -19,7 +19,7 @@ public class BookVO {
 	}
 	public static void bookTitlePrint() {
 		System.out.println("======================================================================");
-		System.out.printf("%s\t\t %s\t\t %s\t\t %s\t\t %s\n", "Á¦¸ñ", "Àå¸£", "»óÅÂ", "´ë¿©ºñ", "´ë¿©ÀÏ");
+		System.out.printf("%s\t\t %s\t\t %s\t\t %s\t\t %s\n", "ì œëª©", "ì¥ë¥´", "ìƒíƒœ", "ëŒ€ì—¬ë¹„", "ëŒ€ì—¬ì¼");
 		System.out.println("======================================================================");
 	}
 	public void bookPrint() {

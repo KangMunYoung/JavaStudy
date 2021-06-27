@@ -1,11 +1,11 @@
 package EmpInfor;
 
 public class EmpVO {
-	private String empNo;//»ç¿ø¹øÈ£
-	private String empName;//»ç¿ø¸í
-	private String tel;//¿¬¶ôÃ³
-	private int sal;//±Ş¿©
-	private String hiredate;//ÀÔ»çÀÏ
+	private String empNo;//å ì™ì˜™å ì™ì˜™å ì‹«ï¿½
+	private String empName;//å ì™ì˜™å ì™ì˜™å ï¿½
+	private String tel;//å ì™ì˜™å ì™ì˜™ì²˜
+	private int sal;//å ìŒ¨ìš¸ì˜™
+	private String hiredate;//å ìŒ‰ì‚¼ì˜™å ì™ì˜™
 	
 	public EmpVO() {
 	
@@ -17,13 +17,13 @@ public class EmpVO {
 		this.sal = sal;
 		this.hiredate = hiredate;
 	}
-	//»ç¿ø 1¸í Ãâ·Â ==============================================
+	//å ì™ì˜™å ï¿½ 1å ì™ì˜™ å ì™ì˜™å ï¿½ ==============================================
 	public void empPrint() {
 		System.out.printf("%-10s %-10s %-20s %-10d %-10s\n", empNo, empName, tel, sal, hiredate);
 	}
-	//Å¸ÀÌÆ² Ãâ·Â
+	//íƒ€å ì™ì˜™í‹€ å ì™ì˜™å ï¿½
 	public static void titlePrint() {
-		System.out.printf("%-8s %-12s %-20s %-12s %-5s\n","»ç¿ø¹øÈ£", "»ç¿ø¸í", "¿¬¶ôÃ³", "±Ş¿©", "ÀÔ»çÀÏ");
+		System.out.printf("%-8s %-12s %-20s %-12s %-5s\n","å ì™ì˜™å ì™ì˜™å ì‹«ï¿½", "å ì™ì˜™å ì™ì˜™å ï¿½", "å ì™ì˜™å ì™ì˜™ì²˜", "å ìŒ¨ìš¸ì˜™", "å ìŒ‰ì‚¼ì˜™å ì™ì˜™");
 		System.out.println("------------------------------------------------------------------");
 	}
 	

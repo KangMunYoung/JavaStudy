@@ -1,14 +1,14 @@
 package dataInfo;
 
 public class ProfileVO {
-	private String memberId;	//À¯Àú¾ÆÀÌµğ
-	private String memberPwd;	//À¯Àúºñ¹Ğ¹øÈ£
-	private String name;		//ÀÌ¸§
-	private String tel;			//ÀüÈ­¹øÈ£
-	private String since;	//°¡ÀÔÀÏ
+	private String memberId;	//ìœ ì €ì•„ì´ë””
+	private String memberPwd;	//ìœ ì €ë¹„ë°€ë²ˆí˜¸
+	private String name;		//ì´ë¦„
+	private String tel;			//ì „í™”ë²ˆí˜¸
+	private String since;	//ê°€ì…ì¼
 	//===========================================
-	private int rentalCnt = 0;	//´ë¿©±Ç¼ö
-	private int money = 0;			//°¡Áøµ·
+	private int rentalCnt = 0;	//ëŒ€ì—¬ê¶Œìˆ˜
+	private int money = 0;			//ê°€ì§„ëˆ
 	
 	public ProfileVO() {
 	}
@@ -23,14 +23,14 @@ public class ProfileVO {
 	}
 	
 	public static void profileTitlePrint() {
-		System.out.println("=========================================================================");
-		System.out.printf("%s\t %s\t %s\t %-5s\t %s\t\t %s\t %s\t\n", "¾ÆÀÌµğ", "ºñ¹Ğ¹øÈ£", "ÀÌ¸§", "ÀüÈ­¹øÈ£", "°¡ÀÔÀÏ", "´ë¿©±Ç¼ö", "¼±ºÒ±İ¾×");
-		System.out.println("=========================================================================");
-//		System.out.printf("%-8s %-10s %-10s %-20s %-10s %-10s %-10s \n", "¾ÆÀÌµğ", "ºñ¹Ğ¹øÈ£", "ÀÌ¸§", "ÀüÈ­¹øÈ£", "°¡ÀÔÀÏ", "´ë¿©±Ç¼ö", "¼±ºÒ±İ¾×");
+		System.out.println("===================================================================================");
+		System.out.printf("%-10s %-9s %-10s %-15s %-13s %-5s %-20s\n", "ì•„ì´ë””", "ë¹„ë°€ë²ˆí˜¸", "ì´ë¦„", "ì „í™”ë²ˆí˜¸", "ê°€ì…ì¼", "ëŒ€ì—¬ê¶Œìˆ˜", "ì„ ë¶ˆê¸ˆì•¡");
+//		System.out.printf("%s\t %s\t %s\t %-5s\t %s\t\t %s\t %s\t\n", "ì•„ì´ë””", "ë¹„ë°€ë²ˆí˜¸", "ì´ë¦„", "ì „í™”ë²ˆí˜¸", "ê°€ì…ì¼", "ëŒ€ì—¬ê¶Œìˆ˜", "ì„ ë¶ˆê¸ˆì•¡");
+		System.out.println("===================================================================================");
 	}
 	public void profilePrint() {
-		System.out.printf("%s\t %s\t %s\t %s\t %s\t %4d\t %d\t\n", memberId, memberPwd, name, tel, since, rentalCnt, money);
-//		System.out.printf("%-10s %-10s %-10s %-20s %-10s %-10s %-10d\n", memberId, memberPwd, name, tel, since, rentalCnt, money);
+//		System.out.printf("%s\t %s\t %s\t %s\t %s\t %4d\t %d\t\n", memberId, memberPwd, name, tel, since, rentalCnt, money);
+		System.out.printf("%-11s %-10s %-10s %-16s %-15s %-6s %-20d\n", memberId, memberPwd, name, tel, since, rentalCnt, money);
 	}
 	
 	public int getRentalCnt() {
