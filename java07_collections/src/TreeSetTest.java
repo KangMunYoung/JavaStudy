@@ -2,20 +2,20 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 public class TreeSetTest {
-	String list[]= {"JAVA", "Spring", "½ºÇÁ¸µÇÁ·¹ÀÓ", "JAVA", "ÀÚ¹Ù","ORACLE", "½ºÇÁ¸µ", "ORACLE"};
+	String list[]= {"JAVA", "Spring", "ìŠ¤í”„ë§í”„ë ˆì„", "JAVA", "ìë°”","ORACLE", "ìŠ¤í”„ë§", "ORACLE"};
 	public TreeSetTest() {
 		start();
 	}
 	public void start() {
-		//	TreeSet :	ÀÔ·Â¼ø¼­ À¯ÁöÇÏÁö ¾Ê´Â´Ù.
-		//				Áßº¹µ¥ÀÌÅÍ Çã¿ëÇÏÁö ¾Ê´Â´Ù.
-		//				Á¤·ÄÇÑ´Ù.
+		//	TreeSet :	ì…ë ¥ìˆœì„œ ìœ ì§€í•˜ì§€ ì•ŠëŠ”ë‹¤.
+		//				ì¤‘ë³µë°ì´í„° í—ˆìš©í•˜ì§€ ì•ŠëŠ”ë‹¤.
+		//				ì •ë ¬í•œë‹¤.
 		TreeSet<String> ts = new TreeSet<String>();
-		//TreeSet¿¡ °´Ã¼ Ãß°¡
+		//TreeSetì— ê°ì²´ ì¶”ê°€
 		
 		for(String data : list)	ts.add(data);
 		
-		//¿À¸§Â÷¼øÀ¸·Î Á¤·ÄµÇ¾î ÀÖ´Ù.
+		//ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬ë˜ì–´ ìˆë‹¤.
 		System.out.println(ts.size());
 		
 		Iterator<String> ii =  ts.iterator();
@@ -25,7 +25,7 @@ public class TreeSetTest {
 			System.out.println(d);
 		}
 		
-		//³»¸²Â÷¼øÀ¸·Î Á¤·ÄÇÏ¿© °´Ã¼ °¡Á®¿À±â
+		//ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•˜ì—¬ ê°ì²´ ê°€ì ¸ì˜¤ê¸°
 		Iterator<String> iii = ts.descendingIterator();
 		while(iii.hasNext()) {
 			String d = iii.next();

@@ -7,9 +7,6 @@ public class BookVO {
 	private int rentalFee;	//대여비용
 	private int rentalDate;	//대여가능일
 	
-	private String registrationDate; //등록날짜
-	private String writer;	//작가
-	
 	public BookVO(String bookName, String genre, String bookStatus, int rentalFee, int rentalDate) {
 		this.bookName = bookName;
 		this.genre = genre;
@@ -18,17 +15,13 @@ public class BookVO {
 		this.rentalDate = rentalDate;
 	}
 	public static void bookTitlePrint() {
-		System.out.println("======================================================================");
-		System.out.printf("%s\t\t %s\t\t %s\t\t %s\t\t %s\n", "제목", "장르", "상태", "대여비", "대여일");
-		System.out.println("======================================================================");
+		System.out.println("================================================================================");
+		System.out.printf("%-20s\t %s\t\t %s\t\t %s\t\t %s\n", "제목", "장르", "상태", "대여비", "대여일");
+		System.out.println("================================================================================");
 	}
 	public void bookPrint() {
-		System.out.printf("%s\t\t %s\t\t %s\t\t %d\t\t %3d\n", bookName, genre, bookStatus, rentalFee, rentalDate);
+		System.out.printf("%-12s\t %s\t\t %-10s\t %d\t\t %3d\n", bookName, genre, bookStatus, rentalFee, rentalDate);
 	}
-	public void rentalBookPrint() {
-		System.out.printf("%s\t\t %s\t\t %s\t\t %d\t\t %3d\n", bookName, genre, bookStatus, rentalFee, rentalDate);
-	}
-	
 	public String getGenre() {
 		return genre;
 	}
@@ -45,13 +38,6 @@ public class BookVO {
 		this.bookName = bookName;
 	}
 
-	public String getWriter() {
-		return writer;
-	}
-
-	public void setWriter(String writer) {
-		this.writer = writer;
-	}
 
 	public int getRentalFee() {
 		return rentalFee;
@@ -61,13 +47,6 @@ public class BookVO {
 		this.rentalFee = rentalFee;
 	}
 
-	public String getRegistrationDate() {
-		return registrationDate;
-	}
-
-	public void setRegistrationDate(String registrationDate) {
-		this.registrationDate = registrationDate;
-	}
 
 	public String getBookStatus() {
 		return bookStatus;

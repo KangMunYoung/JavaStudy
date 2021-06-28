@@ -9,50 +9,50 @@ public class ObjectCompareTest {
 		
 		List<MemberVO> mem = new ArrayList<MemberVO>();
 		
-		mem.add(new MemberVO("È«±æµ¿","±âÈ¹ºÎ","2020-10-10", 5000));
-		mem.add(new MemberVO("ÀÌ¼ø½Å","ÃÑ°ıºÎ","2020-01-01", 6000));
-		mem.add(new MemberVO("Àå¿µ½Ç","ÃÑ¹«ºÎ","2020-07-08", 3000));
-		mem.add(new MemberVO("¼¼Á¾´ë¿Õ","ÀÎ»çºÎ","2020-02-01", 7000));
-		mem.add(new MemberVO("À¯½Â·æ","±âÈ¹ºÎ","2020-03-05", 6000));
-		mem.add(new MemberVO("±è»ñ°«", "¿µ¾÷ºÎ", "2021-02-10", 5000));
+		mem.add(new MemberVO("í™ê¸¸ë™","ê¸°íšë¶€","2020-10-10", 5000));
+		mem.add(new MemberVO("ì´ìˆœì‹ ","ì´ê´„ë¶€","2020-01-01", 6000));
+		mem.add(new MemberVO("ì¥ì˜ì‹¤","ì´ë¬´ë¶€","2020-07-08", 3000));
+		mem.add(new MemberVO("ì„¸ì¢…ëŒ€ì™•","ì¸ì‚¬ë¶€","2020-02-01", 7000));
+		mem.add(new MemberVO("ìœ ìŠ¹ë£¡","ê¸°íšë¶€","2020-03-05", 6000));
+		mem.add(new MemberVO("ê¹€ì‚¿ê°“", "ì˜ì—…ë¶€", "2021-02-10", 5000));
 
-		System.out.println("=====Á¤·ÄÀü======================");
-		//		: ÄÃ·º¼Ç°´Ã¼
+		System.out.println("=====ì •ë ¬ì „======================");
+		//		: ì»¬ë ‰ì…˜ê°ì²´
 		for(MemberVO vo : mem ) {
 			System.out.println(vo.toString());
 		}
 		
 		//
-		System.out.println("=======±Ş¿©¸¦ ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä==========");
+		System.out.println("=======ê¸‰ì—¬ë¥¼ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬==========");
 		Collections.sort(mem, new CompareAscSal());
 		for(MemberVO vo : mem) {
 			System.out.println(vo.toString());
 		}
 		
-		System.out.println("=======±Ş¿©¸¦ ³»¸²Â÷¼øÀ¸·Î Á¤·Ä==========");
+		System.out.println("=======ê¸‰ì—¬ë¥¼ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ì •ë ¬==========");
 		Collections.sort(mem, new CompareDescSal());
 		for(MemberVO vo : mem) {
 			System.out.println(vo.toString());
 		}
 		
-		System.out.println("-=====ÀÌ¸§À» ¿À¸§Â÷¼øÀ¸·Î Á¤·Ä=========");
+		System.out.println("-=====ì´ë¦„ì„ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬=========");
 		Collections.sort(mem, new CompareAscName());
 		for(MemberVO vo : mem) {
 			System.out.println(vo.toString());
 		}
 		
-		System.out.println("-=====ÀÌ¸§À» ³»¸²Â÷¼øÀ¸·Î Á¤·Ä=========");
+		System.out.println("-=====ì´ë¦„ì„ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ì •ë ¬=========");
 		Collections.sort(mem, new CompareDescName());
 		for(MemberVO vo : mem) {
 			System.out.println(vo.toString());
 		}
 		
-		System.out.println("======ÀÔ»çÀÏ ¿À¸§Â÷¼ø Á¤·Ä==========");
+		System.out.println("======ì…ì‚¬ì¼ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬==========");
 		Collections.sort(mem, new CompareAscHire());
 		for(MemberVO vo : mem) {
 			System.out.println(vo.toString());
 		}
-		System.out.println("======ÀÔ»çÀÏ ³»¸²Â÷¼ø Á¤·Ä==========");
+		System.out.println("======ì…ì‚¬ì¼ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬==========");
 		Collections.sort(mem, new CompareDescHire());
 		for(MemberVO vo : mem) {
 			System.out.println(vo.toString());
@@ -60,47 +60,47 @@ public class ObjectCompareTest {
 	}
 	
 	
-	//Á¤·ÄÇÏ´Â Å¬·¡½º´Â Comparator ÀÎÅÍÆäÀÌ½º¸¦ »ó¼Ó¹Ş¾Æ ¸¸µç
-	// ¼ıÀÚ¸¦ ÀÌ¿ëÇÑ ¿À¸§Â÷¼ø Á¤·ÄÇÏ´Â Å¬·¡½º
+	//ì •ë ¬í•˜ëŠ” í´ë˜ìŠ¤ëŠ” Comparator ì¸í„°í˜ì´ìŠ¤ë¥¼ ìƒì†ë°›ì•„ ë§Œë“ 
+	// ìˆ«ìë¥¼ ì´ìš©í•œ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬í•˜ëŠ” í´ë˜ìŠ¤
 	class CompareAscSal implements Comparator<MemberVO>{
 		public int compare(MemberVO v1, MemberVO v2){	// 5000, 6000
-			//»ïÇ×¿¬»êÀÚ Á¶°Ç½Ä
-			//			¿ŞÂÊÀÇ °ªÀÌ ÀÛÀ¸¸é -1(À½¼ö), 		¿ŞÂÊ°ªÀÌ Å©¸é +1(¾ç¼ö),		°°À¸¸é 0À» ¸®ÅÏ
+			//ì‚¼í•­ì—°ì‚°ì ì¡°ê±´ì‹
+			//			ì™¼ìª½ì˜ ê°’ì´ ì‘ìœ¼ë©´ -1(ìŒìˆ˜), 		ì™¼ìª½ê°’ì´ í¬ë©´ +1(ì–‘ìˆ˜),		ê°™ìœ¼ë©´ 0ì„ ë¦¬í„´
 			// +1, -1, 0
 			return (v1.getSal() < v2.getSal())? -1 : (v1.getSal() > v2.getSal())? 1: 0 ;
 //			return (v1.getSal() < v2.getSal())? 1 : (v1.getSal() > v2.getSal())? -1: 0 ;
 		}
 	}
 	
-	//¼ıÀÚ¸¦ ÀÌ¿ëÇÑ ³»¸²Â÷¼ø Á¤·ÄÇÏ´Â Å¬·¡½º
+	//ìˆ«ìë¥¼ ì´ìš©í•œ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬í•˜ëŠ” í´ë˜ìŠ¤
 	class CompareDescSal implements Comparator<MemberVO>{
 		public int compare(MemberVO v1, MemberVO v2) {
-			//			¿ŞÂÊÀÇ °ªÀÌ ÀÛÀ¸¸é 1(¾ç¼ö), 			¿ŞÂÊ°ªÀÌ Å©¸é -1(À½¼ö),		°°À¸¸é 0À» ¸®ÅÏ
+			//			ì™¼ìª½ì˜ ê°’ì´ ì‘ìœ¼ë©´ 1(ì–‘ìˆ˜), 			ì™¼ìª½ê°’ì´ í¬ë©´ -1(ìŒìˆ˜),		ê°™ìœ¼ë©´ 0ì„ ë¦¬í„´
 			// +1, -1, 0
 			return (v1.getSal() < v2.getSal())? 1 : (v1.getSal() > v2.getSal())? -1 : 0 ;
 		}
 	}
-	//ÀÌ¸§À» ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄÇÏ´Â Å¬·¡½º
+	//ì´ë¦„ì„ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•˜ëŠ” í´ë˜ìŠ¤
 	class CompareAscName implements Comparator<MemberVO>{
 		public int compare(MemberVO v1, MemberVO v2) {
 			//System.out.println(v1.getName()+", "+v2.getName()+"-->"+v1.getName().compareToIgnoreCase(v2.getName()));
 			return v1.getName().compareToIgnoreCase(v2.getName());//
 		}
 	}
-	//ÀÌ¸§À» ³»¸²Â÷¼øÀ¸·Î Á¤·ÄÇÏ´Â Å¬·¡½º
+	//ì´ë¦„ì„ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•˜ëŠ” í´ë˜ìŠ¤
 	class CompareDescName implements Comparator<MemberVO>{
 		public int compare(MemberVO v1, MemberVO v2) {
 			return v2.getName().compareToIgnoreCase(v1.getName());
 		}
 	}
-	//ÀÔ»çÀÏ ¿À¸§Â÷¼øÀ¸·Î Á¤·ÄÇÏ´Â Å¬·¡½º	
+	//ì…ì‚¬ì¼ ì˜¤ë¦„ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•˜ëŠ” í´ë˜ìŠ¤	
 	class CompareAscHire implements Comparator<MemberVO>{
 		public int compare(MemberVO v1, MemberVO v2) {
 			//System.out.println(v1.getHire()+", "+v2.getHire()+"-->"+v1.getHire().compareToIgnoreCase(v2.getHire()));
 			return v1.getHire().compareToIgnoreCase(v2.getHire());
 		}
 	}
-	//ÀÔ»çÀÏ ³»¸²Â÷¼øÀ¸·Î Á¤·ÄÇÏ´Â Å¬·¡½º	
+	//ì…ì‚¬ì¼ ë‚´ë¦¼ì°¨ìˆœìœ¼ë¡œ ì •ë ¬í•˜ëŠ” í´ë˜ìŠ¤	
 	class CompareDescHire implements Comparator<MemberVO>{
 		public int compare(MemberVO v1, MemberVO v2) {
 			return v2.getHire().compareToIgnoreCase(v1.getHire());

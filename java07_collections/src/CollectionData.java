@@ -7,16 +7,16 @@ public class CollectionData {
 		// TODO Auto-generated constructor stub
 	}
 	public List<MemberVO> getMember() {
-		//ArrayList¿¡¼­»ç¿øÁ¤º¸¸¦ ´ã¾Æ¼­ ¸®ÅÏÇÑ´Ù.
-		// <> ¾È¿¡ ±âÀÔµÈ Å¸ÀÔ¸¸ »ç¿ë°¡´ÉÇÏ°Ô ¸¸µé¼öÀÖ´Ù.
+		//ArrayListì—ì„œì‚¬ì›ì •ë³´ë¥¼ ë‹´ì•„ì„œ ë¦¬í„´í•œë‹¤.
+		// <> ì•ˆì— ê¸°ì…ëœ íƒ€ì…ë§Œ ì‚¬ìš©ê°€ëŠ¥í•˜ê²Œ ë§Œë“¤ìˆ˜ìˆë‹¤.
 		//ArrayList<MemberVO> al = new ArrayList<MemberVO>();
 		List<MemberVO> al2 = new ArrayList<MemberVO>();
 		
-		al2.add(new MemberVO("AAA","±âÈ¹ºÎ","2021-05-10",5000));
-		al2.add(new MemberVO("BBB","ÃÑ¹«ºÎ","2021-01-01",6000));
-		al2.add(new MemberVO("CCC","ÀÎ»çºÎ","2021-10-10",7000));
-		al2.add(new MemberVO("DDD","ÃÑ¹«ºÎ","2021-02-02",5500));
-		al2.add(new MemberVO("EEE","ÀÎ»çºÎ","2021-03-02",6500));
+		al2.add(new MemberVO("AAA","ê¸°íšë¶€","2021-05-10",5000));
+		al2.add(new MemberVO("BBB","ì´ë¬´ë¶€","2021-01-01",6000));
+		al2.add(new MemberVO("CCC","ì¸ì‚¬ë¶€","2021-10-10",7000));
+		al2.add(new MemberVO("DDD","ì´ë¬´ë¶€","2021-02-02",5500));
+		al2.add(new MemberVO("EEE","ì¸ì‚¬ë¶€","2021-03-02",6500));
 		
 		return al2;
 	}

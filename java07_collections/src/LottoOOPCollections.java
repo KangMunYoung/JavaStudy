@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-//ÄÃ·º¼Ç Å¬·¡½º È°¿ëÇÏ¿© ¸¸µé±â
+//ì»¬ë ‰ì…˜ í´ë˜ìŠ¤ í™œìš©í•˜ì—¬ ë§Œë“¤ê¸°
 public class LottoOOPCollections {
 	Random random = new Random();
 	Scanner scan = new Scanner(System.in);
@@ -12,20 +12,20 @@ public class LottoOOPCollections {
 	public LottoOOPCollections() {}
 	public void lottoStart() {
 		do {
-			System.out.print("°ÔÀÓ¼ö=");
+			System.out.print("ê²Œì„ìˆ˜=");
 			int game = Integer.parseInt(scan.nextLine());
 			
 			for(int i=1; i<=game; i++) {
 				lottoCreate(i);
 			}
-			//°è¼Ó¿©ºÎ
+			//ê³„ì†ì—¬ë¶€
 			if(!yesNo()) {
 				break;
 			}
 		}while(true);
 	}
 	
-	//1°ÔÀÓ¸¸µé±â
+	//1ê²Œì„ë§Œë“¤ê¸°
 	public void lottoCreate(int i) {
 		TreeSet<Integer> lotto = new TreeSet<Integer>();
 		int num=0;
@@ -33,23 +33,23 @@ public class LottoOOPCollections {
 			num = random.nextInt(45)+1;
 			lotto.add(num); 
 		}
-		// lotto TreeSet ¹øÈ£7°³°¡ ÀÖ°í, num¿¡´Â ¸¶Áö¸·À¸·Î ¸¸µç ¹øÈ£°¡ ÀÖ´Ù.
-		// bonus¹øÈ£´Â ·Î¶Ç¹øÈ£¿¡¼­ Áö¿î´Ù.
+		// lotto TreeSet ë²ˆí˜¸7ê°œê°€ ìˆê³ , numì—ëŠ” ë§ˆì§€ë§‰ìœ¼ë¡œ ë§Œë“  ë²ˆí˜¸ê°€ ìˆë‹¤.
+		// bonusë²ˆí˜¸ëŠ” ë¡œë˜ë²ˆí˜¸ì—ì„œ ì§€ìš´ë‹¤.
 		lotto.remove(num);
 		lottoPrint(i, lotto.toString(), num);
 	}
-	//Ãâ·Â
+	//ì¶œë ¥
 	public void lottoPrint(int cnt, String lotto, int bonus) {
-		System.out.print(cnt+"°ÔÀÓ");
-		System.out.print(lotto);//¹øÈ£
+		System.out.print(cnt+"ê²Œì„");
+		System.out.print(lotto);//ë²ˆí˜¸
 		System.out.println(", bonus="+bonus);
 	}
-	//°è¼Ó¿©ºÎ È®ÀÎÇÏ´Â ¸Ş¼Òµå
+	//ê³„ì†ì—¬ë¶€ í™•ì¸í•˜ëŠ” ë©”ì†Œë“œ
 	public boolean yesNo() {
 		do {
-			System.out.print("°è¼ÓÇÏ½Ã°Ú½À´Ï±î?(y:¿¹, n:¾Æ´Ï¿À)?");
+			System.out.print("ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(y:ì˜ˆ, n:ì•„ë‹ˆì˜¤)?");
 			String qa = scan.nextLine();
-			//y:°è¼Ó(true), n:Á¾·á(false) ±×¿Ü ´Ù½Ã
+			//y:ê³„ì†(true), n:ì¢…ë£Œ(false) ê·¸ì™¸ ë‹¤ì‹œ
 			if(qa.equalsIgnoreCase("y")) {
 				return true;
 			}else if(qa.equalsIgnoreCase("n")) {

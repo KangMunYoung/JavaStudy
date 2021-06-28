@@ -3,7 +3,7 @@ import java.util.Calendar;
 public class GenericMain {
 
 	public GenericMain() {
-		String data = "¼­¿ï½Ã ¸¶Æ÷±¸ ¹é¹ü·Î";
+		String data = "ì„œìš¸ì‹œ ë§ˆí¬êµ¬ ë°±ë²”ë¡œ";
 		GenericTest gt = new GenericTest();
 		gt.setUsername(data);
 		
@@ -12,7 +12,7 @@ public class GenericMain {
 		Calendar now = Calendar.getInstance();
 		
 		GenericTest<MemberVO> gt3 = new GenericTest<MemberVO>();
-		gt3.setUsername(new MemberVO("È«","±âÈ¹ºÎ","2021-01-21", 8000));
+		gt3.setUsername(new MemberVO("í™","ê¸°íšë¶€","2021-01-21", 8000));
 		
 		GenericTest<Calendar> gt4 = new GenericTest<Calendar>(now);
 		

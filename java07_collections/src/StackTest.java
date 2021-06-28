@@ -5,9 +5,9 @@ public class StackTest {
 	public StackTest() {
 		Stack<String> stack = new Stack<String>();
 		
-		//stack Àº ¸ØÀú ÀÔ·ÂµÈ Á¤º¸°¡ ³ªÁß¿¡ Ãâ·ÂµÈ´Ù.(FILO : first in last out)
+		//stack ì€ ë©ˆì € ì…ë ¥ëœ ì •ë³´ê°€ ë‚˜ì¤‘ì— ì¶œë ¥ëœë‹¤.(FILO : first in last out)
 		//queue : FIFO
-		//push() ÀÔ·Â, pop: Ãâ·Â
+		//push() ì…ë ¥, pop: ì¶œë ¥
 		
 		stack.push("HongKilDong");
 		stack.push("munmun");
@@ -15,7 +15,7 @@ public class StackTest {
 		stack.push("JangYoungSil");
 		
 		
-		//empty() stack °´Ã¼ ÀÖÀ¸¸é false, °´Ã¼°¡ ¾øÀ» ¶§ true
+		//empty() stack ê°ì²´ ìˆìœ¼ë©´ false, ê°ì²´ê°€ ì—†ì„ ë•Œ true
 		while(!stack.empty()) {
 			System.out.println(stack.pop());
 		}

@@ -5,16 +5,16 @@ public class VectorTest {
 
 	public VectorTest() {}
 	public Vector start() {
-		//Vector ÄÃ·º¼Ç
+		//Vector ì»¬ë ‰ì…˜
 		Vector v = new Vector();
-		//int Integer ¿ÀÅä¹Ú½Ì
-		String username = "È«±æµ¿";
+		//int Integer ì˜¤í† ë°•ì‹±
+		String username = "í™ê¸¸ë™";
 		Integer num = 25010;
 		Calendar cal = Calendar.getInstance();
-		MemberVO vo = new MemberVO("¼¼Á¾´ë¿Õ","±âÈ¹ºÎ","2021-06-10",1000);
+		MemberVO vo = new MemberVO("ì„¸ì¢…ëŒ€ì™•","ê¸°íšë¶€","2021-06-10",1000);
 		
 		
-		//Vector °´Ã¼¿¡ ´Ù¸¥ °´Ã¼ Ãß°¡ÇÏ±â
+		//Vector ê°ì²´ì— ë‹¤ë¥¸ ê°ì²´ ì¶”ê°€í•˜ê¸°
 		v.add(username);
 		v.addElement(num);
 		v.add(1, cal);
@@ -31,7 +31,7 @@ public class VectorTest {
 }
 /*
 
-List(interface):	index°¡ Á¸ÀçÇÑ´Ù.
-					ÀúÀå¼ø¼Ò¸¦ À¯ÁöÇÑ´Ù.
+List(interface):	indexê°€ ì¡´ì¬í•œë‹¤.
+					ì €ì¥ìˆœì†Œë¥¼ ìœ ì§€í•œë‹¤.
 
 */

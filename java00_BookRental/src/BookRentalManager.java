@@ -17,12 +17,10 @@ public class BookRentalManager {
 
 	public BookRentalManager() {
 	}
-
 	public void bookRentalStart() {
 		ProfileDataSet.basicProfileSet();
 		BookDataSet.basicBookSet();
 		BookDataSet.rentalBookListSet();
-		
 		do {
 			firstMenu();
 			if(session.equals("admin")) {
@@ -36,7 +34,6 @@ public class BookRentalManager {
 			}
 		}while(true);
 	}
-	
 	public void firstMenu() {//로그인. 회원가입, 종료
 		boolean logResult = false;
 		Login log = new Login();
@@ -84,13 +81,11 @@ public class BookRentalManager {
 		ProfileDataSet.profileList.put(vo.getMemberId(), vo);
 		allProfileList();
 		return true;
-		
 	}
 	
 	//회원메뉴
 	public void memberMenu() {
 		String memberTitle = "메뉴[1.책대여, 2.책반납, 3.선금넣기, 4.로그아웃, 5.종료]";
-		
 		do {
 			try {
 				allBookList();
@@ -117,7 +112,6 @@ public class BookRentalManager {
 	}
 	//선금추가
 	public void memMoney() {
-		
 		ProfileVO vo = ProfileDataSet.profileList.get(id);
 		do {
 			boolean flag = true;
@@ -141,9 +135,8 @@ public class BookRentalManager {
 			if(menu == 1 && vo.getBookStatus().equals("보유중")) {	//대여
 				statusUpdate(pick, menu);
 				BookDataSet.rentalBookList.put(vo.getBookName(), vo);
-				int don = pvo.getMoney() - vo.getRentalFee(); 
-				pvo.setMoney(don);
-				
+				pvo.setMoney(pvo.getMoney() - vo.getRentalFee());
+				pvo.setRentalCnt(pvo.getRentalCnt()+1);
 			}else if(menu == 2) {	//반납
 				statusUpdate(pick, menu);
 				BookDataSet.bookList.put(vo.getBookName(), vo);
@@ -154,13 +147,13 @@ public class BookRentalManager {
 		}else {
 			System.out.println("목록에 없는 책입니다.");
 		}
-		
 	}
 	//대여중 목록
 	public void rentalList() {
 		Collection<BookVO> rentalList = BookDataSet.rentalBookList.values();
 		Iterator<BookVO> ii = rentalList.iterator();
-		System.out.println("--------------------------------대여중--------------------------------");
+		System.out.println("--------------------------------------------------------------------------------");
+		System.out.println("아래는 대여중인 항목입니다.-----------------------------------------------------");
 		BookVO.bookTitlePrint();
 		while(ii.hasNext()) {
 			BookVO vo = ii.next();
@@ -172,10 +165,10 @@ public class BookRentalManager {
 		}
 	}
 	
-	//�����ڸ޴�==================================================================
+	//관리자 메뉴==================================================================
 	public void adminMenu() {
-		String adminTitle = "관리자 메뉴[1.책등록, 2.책삭제, 3.책목록, 4.회원등록, 5.회원목록, 6.회원삭제, 7.로그아웃, 8.종료]";
-		String profileUpdateTitle = "[1.아이디, 2.비밀번호, 3.이름, 4.전화번호, 5.가입날짜, 6대여권수, 7.선금]";
+		String adminTitle = "관리자 메뉴[1.책등록, 2.책삭제, 3.책목록, 4.회원등록, 5.회원목록, 6.회원삭제, 7.회원정보 수정 8.책정보 수정 9.로그아웃, 10.종료]";
+		
 		do {
 			try {
 				int menu = Integer.parseInt(inData(adminTitle));
@@ -191,11 +184,16 @@ public class BookRentalManager {
 					allProfileList();
 				}else if(menu == 6) {	//회원삭제
 					delProfile(); 
-				}else if(menu == 7) {	//로그아웃
+				}else if(menu == 7) {	//회원정보 수정
+					profileUpdate();
+				}else if(menu == 8) {	//책 정보 수정
+					bookUpdate();
+				}else if(menu == 9) {	//로그아웃
 					logout();
-				}else if(menu == 8) {	//종료
+				}else if(menu == 10) {	//종료
 					programExit();
 				}
+				
 			}catch(NumberFormatException nfe) {
 				System.out.println("잘못입력하셨습니다. 1~8중에서 선택해주세요.");
 			}
@@ -248,7 +246,6 @@ public class BookRentalManager {
 		allProfileList();
 	}
 	
-	//공통=================================================================
 	//로그아웃 & 종료 & 입력받기===============================================
 	public void logout() {//로그아웃
 		session = "logout";
@@ -276,32 +273,84 @@ public class BookRentalManager {
 	
 	//정보수정===========================================================
 	public void statusUpdate(String pic, int menu) {//상태수정
-		if(menu == 1) {
+		if(menu == 1) { // 대여
 			BookVO vo = BookDataSet.bookList.get(pic);
 			vo.setBookStatus(memberName);
-		}else if(menu == 2) {
+		}else if(menu == 2) { //반납
 			BookVO vo = BookDataSet.rentalBookList.get(pic);
 			vo.setBookStatus("보유중");
 		}
 	}
 	
-	public void profileUpdate(String pic, int menu) {
-		ProfileVO vo = ProfileDataSet.profileList.get(pic);
-		if(menu == 1) {//아이디 수정
-			vo.setMemberId(inData("수정할 아이디"));
-		}else if(menu == 2) {//비밀번호 수정
-			vo.setMemberPwd(inData("수정할 비밀번호"));
-		}else if(menu == 3) {//이름 수정
-			vo.setName(inData("수정할 이름"));
-		}else if(menu == 4) {//전화번호 수정
-			vo.setTel(inData("수정할 전화번호"));
-		}else if(menu == 5) {//가입날짜 수정
-			vo.setSince(inData("수정할 가입날짜"));
-		}else if(menu == 6) {//대여권수 수정
-			vo.setRentalCnt(Integer.parseInt(inData("수정할 대여권수")));
-		}else if(menu == 7) {//선금 수정
-			vo.setMoney(Integer.parseInt(inData("수정할 금액")));
-		}
+	//회원정보 수정
+	public void profileUpdate() {
+		String profileUpdateTitle = "[1.비밀번호, 2.이름, 3.전화번호, 4.가입일, 5.대여권수, 6.선불금액, 7.완료]";
+		boolean flag = true;
+		do {
+			allProfileList();
+			String pic = inData("수정할 회원 아이디");
+			if(ProfileDataSet.profileList.containsKey(pic)) {
+				ProfileVO vo = ProfileDataSet.profileList.get(pic);
+				do {
+					try {
+						int menu = Integer.parseInt(inData(profileUpdateTitle));
+						if(menu == 1) {//비밀번호 수정
+							vo.setMemberPwd(inData("수정할 비밀번호"));
+						}else if(menu == 2) {//이름 수정
+							vo.setName(inData("수정할 이름"));					
+						}else if(menu == 3) {//전화번호 수정
+							vo.setTel(inData("수정할 전화번호"));
+						}else if(menu == 4) { //가입날짜 수정
+							vo.setSince(inData("수정할 가입일"));
+						}else if(menu == 5) {//대여권수 수정
+							vo.setRentalCnt(Integer.parseInt(inData("수정할 대여권수")));
+						}else if(menu == 6) {//선금 수정
+							vo.setMoney(Integer.parseInt(inData("수정할 선불금액")));
+						}else if(menu == 7) {
+							System.out.println("수정완료");
+							flag = false;
+						}	
+						allProfileList();
+					}catch(NumberFormatException nfe) {
+						System.out.println("잘못입력하셨습니다. 숫자로 입력해주세요.");
+					}
+				}while(flag);
+			}else {
+				System.out.println("없는 아이디 입니다. 다시 입력하세요");
+			}
+		}while(flag);
 	}
 	
+	//책정보 수정
+	public void bookUpdate() {
+		String bookUpdateTitle = "[1.상태, 2.대여비, 3.대여일, 4.수정완료]";
+		boolean flag = true;
+		do {
+			allBookList();
+			String pic = inData("수정할 책 제목");
+			if(BookDataSet.bookList.containsKey(pic)) {
+				BookVO vo = BookDataSet.bookList.get(pic);
+				do {
+					try {
+						int menu = Integer.parseInt(inData(bookUpdateTitle));
+						if(menu == 1) {//상태
+							vo.setBookStatus(inData("수정할 책 상태"));
+						}else if(menu == 2) {//대여비
+							vo.setRentalFee(Integer.parseInt(inData("수정할 책 대여비")));					
+						}else if(menu == 3) {//대여일
+							vo.setRentalDate(Integer.parseInt(inData("수정할 책 대여일")));
+						}else if(menu == 4) {//수정완료
+							System.out.println("수정완료");
+							flag = false;
+						}	
+						allBookList();
+					}catch(NumberFormatException nfe) {
+						System.out.println("잘못입력하셨습니다. 숫자로 입력해주세요.");
+					}
+				}while(flag);
+			}else {
+				System.out.println("목록에 없는 책입니다. 다시 입력하세요");
+			}
+		}while(flag);
+	}
 }

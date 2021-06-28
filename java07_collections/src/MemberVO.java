@@ -1,7 +1,7 @@
 
 public class MemberVO {
-	// 1°³ÀÇ ·¹ÄÚµå¸¦ º¸°üÇÒ º¯¼ö¸¦ ¼±¾ğÇÏ´Â Å¬·¡½º
-	// ¸â¹öº¯¼ö´Â Ä¸½¶È­ÇÑ´Ù.
+	// 1ê°œì˜ ë ˆì½”ë“œë¥¼ ë³´ê´€í•  ë³€ìˆ˜ë¥¼ ì„ ì–¸í•˜ëŠ” í´ë˜ìŠ¤
+	// ë©¤ë²„ë³€ìˆ˜ëŠ” ìº¡ìŠí™”í•œë‹¤.
 	private String name;
 	private String depart;
 	private String hire;
@@ -18,8 +18,8 @@ public class MemberVO {
 		this.sal = sal;
 	}
 	
-	//Ä¸½¶È­µÈ¸â¹ö¸¦ Á¢±ÙÇÒ ¸Ş¼Òµç
-	//±ÔÄ¢ÀÓ		set¸â¹öº¯¼ö¸í	¹İµíÀÌÀÌ·¸°Ô ÇØ¾ßÇÔ
+	//ìº¡ìŠí™”ëœë©¤ë²„ë¥¼ ì ‘ê·¼í•  ë©”ì†Œë“ 
+	//ê·œì¹™ì„		setë©¤ë²„ë³€ìˆ˜ëª…	ë°˜ë“¯ì´ì´ë ‡ê²Œ í•´ì•¼í•¨
 	public void setName(String name) {	//	setter
 		this.name = name;
 	}
@@ -50,15 +50,15 @@ public class MemberVO {
 		return sal;
 	}
 	///////////////////////////////////////
-	//Ãâ·Â¸Ş¼Òµå
+	//ì¶œë ¥ë©”ì†Œë“œ
 	public void memberPrint() {
-		System.out.println("ÀÌ¸§="+name);
-		System.out.println("ºÎ¼­¸í="+depart);
-		System.out.println("ÀÔ»çÀÏ="+hire);
-		System.out.println("ÀÓ±İ="+sal);
+		System.out.println("ì´ë¦„="+name);
+		System.out.println("ë¶€ì„œëª…="+depart);
+		System.out.println("ì…ì‚¬ì¼="+hire);
+		System.out.println("ì„ê¸ˆ="+sal);
 		System.out.println();
 	}
-	//»óÀ§Å¬·¡½ºÀÎ ObjectÀÇ toString()¸Å¼Òµå¸¦ ¿À¹ö¶óÀÌµù
+	//ìƒìœ„í´ë˜ìŠ¤ì¸ Objectì˜ toString()ë§¤ì†Œë“œë¥¼ ì˜¤ë²„ë¼ì´ë”©
 	public String toString() {
 		String memberData = name+", "+depart+", "+hire+", "+sal;
 		return memberData;

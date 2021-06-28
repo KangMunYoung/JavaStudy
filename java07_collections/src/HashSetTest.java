@@ -4,9 +4,9 @@ import java.util.Iterator;
 public class HashSetTest {
 
 	public HashSetTest() {
-		//	SetÀÎÅÍÆäÀÌ½º¸¦ »ó¼Ó¹ŞÀº Å¬·¡½º´Â 
-		//		1. ÀÔ·Â¼ø¼­¸¦ À¯ÁöÇÏÁö ¾Ê´Â´Ù.
-		//		2. Áßº¹µ¥ÀÌÅÍ¸¦ Çã¿ëÇÏÁö ¾Ê´Â´Ù.
+		//	Setì¸í„°í˜ì´ìŠ¤ë¥¼ ìƒì†ë°›ì€ í´ë˜ìŠ¤ëŠ” 
+		//		1. ì…ë ¥ìˆœì„œë¥¼ ìœ ì§€í•˜ì§€ ì•ŠëŠ”ë‹¤.
+		//		2. ì¤‘ë³µë°ì´í„°ë¥¼ í—ˆìš©í•˜ì§€ ì•ŠëŠ”ë‹¤.
 		
 		double data[] = { 5.6, 12.3, 5.2, 9.1, 9.1, 12.3, 3.4, 6.7 };
 		HashSet<Double> hs = new HashSet<Double>();
@@ -18,7 +18,7 @@ public class HashSetTest {
 		System.out.println("size="+ hs.size());
 		
 		Iterator<Double> ii = hs.iterator();
-		while(ii.hasNext()) { //°´Ã¼°¡ ÀÖÀ¸¸é true, ¾øÀ¸¸é false
+		while(ii.hasNext()) { //ê°ì²´ê°€ ìˆìœ¼ë©´ true, ì—†ìœ¼ë©´ false
 			Double iiData = ii.next();
 			System.out.println(iiData);
 		}

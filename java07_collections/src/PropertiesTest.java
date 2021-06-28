@@ -4,22 +4,22 @@ import java.util.Properties;
 public class PropertiesTest {
 
 	public PropertiesTest() {
-		//PropertisesÄÃ·º¼Ç : key value°¡ ¸ğµÎ StringÄÃ·º¼ÇÀÌ´Ù.
+		//Propertisesì»¬ë ‰ì…˜ : key valueê°€ ëª¨ë‘ Stringì»¬ë ‰ì…˜ì´ë‹¤.
 		Properties prop = new Properties();
 		
-		//°´Ã¼ Ãß°¡
-		prop.setProperty("³×ÀÌ¹ö", "https://www.naver.com");
-		prop.setProperty("³×ÀÌÆ®", "https://www.nate.com");
-		prop.setProperty("´ÙÀ½", "https://www.daum.net");
-		prop.setProperty("±¸±Û", "https://www.google.com");
-		//getProperty() = Å°¸¦ÀÌ¿ëÇÏ¿© °´Ã¼ ¾ò¾î¿À±â
+		//ê°ì²´ ì¶”ê°€
+		prop.setProperty("ë„¤ì´ë²„", "https://www.naver.com");
+		prop.setProperty("ë„¤ì´íŠ¸", "https://www.nate.com");
+		prop.setProperty("ë‹¤ìŒ", "https://www.daum.net");
+		prop.setProperty("êµ¬ê¸€", "https://www.google.com");
+		//getProperty() = í‚¤ë¥¼ì´ìš©í•˜ì—¬ ê°ì²´ ì–»ì–´ì˜¤ê¸°
 		
-		System.out.println(prop.getProperty("´ÙÀ½"));
+		System.out.println(prop.getProperty("ë‹¤ìŒ"));
 		
-		//Å° ¸ñ·Ï ÀüÃ¼ ±¸ÇÏ±â
+		//í‚¤ ëª©ë¡ ì „ì²´ êµ¬í•˜ê¸°
 		Enumeration e = prop.propertyNames();
 		
-		while(e.hasMoreElements()) {//°³Ã¼°¡ ³²¾Æ ÀÖÀ» °æ¿ì ¤¡
+		while(e.hasMoreElements()) {//ê°œì²´ê°€ ë‚¨ì•„ ìˆì„ ê²½ìš° ã„±
 			//Object obj = e. nextElement();
 			String str = (String)e. nextElement();
 			System.out.println("key="+str+", "+prop.getProperty(str));

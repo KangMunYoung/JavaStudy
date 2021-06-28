@@ -6,7 +6,6 @@ public class ProfileVO {
 	private String name;		//이름
 	private String tel;			//전화번호
 	private String since;	//가입일
-	//===========================================
 	private int rentalCnt = 0;	//대여권수
 	private int money = 0;			//가진돈
 	
@@ -23,14 +22,12 @@ public class ProfileVO {
 	}
 	
 	public static void profileTitlePrint() {
-		System.out.println("===================================================================================");
-		System.out.printf("%-10s %-9s %-10s %-15s %-13s %-5s %-20s\n", "아이디", "비밀번호", "이름", "전화번호", "가입일", "대여권수", "선불금액");
-//		System.out.printf("%s\t %s\t %s\t %-5s\t %s\t\t %s\t %s\t\n", "아이디", "비밀번호", "이름", "전화번호", "가입일", "대여권수", "선불금액");
-		System.out.println("===================================================================================");
+		System.out.println("================================================================================================");
+		System.out.printf("%-7s %-8s %-10s %-15s %-12s %-9s %-20s\n", "아이디", "비밀번호", "이름", "전화번호", "가입일", "대여권수", "선불금액");
+		System.out.println("================================================================================================");
 	}
 	public void profilePrint() {
-//		System.out.printf("%s\t %s\t %s\t %s\t %s\t %4d\t %d\t\n", memberId, memberPwd, name, tel, since, rentalCnt, money);
-		System.out.printf("%-11s %-10s %-10s %-16s %-15s %-6s %-20d\n", memberId, memberPwd, name, tel, since, rentalCnt, money);
+		System.out.printf("%-10s %-12s %-9s %-19s %-15s %-13s %-20d원\n", memberId, memberPwd, name, tel, since, rentalCnt, money);
 	}
 	
 	public int getRentalCnt() {
@@ -39,8 +36,6 @@ public class ProfileVO {
 	public void setRentalCnt(int rentalCnt) {
 		this.rentalCnt = rentalCnt;
 	}
-	
-	
 	
 	public String getMemberId() {
 		return memberId;
@@ -81,8 +76,6 @@ public class ProfileVO {
 	public void setSince(String since) {
 		this.since = since;
 	}
-
-
 
 	public int getMoney() {
 		return money;

@@ -6,22 +6,22 @@ import java.util.Set;
 public class HashMapTest {
 
 	public HashMapTest() {
-		//Map interface¸¦ »ó¼Ó¹ŞÀº Å¬·¡½º´Â key, value°¡ Á¸ÀçÇÑ´Ù.
-		//1. HashMapÀº key¿Í valueµ¥ÀÌÅÍ¸¦ ÀúÀåÇÑ´Ù
-		//2. TreeMapÀº key¿Í valueµ¥ÀÌÅÍ¸¦ ÀúÀåÇÑ´Ù, key±âÁØÀ¸·Î Á¤·ÄÇÑ´Ù.
+		//Map interfaceë¥¼ ìƒì†ë°›ì€ í´ë˜ìŠ¤ëŠ” key, valueê°€ ì¡´ì¬í•œë‹¤.
+		//1. HashMapì€ keyì™€ valueë°ì´í„°ë¥¼ ì €ì¥í•œë‹¤
+		//2. TreeMapì€ keyì™€ valueë°ì´í„°ë¥¼ ì €ì¥í•œë‹¤, keyê¸°ì¤€ìœ¼ë¡œ ì •ë ¬í•œë‹¤.
 		
 		
 		HashMap<Integer, String> hm = new HashMap<Integer, String>();
-		hm.put(1, "È«±æµ¿");//°´Ã¼Ãß°¡
-		hm.put(100, "¼¼Á¾´ë¿Õ");
-		hm.put(50, "ÀÌ¼ø½Å");
-		hm.put(25, "Àå¿µ½Ç");
-		hm.put(33, "À¯½Â·æ");
+		hm.put(1, "í™ê¸¸ë™");//ê°ì²´ì¶”ê°€
+		hm.put(100, "ì„¸ì¢…ëŒ€ì™•");
+		hm.put(50, "ì´ìˆœì‹ ");
+		hm.put(25, "ì¥ì˜ì‹¤");
+		hm.put(33, "ìœ ìŠ¹ë£¡");
 		
 		String name = hm.get(100); // int --> Integer
 		System.out.println("100->"+name);
 		
-		//HashMap¿¡¼­ Key¸ñ·ÏÀ» ±¸ÇÏ¿© set¿¡ ´ã¾ÆÁØ´Ù.
+		//HashMapì—ì„œ Keyëª©ë¡ì„ êµ¬í•˜ì—¬ setì— ë‹´ì•„ì¤€ë‹¤.
 		Set<Integer> keyList = hm.keySet();
 		
 		Iterator<Integer> ii = keyList.iterator();
@@ -32,16 +32,16 @@ public class HashMapTest {
 		
 		System.out.println("===============================================");
 		HashMap<String, MemberVO> hm2 = new HashMap<String, MemberVO>();
-		hm2.put("È«±æµ¿", new MemberVO("È«±æµ¿","±âÈ¹ºÎ","2020-10-10", 5000));
-		hm2.put("ÀÌ¼ø½Å", new MemberVO("ÀÌ¼ø½Å","ÃÑ°ıºÎ","2020-01-01", 6000));
-		hm2.put("Àå¿µ½Ç", new MemberVO("Àå¿µ½Ç","ÃÑ¹«ºÎ","2020-07-08", 3000));
-		hm2.put("¼¼Á¾´ë¿Õ", new MemberVO("¼¼Á¾´ë¿Õ","ÀÎ»çºÎ","2020-02-01", 7000));
-		hm2.put("À¯½Â·æ", new MemberVO("À¯½Â·æ","±âÈ¹ºÎ","2020-03-05", 6000));
+		hm2.put("í™ê¸¸ë™", new MemberVO("í™ê¸¸ë™","ê¸°íšë¶€","2020-10-10", 5000));
+		hm2.put("ì´ìˆœì‹ ", new MemberVO("ì´ìˆœì‹ ","ì´ê´„ë¶€","2020-01-01", 6000));
+		hm2.put("ì¥ì˜ì‹¤", new MemberVO("ì¥ì˜ì‹¤","ì´ë¬´ë¶€","2020-07-08", 3000));
+		hm2.put("ì„¸ì¢…ëŒ€ì™•", new MemberVO("ì„¸ì¢…ëŒ€ì™•","ì¸ì‚¬ë¶€","2020-02-01", 7000));
+		hm2.put("ìœ ìŠ¹ë£¡", new MemberVO("ìœ ìŠ¹ë£¡","ê¸°íšë¶€","2020-03-05", 6000));
 		
-		System.out.println("======key¸¦ ÀÌ¿ë Á¤º¸ ¾ò¾î¿À±â=======");
-		String test = hm2.get("È«±æµ¿").getHire();
+		System.out.println("======keyë¥¼ ì´ìš© ì •ë³´ ì–»ì–´ì˜¤ê¸°=======");
+		String test = hm2.get("í™ê¸¸ë™").getHire();
 		System.out.println(test);
-		//key¸ñ·Ï 
+		//keyëª©ë¡ 
 		Set<String> memberKey = hm2.keySet();
 		//Iterator
 		Iterator<String> iii = memberKey.iterator();
@@ -54,7 +54,7 @@ public class HashMapTest {
 			System.out.print(", "+value.getHire());
 			System.out.println(", "+value.getSal());
 		}
-		System.out.println("======value ÀÌ¿ë Á¤º¸ ¾ò¾î¿À±â=======");
+		System.out.println("======value ì´ìš© ì •ë³´ ì–»ì–´ì˜¤ê¸°=======");
 		Collection<MemberVO> values = hm2.values();
 		
 		Iterator<MemberVO> memberValue= values.iterator();

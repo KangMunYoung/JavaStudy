@@ -7,30 +7,30 @@ public class LinkedListTest {
 	}
 	public void start() {
 		//LinkedList :	List, Deque, Queue
-		//				Queue ÀÏ¶§ ÀÔ·Â¼ø¼­¸¦ À¯Áö Ãâ·Â ¸ÕÀúÀÔ·ÂµÈ °´Ã¼°¡ Ãâ·ÂµÈ´Ù.
-		//				Ãâ·ÂµÈ °´Ã¼´Â ÄÃ·º¼Ç¿¡ Áö¿öÁø´Ù.
-		//				DequeÀÏ¶§ ¾çÂÊ¿¡¼­ °´Ã¼¸¦ ÀÔ·Â ¶Ç´Â Ãâ·ÂÇÒ¼ö ÀÖ´Ù.
+		//				Queue ì¼ë•Œ ì…ë ¥ìˆœì„œë¥¼ ìœ ì§€ ì¶œë ¥ ë¨¼ì €ì…ë ¥ëœ ê°ì²´ê°€ ì¶œë ¥ëœë‹¤.
+		//				ì¶œë ¥ëœ ê°ì²´ëŠ” ì»¬ë ‰ì…˜ì— ì§€ì›Œì§„ë‹¤.
+		//				Dequeì¼ë•Œ ì–‘ìª½ì—ì„œ ê°ì²´ë¥¼ ì…ë ¥ ë˜ëŠ” ì¶œë ¥í• ìˆ˜ ìˆë‹¤.
 		
 		LinkedList<String> ll = new LinkedList();
 		
-		//°´Ã¼Ãß°¡
-		ll.offer("È«±æµ¿");
-		ll.offer(new String("¼¼Á¾´ë¿Õ"));
+		//ê°ì²´ì¶”ê°€
+		ll.offer("í™ê¸¸ë™");
+		ll.offer(new String("ì„¸ì¢…ëŒ€ì™•"));
 		ll.offer(String.valueOf(1234));
 		ll.offer(5678+"");
 		System.out.println("size="+ll.size());
-		//°´Ã¼ ¾ò¾î¿À±â
-//		String data = ll.pop();	//Á¦ÀÏ ¾Õ¿¡ÀÖ´Â °´Ã¼°¡ ¾ò¾îÁö°í ÄÃ·º¼Ç¿¡¼­´Â Áö¿öÁø´Ù.
+		//ê°ì²´ ì–»ì–´ì˜¤ê¸°
+//		String data = ll.pop();	//ì œì¼ ì•ì—ìˆëŠ” ê°ì²´ê°€ ì–»ì–´ì§€ê³  ì»¬ë ‰ì…˜ì—ì„œëŠ” ì§€ì›Œì§„ë‹¤.
 //		System.out.println("data="+data);
 //		System.out.println("size="+ll.size());
 //		System.out.println(ll.isEmpty());
 //		System.out.println("data="+data);
 		
-		//	true:ÄÃ·º¼Ç¿¡ °´Ã¼°¡ ¾ø´Ù. false:ÄÃ·º¼Ç¿¡ ³²¾ÆÀÖ´Â °´Ã¼°¡ ÀÖ´Ù.
+		//	true:ì»¬ë ‰ì…˜ì— ê°ì²´ê°€ ì—†ë‹¤. false:ì»¬ë ‰ì…˜ì— ë‚¨ì•„ìˆëŠ” ê°ì²´ê°€ ìˆë‹¤.
 		while(!ll.isEmpty()){
 			String data = ll.pop();
 			int cnt = ll.size();
-			System.out.println(data + ", ³²Àº°´Ã¼¼ö="+cnt);
+			System.out.println(data + ", ë‚¨ì€ê°ì²´ìˆ˜="+cnt);
 		}
 		
 	}

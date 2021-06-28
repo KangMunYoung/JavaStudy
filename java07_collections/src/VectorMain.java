@@ -4,7 +4,7 @@ import java.util.Vector;
 public class VectorMain {
 
 	public VectorMain() {
-		//VectorTestÅ¬·¡½ºÀÇ start()¸Ş¼Òµå¸¦ È£ÃâÇÏ¸é Vector ¸®ÅÏµÈ´Ù.
+		//VectorTestí´ë˜ìŠ¤ì˜ start()ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•˜ë©´ Vector ë¦¬í„´ëœë‹¤.
 		VectorTest vt = new VectorTest();
 		Vector vvv = vt.start();
 		
