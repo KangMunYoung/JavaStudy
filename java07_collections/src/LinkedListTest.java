@@ -23,7 +23,7 @@ public class LinkedListTest {
 //		String data = ll.pop();	//제일 앞에있는 객체가 얻어지고 컬렉션에서는 지워진다.
 //		System.out.println("data="+data);
 //		System.out.println("size="+ll.size());
-//		System.out.println(ll.isEmpty());
+		// System.out.println(ll.isEmpty());
 //		System.out.println("data="+data);
 		
 		//	true:컬렉션에 객체가 없다. false:컬렉션에 남아있는 객체가 있다.
