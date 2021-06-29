@@ -1,15 +1,15 @@
 
 public class StaticTest2 {
 	//static
-	//	¸â¹öº¯¼öÀÇ µ¥ÀÌÅÍÇü ¿ŞÂÊ	public static int a = 100
+	//	ë©¤ë²„ë³€ìˆ˜ì˜ ë°ì´í„°í˜• ì™¼ìª½	public static int a = 100
 	// 						static int b = 200;
-	//	¸Ş¼ÒµåÀÇ ¹İÈ¯Çü ¿ŞÂÊ¿¡ Ç¥±âÇÑ´Ù.
+	//	ë©”ì†Œë“œì˜ ë°˜í™˜í˜• ì™¼ìª½ì— í‘œê¸°í•œë‹¤.
 	//			public static void method(){}
 	//			static void method() {}
 	
-	//¸â¹ö¿µ¿ª¿¡ ½ÇÇà¹® Ç¥±âÇÒ¼ö ¾ø´Ù.
-	//static{}¿¡´Â ½ÇÇà¹®À» Ç¥±âÇÒ¼ö ÀÖ´Ù.
-	//static{}°ú »ı¼ºÀÚ¸Ş¼Òµå´Â static{}ÀÌ ¸ÕÀú ½ÇÇàµÈ
+	//ë©¤ë²„ì˜ì—­ì— ì‹¤í–‰ë¬¸ í‘œê¸°í• ìˆ˜ ì—†ë‹¤.
+	//static{}ì—ëŠ” ì‹¤í–‰ë¬¸ì„ í‘œê¸°í• ìˆ˜ ìˆë‹¤.
+	//static{}ê³¼ ìƒì„±ìë©”ì†Œë“œëŠ” static{}ì´ ë¨¼ì € ì‹¤í–‰ëœ
 	static{
 		for(int i = 1; i<=10; i++) {
 			System.out.println(i);
@@ -17,7 +17,7 @@ public class StaticTest2 {
 	}
 	
 	public StaticTest2() {
-		System.out.println("SteticTest2()¸Ş¼Òµå ½ÇÇàµÊ.");
+		System.out.println("SteticTest2()ë©”ì†Œë“œ ì‹¤í–‰ë¨.");
 	}
 
 	public static void main(String a[]) {

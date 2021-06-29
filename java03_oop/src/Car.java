@@ -3,15 +3,15 @@ public class Car {
 	int speed=0;
 	final int SPEED_MAX = 180;
 	final int SPEED_MIN = 0;
-	String carName = "±×·£Á®";
+	String carName = "ê·¸ëœì ¸";
 	
 	public Car() {
-		System.out.println("Car()»ı¼ºÀÚ¸Ş¼Òµå ½ÇÇà");
+		System.out.println("Car()ìƒì„±ìë©”ì†Œë“œ ì‹¤í–‰");
 	}
 
 	public Car(String carName) {
 		this.carName = carName;
-		System.out.println("Car(String carName)»ı¼ºÀÚ¸Ş¼Òµå ½ÇÇà");
+		System.out.println("Car(String carName)ìƒì„±ìë©”ì†Œë“œ ì‹¤í–‰");
 	}
 
 	public void speedUp() {

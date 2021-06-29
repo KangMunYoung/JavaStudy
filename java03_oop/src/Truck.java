@@ -1,23 +1,23 @@
 
-//	extends Å°¿öµå »ç¿ë Å¬·¡½º¸¦ »ó¼Ó
-//			Å¬·¡½º´Â 1°³¸¸ »ó¼Ó ¹ŞÀ» ¼ö ÀÖ´Ù.
+//	extends í‚¤ì›Œë“œ ì‚¬ìš© í´ë˜ìŠ¤ë¥¼ ìƒì†
+//			í´ë˜ìŠ¤ëŠ” 1ê°œë§Œ ìƒì† ë°›ì„ ìˆ˜ ìˆë‹¤.
 public class Truck extends Car {
 	int speed = 100;
 	public Truck() {
-		System.out.println("Truck()»ı¼ºÀÚ ¸Ş¼Òµå ½ÇÇà");
+		System.out.println("Truck()ìƒì„±ì ë©”ì†Œë“œ ì‹¤í–‰");
 		System.out.println("Truck.speed-?"+speed);
 		super.speedUp();
 		
 	}
 	
 	public Truck(String CarName) {
-		//»óÀ§Å¬·¡½ºÀ§ »ı¼ºÀÚ¸Ş¼Òµå È£Ãâ
+		//ìƒìœ„í´ë˜ìŠ¤ìœ„ ìƒì„±ìë©”ì†Œë“œ í˜¸ì¶œ
 		super(CarName);
-		System.out.println("Truck(String)»ı¼ºÀÚ ½ÇÇà@!@");
+		System.out.println("Truck(String)ìƒì„±ì ì‹¤í–‰@!@");
 	}
 	
-	//overriding :	»óÀ§Å¬·¡½ºÀÇ ¸Ş¼Òµå¸¦ ÇÏÀ§Å¬·¡½º¿¡¼­ ÀçÁ¤ÀÇ
-	//				¹İÈ¯Çü,¸Ş¼Òµå¸í,¸Å°³º¯¼ö°¡ °°Àº ¸Ş¼Òµå¸¦ ÀçÁ¤ÀÇÇÏ´À ¤¤°ÍÀÌ´Ù.
+	//overriding :	ìƒìœ„í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œë¥¼ í•˜ìœ„í´ë˜ìŠ¤ì—ì„œ ì¬ì •ì˜
+	//				ë°˜í™˜í˜•,ë©”ì†Œë“œëª…,ë§¤ê°œë³€ìˆ˜ê°€ ê°™ì€ ë©”ì†Œë“œë¥¼ ì¬ì •ì˜í•˜ëŠ ã„´ê²ƒì´ë‹¤.
 	public void speedUp() {
 		speed += 10;
 		if(speed >= SPEED_MAX) {
@@ -26,17 +26,17 @@ public class Truck extends Car {
 		System.out.println("truck.speed="+speed);
 	}
 	public static void main(String a[]) {
-		//	»ó¼Ó°ü°è¿¡¼­ °´Ã¼»ı¼º½Ã »óÀ§Å¬·¡½ºÀÇ »ı¼ºÀÚ°¡ ¸ÕÀú ½ÇÇàµÇ°í
-		//	ÇÏÀ§Å¬·¡½ºÀÇ »ı¼ºÀÚ°¡ ½ÇÇàµÈ´Ù.
+		//	ìƒì†ê´€ê³„ì—ì„œ ê°ì²´ìƒì„±ì‹œ ìƒìœ„í´ë˜ìŠ¤ì˜ ìƒì„±ìê°€ ë¨¼ì € ì‹¤í–‰ë˜ê³ 
+		//	í•˜ìœ„í´ë˜ìŠ¤ì˜ ìƒì„±ìê°€ ì‹¤í–‰ëœë‹¤.
 		Truck t = new Truck();
 		System.out.println("t.speed="+t.speed);
-		//»óÀ§Å¬·¡½ºÀÇ ¸Ş¼Òµå È£Ãâ
+		//ìƒìœ„í´ë˜ìŠ¤ì˜ ë©”ì†Œë“œ í˜¸ì¶œ
 		t.speedUp();
 		t.speedUp();
 		t.speedDown();
 
-		//»óÀ§Å¬·¡½ºÀÇ »ı¼ºÀÚ¸¦ ¼±ÅÃÀûÀ¸·Î È£ÃâÇÏ±â
-		Truck tt = new Truck("¼Ò³ªÅ¸");
+		//ìƒìœ„í´ë˜ìŠ¤ì˜ ìƒì„±ìë¥¼ ì„ íƒì ìœ¼ë¡œ í˜¸ì¶œí•˜ê¸°
+		Truck tt = new Truck("ì†Œë‚˜íƒ€");
 		System.out.println("tt.carName="+tt.carName);
 	}
 }

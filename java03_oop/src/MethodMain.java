@@ -2,28 +2,28 @@
 public class MethodMain {
 
 	public static void main(String[] args) {
-		//		°´Ã¼¸í(mt)= instance=referenceº¯¼ö
-		//					»ı¼ºÀÚ¸Ş¼Òµå
+		//		ê°ì²´ëª…(mt)= instance=referenceë³€ìˆ˜
+		//					ìƒì„±ìë©”ì†Œë“œ
 		MethodTest mt = new MethodTest();
 		MethodTest mt2 = new MethodTest("010-1234-5555");
 		
-		//°´Ã¼³»ÀÇ ¸â¹ö¿µ¿ªÀÇ º¯¼ö¸¦ ´Ù¸¥µ¥ÀÌÅÍ·Î ¼öÁ¤ÇÏ±â
-		mt.name = "ÀÌ¼ø½Å";
+		//ê°ì²´ë‚´ì˜ ë©¤ë²„ì˜ì—­ì˜ ë³€ìˆ˜ë¥¼ ë‹¤ë¥¸ë°ì´í„°ë¡œ ìˆ˜ì •í•˜ê¸°
+		mt.name = "ì´ìˆœì‹ ";
 		System.out.println("mt.name"+mt.name);
 		System.out.println("mt2.name"+mt2.name);
 		System.out.println("mt2.name"+mt2.name);
 		
 //		
-		MethodTest mt3 = new MethodTest(100,"¼¼Á¾´ë¿Õ");
+		MethodTest mt3 = new MethodTest(100,"ì„¸ì¢…ëŒ€ì™•");
 		
 		System.out.println("mt3.num="+mt3.num);	//100
-		System.out.println("mt3.name="+mt3.name);	//¼¼Á¾´ë¿Õ
+		System.out.println("mt3.name="+mt3.name);	//ì„¸ì¢…ëŒ€ì™•
 		System.out.println("mt3.tel="+mt3.tel);	//02-1234-1234
 		
-		MethodTest mt4 = new MethodTest("Àå¿µ½Ç", 200);
+		MethodTest mt4 = new MethodTest("ì¥ì˜ì‹¤", 200);
 		
 		System.out.println("mt4.num="+mt4.num);	//200	
-		System.out.println("mt4.name="+mt4.name);//	Àå¿µ½Ç
+		System.out.println("mt4.name="+mt4.name);//	ì¥ì˜ì‹¤
 		System.out.println("mt4.tel="+mt4.tel);	// 02-1234-1234
 	
 	}

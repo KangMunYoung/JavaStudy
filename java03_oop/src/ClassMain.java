@@ -3,12 +3,12 @@ public class ClassMain {
 
 	public static void main(String[] args) {
 		ClassTest ct = new ClassTest();
-		//						°´Ã¼¸í.¸â¹öº¯¼ö
+		//						ê°ì²´ëª….ë©¤ë²„ë³€ìˆ˜
 		//System.out.println("b="+ ct.b);
 		
 		ClassTest ct2 = new ClassTest(5679);
 		
-		//¸Ş¼Òµå È£Ãâ : °´Ã¼¸í.¸Ş¼Òµå¸í()
+		//ë©”ì†Œë“œ í˜¸ì¶œ : ê°ì²´ëª….ë©”ì†Œë“œëª…()
 		ct.sum();
 		
 		ct.total(100,200);

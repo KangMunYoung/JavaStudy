@@ -6,7 +6,7 @@ public class MethodException {
 	}
 	public void start() throws ArithmeticException, NumberFormatException {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("Á¤¼öÀÔ·Â = ");
+		System.out.print("ì •ìˆ˜ìž…ë ¥ = ");
 		int n = Integer.parseInt(scan.nextLine());
 		plus(150, n);
 	}

@@ -2,7 +2,7 @@
 public class PrivateChild extends PrivateParent{
 
 	public PrivateChild() {
-		//»óÀ§Å¬·¡½º private¸â¹öº¯¼ö´Â »ó¼ÓµÇÁö ¾Ê´Â´Ù.
+		//ìƒìœ„í´ë˜ìŠ¤ privateë©¤ë²„ë³€ìˆ˜ëŠ” ìƒì†ë˜ì§€ ì•ŠëŠ”ë‹¤.
 		//System.out.println("num="+num);
 		//getData();
 	}

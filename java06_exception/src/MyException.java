@@ -1,8 +1,8 @@
-//1. ¿¹¿ÜÅ¬·¡½º »ı¼º½Ã ¹İµå½Ã Exception class extends »ı¼º
+//1. ì˜ˆì™¸í´ë˜ìŠ¤ ìƒì„±ì‹œ ë°˜ë“œì‹œ Exception class extends ìƒì„±
 public class MyException extends Exception{
 
 	public MyException() {
-		super("1~100»çÀÌÀÇ °ªÀÌ¿©¾ßÇÕ´Ï´Ù.");
+		super("1~100ì‚¬ì´ì˜ ê°’ì´ì—¬ì•¼í•©ë‹ˆë‹¤.");
 	}
 	public MyException(String message) {
 		super(message);

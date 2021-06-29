@@ -1,12 +1,12 @@
 
 public class MethodInner {
-	String name="¼¼Á¾´ë¿Õ";
+	String name="ì„¸ì¢…ëŒ€ì™•";
 	public MethodInner() {
 		System.out.println("MethodInner");
 	}
 
 	public void start() {
-		//³»ºÎÅ¬·¡½º
+		//ë‚´ë¶€í´ë˜ìŠ¤
 		class MethodInnerTest{
 			int num=20;
 			String email = "aaaa@nate.com";
@@ -23,7 +23,7 @@ public class MethodInner {
 			}
 		}
 		
-		//³»ºÎÅ¬·¡½º °´Ã¼¸¦ »ı¼º
+		//ë‚´ë¶€í´ë˜ìŠ¤ ê°ì²´ë¥¼ ìƒì„±
 		MethodInnerTest mt = new MethodInnerTest(500);
 		mt.emailOutput();
 	}

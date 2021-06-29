@@ -1,4 +1,4 @@
-								//Ãß»óÅ¬·¡½º »ó¼Ó
+//ì¶”ìƒí´ë˜ìŠ¤ ìƒì†
 public class AvstractMain extends AbstractTest{
 
 	public AvstractMain() {
@@ -6,7 +6,7 @@ public class AvstractMain extends AbstractTest{
 	}
 
 	
-	//»ó¼Ó¹ŞÀº Ãß»óÅ¬·¡½º³»ÀÇ ¸ğµç Ãß»ó¸Ş¼Òµå¸¦ ¿À¹ö¶óÀÌµùÇÑ´Ù.
+	//ìƒì†ë°›ì€ ì¶”ìƒí´ë˜ìŠ¤ë‚´ì˜ ëª¨ë“  ì¶”ìƒë©”ì†Œë“œë¥¼ ì˜¤ë²„ë¼ì´ë”©í•œë‹¤.
 	public void print() {
 		System.out.println("num"+num+", name="+name);
 	}
@@ -18,7 +18,7 @@ public class AvstractMain extends AbstractTest{
 	
 	public void start() {
 		numOutput();
-		setData(5000,"ÀÌ¼ø½Å");
+		setData(5000,"ì´ìˆœì‹ ");
 		print();
 	}
 	
@@ -29,3 +29,4 @@ public class AvstractMain extends AbstractTest{
 	}
 
 }
+								

@@ -1,9 +1,9 @@
 
 public class PrivateParent {
-	//private Á¢±ÙÁ¦ÇÑÀÚ´Â ´Ù¸¥ Å¬·¡½º¿¡ °´Ã¼¸¦ ÅëÇÏ¿© Á¢±ÙÇÒ¼ö ¾ø´Ù.
-	//		»ó¼Ó ºÒ°¡.
+	//private ì ‘ê·¼ì œí•œìëŠ” ë‹¤ë¥¸ í´ë˜ìŠ¤ì— ê°ì²´ë¥¼ í†µí•˜ì—¬ ì ‘ê·¼í• ìˆ˜ ì—†ë‹¤.
+	//		ìƒì† ë¶ˆê°€.
 	private int num = 200;
-	//»ı¼ºÀÚ ¸Ş¼Òµå¿¡ privateÁ¢±ÙÁ¦ÇÑÀÚ´Â °´Ã¼¸¦ »ı¼ºÇÒ ¼ö ¾ø´Ù.
+	//ìƒì„±ì ë©”ì†Œë“œì— privateì ‘ê·¼ì œí•œìëŠ” ê°ì²´ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ë‹¤.
 //	private PrivateParent() {
 //		
 //	}
@@ -11,9 +11,9 @@ public class PrivateParent {
 	PrivateParent(){
 		
 	}
-	//°´Ã¼¸¦ ÅëÇØ¼­ Á¢±ÙºÒ°¡
+	//ê°ì²´ë¥¼ í†µí•´ì„œ ì ‘ê·¼ë¶ˆê°€
 	private void getData()	{
-		System.out.println("¹øÈ£="+num);
+		System.out.println("ë²ˆí˜¸="+num);
 	}
 
 }

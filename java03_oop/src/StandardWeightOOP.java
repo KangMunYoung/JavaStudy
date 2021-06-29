@@ -5,7 +5,7 @@ public class StandardWeightOOP {
 	public StandardWeightOOP() {
 		// TODO Auto-generated constructor stub
 	}
-	//Á¤º¸ ÀÔ·Â
+	//ì •ë³´ ì…ë ¥
 	int age;
 	int gender;
 	double hight=0.0;
@@ -18,47 +18,47 @@ public class StandardWeightOOP {
 	
 	void dataInput(){
 		Scanner scan = new Scanner(System.in);
-		System.out.print("³ªÀÌ=");
+		System.out.print("ë‚˜ì´=");
 		age = scan.nextInt();
 		
-		System.out.print("¼ºº°(1.³²ÀÚ 2.¿©ÀÚ)=");
+		System.out.print("ì„±ë³„(1.ë‚¨ì 2.ì—¬ì)=");
 		gender = scan.nextInt();
 		
-		System.out.print("Å°=");
+		System.out.print("í‚¤=");
 		hight = scan.nextInt();
 		
-		System.out.print("ÇöÀçÃ¼Áß=");
+		System.out.print("í˜„ì¬ì²´ì¤‘=");
 		weight = scan.nextInt();
 	}
 	
-	//ºĞ·ù
+	//ë¶„ë¥˜
 	void result() {
 		idx = 0.90;
 		if(age <=35 && gender ==2) idx = 0.85;
 		else if(age >=36 && gender ==1) idx = 0.95;
 	}
-	//Ç¥ÁØÃ¼Áß°è»ê
+	//í‘œì¤€ì²´ì¤‘ê³„ì‚°
 	void sWeight() {
 		sWeight = (hight-100)*idx;
 	}
-	//Ç¥ÁØÃ¼ÁßÁö¼ö
+	//í‘œì¤€ì²´ì¤‘ì§€ìˆ˜
 	void sWeightIndex() {
 		sWeightIndex = (weight / sWeight) * 100;
 	}
 	
-	//Ç¥ÁØÃ¼ÁßÁö¼ö Æò°¡±âÁØ
+	//í‘œì¤€ì²´ì¤‘ì§€ìˆ˜ í‰ê°€ê¸°ì¤€
 	void sWeightMsg() {
 		
-		if(sWeightIndex<=85) sWeightMsg = "¸¶¸¥Çü";
-		else if(sWeightIndex<=95) sWeightMsg = "Á¶±İ¸¶¸¥Çü";
-		else if(sWeightIndex<=115) sWeightMsg = "Ç¥ÁØÇü";
-		else if(sWeightIndex<=125) sWeightMsg = "Á¶±İºñ¸¸Çü";
-		else sWeightMsg = "ºñ¸¸Çü";
+		if(sWeightIndex<=85) sWeightMsg = "ë§ˆë¥¸í˜•";
+		else if(sWeightIndex<=95) sWeightMsg = "ì¡°ê¸ˆë§ˆë¥¸í˜•";
+		else if(sWeightIndex<=115) sWeightMsg = "í‘œì¤€í˜•";
+		else if(sWeightIndex<=125) sWeightMsg = "ì¡°ê¸ˆë¹„ë§Œí˜•";
+		else sWeightMsg = "ë¹„ë§Œí˜•";
 	}
-	//Ãâ·Â
+	//ì¶œë ¥
 	void print() {
-		System.out.printf("Ç¥ÁØÃ¼Áß=%.2f\n", sWeight);
-		System.out.printf("´ç½ÅÀÇ Ç¥ÁßÃ¼ÁßÁö¼ö´Â %.2fÀ¸·Î %sÀÔ´Ï´Ù\n",sWeightIndex, sWeightMsg);
+		System.out.printf("í‘œì¤€ì²´ì¤‘=%.2f\n", sWeight);
+		System.out.printf("ë‹¹ì‹ ì˜ í‘œì¤‘ì²´ì¤‘ì§€ìˆ˜ëŠ” %.2fìœ¼ë¡œ %sì…ë‹ˆë‹¤\n",sWeightIndex, sWeightMsg);
 	}
 	
 	void start() {
@@ -78,12 +78,12 @@ public class StandardWeightOOP {
 	}
 
 }
-/*³ªÀÌ=36
-¼ºº°(1:³²¼º,2:¿©¼º)=1
-Å°=168
-ÇöÀçÃ¼Áß=85
-Ç¥ÁØÃ¼Áß=64
-´ç½ÅÀÇ Ç¥ÁØÃ¼ÁßÁö¼ö´Â 131.57894736842107À¸·Î ºñ¸¸ÇüÀÔ´Ï´Ù.
+/*ë‚˜ì´=36
+ì„±ë³„(1:ë‚¨ì„±,2:ì—¬ì„±)=1
+í‚¤=168
+í˜„ì¬ì²´ì¤‘=85
+í‘œì¤€ì²´ì¤‘=64
+ë‹¹ì‹ ì˜ í‘œì¤€ì²´ì¤‘ì§€ìˆ˜ëŠ” 131.57894736842107ìœ¼ë¡œ ë¹„ë§Œí˜•ì…ë‹ˆë‹¤.
 
  * */
  

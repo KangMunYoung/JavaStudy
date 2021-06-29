@@ -10,20 +10,20 @@ public class LottoOopExceptioncode {
 	
 	public LottoOopExceptioncode() {
 	}
-	//1°ÔÀÓ¸¸µé±â
+	//1ê²Œìž„ë§Œë“¤ê¸°
 	
 	public int[] lottoCreate() {
 		int lotto[] = new int[7];
 		for(int i=0; i<lotto.length; i++) {
-			//·Î¶Ç¹øÈ£ »ý¼º
+			//ë¡œë˜ë²ˆí˜¸ ìƒì„±
 			lotto[i] = random.nextInt(45)+1;
-			//Áßº¹°Ë»ç
+			//ì¤‘ë³µê²€ì‚¬
 			i = doubleCheck(lotto,i);
 		}
 		return lotto;
 	}
 	
-	//Áßº¹°Ë»ç
+	//ì¤‘ë³µê²€ì‚¬
 	public int doubleCheck(int lotto[], int i) {
 		for(int j=0; j<i; j++) {
 			if(lotto[j] == lotto[i]) {
@@ -34,21 +34,21 @@ public class LottoOopExceptioncode {
 		return i;
 	}
 	
-	//Ãâ·Â
+	//ì¶œë ¥
 	public void lottoPrint(int cnt, int lotto[]) {
-		System.out.print(cnt+"°ÔÀÓ");
-		System.out.print(Arrays.toString(Arrays.copyOfRange(lotto, 0, 6)));//¹øÈ£
+		System.out.print(cnt+"ê²Œìž„");
+		System.out.print(Arrays.toString(Arrays.copyOfRange(lotto, 0, 6)));//ë²ˆí˜¸
 		System.out.println(", bonus="+lotto[6]);
 	}
 	
-	//°è¼Ó¿©ºÎ È®ÀÎÇÏ´Â ¸Þ¼Òµå
+	//ê³„ì†ì—¬ë¶€ í™•ì¸í•˜ëŠ” ë©”ì†Œë“œ
 	
 	public boolean yesNo() {
 		do {
 			try {
-				System.out.print("°è¼ÓÇÏ½Ã°Ú½À´Ï±î?(y:¿¹, n:¾Æ´Ï¿À)?");
+				System.out.print("ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(y:ì˜ˆ, n:ì•„ë‹ˆì˜¤)?");
 				String qa = scan.nextLine();
-				//y:°è¼Ó(true), n:Á¾·á(false) ±×¿Ü ´Ù½Ã
+				//y:ê³„ì†(true), n:ì¢…ë£Œ(false) ê·¸ì™¸ ë‹¤ì‹œ
 				if(qa.equalsIgnoreCase("y")) {
 					return true;
 				}else if(qa.equalsIgnoreCase("n")) {
@@ -66,20 +66,20 @@ public class LottoOopExceptioncode {
 	public void lottoStart() {
 		do {
 			try {
-				System.out.print("°ÔÀÓ¼ö=");
+				System.out.print("ê²Œìž„ìˆ˜=");
 				int game = Integer.parseInt(scan.nextLine());
 				
 				for(int i=1; i<=game; i++) {
 					int lotto[] = lottoCreate();
-					Arrays.sort(lotto, 0, 5);//Á¤·Ä
-					lottoPrint(i, lotto);//Ãâ·Â
+					Arrays.sort(lotto, 0, 5);//ì •ë ¬
+					lottoPrint(i, lotto);//ì¶œë ¥
 				}
-				//°è¼Ó¿©ºÎ
+				//ê³„ì†ì—¬ë¶€
 				if(!yesNo()) {
 					break;
 				}
 			}catch(NumberFormatException nfe) {
-				System.out.println("¼ýÀÚ¸¦ÀÔ·ÂÇÏ¼¼¿ä");
+				System.out.println("ìˆ«ìžë¥¼ìž…ë ¥í•˜ì„¸ìš”");
 			}
 		}while(true);
 	}

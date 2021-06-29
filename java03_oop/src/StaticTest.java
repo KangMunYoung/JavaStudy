@@ -1,15 +1,15 @@
 
 public class StaticTest {
 	int num = 1234;
-	String name ="È«±æµ¿";
-	static String addr ="¸¶Æ÷±¸";
-//	staticÀ¸·Î ¸¸µç º¯¼ö´Â main¸Ş¼Òµå¿¡¼­ Àü¿ªº¯¼ö·Î »ç¿ëµÈ´Ù.
-//	ÇöÀçÅ¬·¡½ºÀÇ ¸ğµç °´Ã¼¿¡¼­ 1°³¸¸ Á¸ÀçÇÑ´Ù.(°øÅëº¯¼ö·Î »ç¿ë)
+	String name ="í™ê¸¸ë™";
+	static String addr ="ë§ˆí¬êµ¬";
+//	staticìœ¼ë¡œ ë§Œë“  ë³€ìˆ˜ëŠ” mainë©”ì†Œë“œì—ì„œ ì „ì—­ë³€ìˆ˜ë¡œ ì‚¬ìš©ëœë‹¤.
+//	í˜„ì¬í´ë˜ìŠ¤ì˜ ëª¨ë“  ê°ì²´ì—ì„œ 1ê°œë§Œ ì¡´ì¬í•œë‹¤.(ê³µí†µë³€ìˆ˜ë¡œ ì‚¬ìš©)
 	
 	public StaticTest() {
 		// TODO Auto-generated constructor stub
 	}
-	//ÁÖ¼Ò¸¦ º¯°æÇÏ´Â ¸Ş¼Òµå
+	//ì£¼ì†Œë¥¼ ë³€ê²½í•˜ëŠ” ë©”ì†Œë“œ
 	void setAddr(String addr) {
 		this.addr=addr;
 	}

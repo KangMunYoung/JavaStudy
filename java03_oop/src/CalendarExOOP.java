@@ -15,36 +15,36 @@ class CalendarExOOP
 	}
 	
 	void setData() {
-		year = getData("³âµµ");
-		month = getData("¿ù");
+		year = getData("ë…„ë„");
+		month = getData("ì›”");
 	}
 	
-	//³â,¿ù,¿äÀÏ Ãâ·Â
+	//ë…„,ì›”,ìš”ì¼ ì¶œë ¥
 	void setForm() {
-		System.out.printf("\t\t%d³â %d¿ù\n", year, month);
-		System.out.println("ÀÏ\t¿ù\tÈ­\t¼ö\t¸ñ\t±İ\tÅä");
+		System.out.printf("\t\t%dë…„ %dì›”\n", year, month);
+		System.out.println("ì¼\tì›”\tí™”\tìˆ˜\tëª©\tê¸ˆ\tí† ");
 	}
 	
-	//´Ş·Â Ãâ·Â
+	//ë‹¬ë ¥ ì¶œë ¥
 	void setDate() {
 		Calendar date = Calendar.getInstance();
 		
 		
 		date.set(year, month-1,1);
 		
-		//¿ùÀÇ ½ÃÀÛ¿äÀÏ
+		//ì›”ì˜ ì‹œì‘ìš”ì¼
 		int week = date.get(Calendar.DAY_OF_WEEK);
 		
-		//¿ùÀÇ ÃÖ´ëÀÏ¼ö
+		//ì›”ì˜ ìµœëŒ€ì¼ìˆ˜
 		int lastDay = date.getActualMaximum(Calendar.DAY_OF_MONTH);
 		
-		//°ø¹éÃâ·Â
+		//ê³µë°±ì¶œë ¥
 		for (int s=1; s<week; s++) System.out.print("\t");
 		
-		//³¯Â¥Ãâ·Â
+		//ë‚ ì§œì¶œë ¥
 		for(int d=1; d<=lastDay; d++) {
 			System.out.print(d+"\t");
-			if((d+week-1)%7==0) {//Ãâ·ÂÇÑ ¹®ÀÚ°¡ 7ÀÇ ¹è¼ö°³ÀÌ¸é ÁÙ¹Ù²Ù±â
+			if((d+week-1)%7==0) {//ì¶œë ¥í•œ ë¬¸ìê°€ 7ì˜ ë°°ìˆ˜ê°œì´ë©´ ì¤„ë°”ê¾¸ê¸°
 				System.out.println();
 			}
 		}

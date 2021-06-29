@@ -5,13 +5,13 @@ public class AnonimousInner {
 		// TODO Auto-generated constructor stub
 	}
 	public void innerTest() {
-		//ÀÍ¸íÀÇ ³»ºÎ Å¬·¡½º : Å¬·¡½º¸íÀÌ Á¸ÀçÇÏÁö ¾Ê´Â´Ù
-		//					´Ù¸¥ Å¬·¡½º¸¦ °´Ã¼È­ÇÏ´Â °úÁ¤¿¡¼­ Å¬·¡½º ¼öÁ¤ÇÏ¿© »õ·Î¸¸µç´Ù.
+		//ìµëª…ì˜ ë‚´ë¶€ í´ë˜ìŠ¤ : í´ë˜ìŠ¤ëª…ì´ ì¡´ì¬í•˜ì§€ ì•ŠëŠ”ë‹¤
+		//					ë‹¤ë¥¸ í´ë˜ìŠ¤ë¥¼ ê°ì²´í™”í•˜ëŠ” ê³¼ì •ì—ì„œ í´ë˜ìŠ¤ ìˆ˜ì •í•˜ì—¬ ìƒˆë¡œë§Œë“ ë‹¤.
 		//					zmffotmauddl whswogkwl dksgdmamfh qustnfmf tjsdjsgkftn djqtek.
 		new Student() {
-			//½ÇÇàºÎ
+			//ì‹¤í–‰ë¶€
 			String tel ="010-1234-8888";
-			//StudentÅ¬·¡½ºÀÇ print¸Ş¼Òµå¸¦ ¿À¹ö¶óÀÌµù
+			//Studentí´ë˜ìŠ¤ì˜ printë©”ì†Œë“œë¥¼ ì˜¤ë²„ë¼ì´ë”©
 			public void print() {
 				System.out.println("num="+num);
 				System.out.println("name="+name);

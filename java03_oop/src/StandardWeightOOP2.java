@@ -5,13 +5,13 @@ public class StandardWeightOOP2 {
 	public StandardWeightOOP2() {
 		// TODO Auto-generated constructor stub
 	}
-	//Á¤º¸ ÀÔ·Â
+	//ì •ë³´ ì…ë ¥
 	int age;
 	int gender;
 	double hight=0.0;
 	double weight=0.0;
 	
-	//µ¥ÀÌÅÍ ÀÔ·Â ¸Ş¼Òµå
+	//ë°ì´í„° ì…ë ¥ ë©”ì†Œë“œ
 	double getConData(String msg){
 		Scanner scan = new Scanner(System.in);
 		System.out.print(msg+"=");
@@ -19,54 +19,54 @@ public class StandardWeightOOP2 {
 	}
 	
 	void setData() {
-		age = (int)getConData("³ªÀÌ");
-		gender = (int)getConData("¼ºº°");
-		hight = getConData("Å°");
-		weight = getConData("¸ö¹«°Ô");
+		age = (int)getConData("ë‚˜ì´");
+		gender = (int)getConData("ì„±ë³„");
+		hight = getConData("í‚¤");
+		weight = getConData("ëª¸ë¬´ê²Œ");
 	}
 	/*
 	 * void dataInput(){ Scanner scan = new Scanner(System.in);
-	 * System.out.print("³ªÀÌ="); age = scan.nextInt();
+	 * System.out.print("ë‚˜ì´="); age = scan.nextInt();
 	 * 
-	 * System.out.print("¼ºº°(1.³²ÀÚ 2.¿©ÀÚ)="); gender = scan.nextInt();
+	 * System.out.print("ì„±ë³„(1.ë‚¨ì 2.ì—¬ì)="); gender = scan.nextInt();
 	 * 
-	 * System.out.print("Å°="); hight = scan.nextInt();
+	 * System.out.print("í‚¤="); hight = scan.nextInt();
 	 * 
-	 * System.out.print("ÇöÀçÃ¼Áß="); weight = scan.nextInt(); }
+	 * System.out.print("í˜„ì¬ì²´ì¤‘="); weight = scan.nextInt(); }
 	 */
 	
-	//ºĞ·ù
+	//ë¶„ë¥˜
 	double idxOop() {
 		double idx=0.90;
 		if(age <=35 && gender ==2) idx = 0.85;
 		else if(age >=36 && gender ==1) idx = 0.95;
 		return idx;
 	}
-	//Ç¥ÁØÃ¼Áß°è»ê
+	//í‘œì¤€ì²´ì¤‘ê³„ì‚°
 	double sWeightOop() {
 		double sWeight=(hight-100)*idxOop();
 		return sWeight;
 	}
-	//Ç¥ÁØÃ¼ÁßÁö¼ö
+	//í‘œì¤€ì²´ì¤‘ì§€ìˆ˜
 	double sWeightIndexOop() {
 		double sWeightIndex=(weight / sWeightOop()) * 100;
 		return sWeightIndex;
 	}
 	
-	//Ç¥ÁØÃ¼ÁßÁö¼ö Æò°¡±âÁØ
+	//í‘œì¤€ì²´ì¤‘ì§€ìˆ˜ í‰ê°€ê¸°ì¤€
 	String sWeightMsgOop() {
 		String sWeightMsg="";
-		if(sWeightIndexOop()<=85) sWeightMsg = "¸¶¸¥Çü";
-		else if(sWeightIndexOop()<=95) sWeightMsg = "Á¶±İ¸¶¸¥Çü";
-		else if(sWeightIndexOop()<=115) sWeightMsg = "Ç¥ÁØÇü";
-		else if(sWeightIndexOop()<=125) sWeightMsg = "Á¶±İºñ¸¸Çü";
-		else sWeightMsg = "ºñ¸¸Çü";
+		if(sWeightIndexOop()<=85) sWeightMsg = "ë§ˆë¥¸í˜•";
+		else if(sWeightIndexOop()<=95) sWeightMsg = "ì¡°ê¸ˆë§ˆë¥¸í˜•";
+		else if(sWeightIndexOop()<=115) sWeightMsg = "í‘œì¤€í˜•";
+		else if(sWeightIndexOop()<=125) sWeightMsg = "ì¡°ê¸ˆë¹„ë§Œí˜•";
+		else sWeightMsg = "ë¹„ë§Œí˜•";
 		return sWeightMsg;
 	}
-	//Ãâ·Â
+	//ì¶œë ¥
 	void print() {
-		System.out.printf("Ç¥ÁØÃ¼Áß=%.2f\n", sWeightOop());
-		System.out.printf("´ç½ÅÀÇ Ç¥ÁßÃ¼ÁßÁö¼ö´Â %.2fÀ¸·Î %sÀÔ´Ï´Ù\n",sWeightIndexOop(), sWeightMsgOop());
+		System.out.printf("í‘œì¤€ì²´ì¤‘=%.2f\n", sWeightOop());
+		System.out.printf("ë‹¹ì‹ ì˜ í‘œì¤‘ì²´ì¤‘ì§€ìˆ˜ëŠ” %.2fìœ¼ë¡œ %sì…ë‹ˆë‹¤\n",sWeightIndexOop(), sWeightMsgOop());
 	}
 	
 	void start() {
@@ -82,12 +82,12 @@ public class StandardWeightOOP2 {
 	}
 
 }
-/*³ªÀÌ=36
-¼ºº°(1:³²¼º,2:¿©¼º)=1
-Å°=168
-ÇöÀçÃ¼Áß=85
-Ç¥ÁØÃ¼Áß=64
-´ç½ÅÀÇ Ç¥ÁØÃ¼ÁßÁö¼ö´Â 131.57894736842107À¸·Î ºñ¸¸ÇüÀÔ´Ï´Ù.
+/*ë‚˜ì´=36
+ì„±ë³„(1:ë‚¨ì„±,2:ì—¬ì„±)=1
+í‚¤=168
+í˜„ì¬ì²´ì¤‘=85
+í‘œì¤€ì²´ì¤‘=64
+ë‹¹ì‹ ì˜ í‘œì¤€ì²´ì¤‘ì§€ìˆ˜ëŠ” 131.57894736842107ìœ¼ë¡œ ë¹„ë§Œí˜•ì…ë‹ˆë‹¤.
 
  * */
  

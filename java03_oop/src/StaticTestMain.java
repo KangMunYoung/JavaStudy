@@ -9,12 +9,12 @@ public class StaticTestMain {
 		StaticTest ss = new StaticTest();
 		StaticTest ss2 = new StaticTest();
 		
-		ss.setAddr("¿µµîÆ÷±¸");
+		ss.setAddr("ì˜ë“±í¬êµ¬");
 		
 		String address = ss2.getAddr();
 		System.out.println("address="+ address);
 		
-//		static ¸â¹ö º¯¼ö´Â °´Ã¼»ı¼ºÇÏÁö ¾Ê°í »ç¿ëÇÒ¼ö ÀÖ´Ù.
+//		static ë©¤ë²„ ë³€ìˆ˜ëŠ” ê°ì²´ìƒì„±í•˜ì§€ ì•Šê³  ì‚¬ìš©í• ìˆ˜ ìˆë‹¤.
 		System.out.println("name="+	StaticTest.addr);
 		
 		Calendar now = Calendar.getInstance();

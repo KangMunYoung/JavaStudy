@@ -12,7 +12,7 @@ public class LottoGame {
 	public void start() {
 		int check;
 		do {
-			System.out.print("°ÔÀÓ¼ö->");
+			System.out.print("ê²Œì„ìˆ˜->");
 			int game = inputNum();
 			
 			for(int i=1; i<=game; i++) {
@@ -20,17 +20,17 @@ public class LottoGame {
 				gamePrint(i);
 			}
 			
-			System.out.print("°è¼ÓÇÏ½Ã°Ú½À´Ï±î? [1.¿¹ 2.¾Æ´Ï¿À]");
+			System.out.print("ê³„ì†í•˜ì‹œê² ìŠµë‹ˆê¹Œ? [1.ì˜ˆ 2.ì•„ë‹ˆì˜¤]");
 			check = inputNum();
 		}while(check != 2);
 	}
 	
-	public int inputNum() { // ¹øÈ£ÀÔ·Â
+	public int inputNum() { // ë²ˆí˜¸ì…ë ¥
 		Scanner scan = new Scanner(System.in);
 		return scan.nextInt();
 	}
 	
-	public void lotto() {	//¹øÈ£»ı¼º&Áßº¹Á¦°Å
+	public void lotto() {	//ë²ˆí˜¸ìƒì„±&ì¤‘ë³µì œê±°
 		for(int i=0; i<lottoData.length; i++) {
 			lottoData[i]=(int)(Math.random()*45)+1;
 			for(int c=0; c<i; c++) {
@@ -41,10 +41,10 @@ public class LottoGame {
 		}
 	}
 	
-	public void gamePrint(int i) {	// Á¤·Ä & º¸³Ê½º ±¸ºĞ
+	public void gamePrint(int i) {	// ì •ë ¬ & ë³´ë„ˆìŠ¤ êµ¬ë¶„
 		int lottoArr[] = Arrays.copyOfRange(lottoData, 0, 6);
 		Arrays.sort(lottoArr);
-		System.out.println(i+"°ÔÀÓ="+Arrays.toString(lottoArr)+" º¸³Ê½º="+lottoData[6]);
+		System.out.println(i+"ê²Œì„="+Arrays.toString(lottoArr)+" ë³´ë„ˆìŠ¤="+lottoData[6]);
 	}
 	
 	public static void main(String[] args) {

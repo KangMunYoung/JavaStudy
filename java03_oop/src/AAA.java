@@ -7,8 +7,8 @@ public class AAA {
 	}
 	
 	public void output() {
-		System.out.println("¹øÈ£="+num);
-		System.out.println("ÀÌ¸§="+name);
+		System.out.println("ë²ˆí˜¸="+num);
+		System.out.println("ì´ë¦„="+name);
 	}
 
 }

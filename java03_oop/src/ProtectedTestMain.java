@@ -3,15 +3,15 @@ import test.ProtectedTest2;
 public class ProtectedTestMain extends ProtectedTest2{
 
 	ProtectedTestMain() {
-		//°°Àº ÆÑÅ°Áö³»ÀÇ ´Ù¸¥Å¬·¡½º´Â defaultÃ³·³ »ç¿ë°¡´É
+		//ê°™ì€ íŒ©í‚¤ì§€ë‚´ì˜ ë‹¤ë¥¸í´ë˜ìŠ¤ëŠ” defaultì²˜ëŸ¼ ì‚¬ìš©ê°€ëŠ¥
 		ProtectedTest pt = new ProtectedTest();
 		System.out.println("pt.num"+pt.num);
 		pt.print();
 		
-		//´Ù¸¥ÆÑÅ°ÁöÀÇ Å¬·¡½º´Â °´Ã¼¸¦ »ı¼ºÇÒ ¼ö ¾ø´Ù.
+		//ë‹¤ë¥¸íŒ©í‚¤ì§€ì˜ í´ë˜ìŠ¤ëŠ” ê°ì²´ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ë‹¤.
 		//ProtectedTest2 pt2 = new ProtectedTest2();
 		
-		//protectedÁ¢±ÙÁ¦ÇÑÀÚ´Â ´Ù¸¥ ÆÑÅ°ÁöÀÏ°æ¿ì »ó¼Ó¹Ş¾Æ »ç¿ëÇÑ´Ù
+		//protectedì ‘ê·¼ì œí•œìëŠ” ë‹¤ë¥¸ íŒ©í‚¤ì§€ì¼ê²½ìš° ìƒì†ë°›ì•„ ì‚¬ìš©í•œë‹¤
 		System.out.println("tel="+tel);
 		telOutput();
 	}

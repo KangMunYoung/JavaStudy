@@ -10,14 +10,14 @@ public class OOP_Ex01 {
 //		System.out.print(gugudan(danInput()));
 	}
 	
-	//´ÜÀÔ·Â¹Þ±â
+	//ë‹¨ìž…ë ¥ë°›ê¸°
 	int danInput() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("´ÜÀÔ·Â=");
+		System.out.print("ë‹¨ìž…ë ¥=");
 		return scan.nextInt();
 	}
 	
-	//±¸±¸´ÜÃâ·ÂÇÏ±â
+	//êµ¬êµ¬ë‹¨ì¶œë ¥í•˜ê¸°
 	String gugudan(int dan) {
 		String gugu="";
 		for(int i=2; i<=9; i++) {
@@ -33,12 +33,12 @@ public class OOP_Ex01 {
 		System.out.println(result);
 	}
 	public static void main(String[] args) {
-		OOP_Ex01 oop = new OOP_Ex01();//new ÇÏ¸é »ý¼ºÀÚ ¸Þ¼Òµå°¡ ½ÇÇàµÈ´Ù.
+		OOP_Ex01 oop = new OOP_Ex01();//new í•˜ë©´ ìƒì„±ìž ë©”ì†Œë“œê°€ ì‹¤í–‰ëœë‹¤.
 		oop.start();
 //		System.out.print(oop.gugudan(oop.danInput()));
 		
 	}
 
 }
-//ÄÜ¼Ö¿¡¼­ ´ÜÀ» ÀÔ·Â¹Þ¾Æ ÀÔ·Â¹ÞÀº ±¸±¸´ÜÀ» Ãâ·ÂÇÏ¶ó.
+//ì½˜ì†”ì—ì„œ ë‹¨ì„ ìž…ë ¥ë°›ì•„ ìž…ë ¥ë°›ì€ êµ¬êµ¬ë‹¨ì„ ì¶œë ¥í•˜ë¼.
 //

@@ -5,18 +5,18 @@ public class MethodOverroding {
 		// TODO Auto-generated constructor stub
 	}
 
-//	¿À¹ö·Îµù
-//	°°Àº Å¬·¡½º¿¡¼­ ¸Þ¼Òµå¸íÀÌ °°Àº ¸Þ¼Òµå°¡ ¿©·¯°³ Á¸ÀçÇÒ ¶§ ¿À¹ö·ÎµùÀÌ¶ó°í ÇÑ´Ù.
-//	¸Þ¼Òµå¸í°ú ¹ÝÈ¯ÇüÀÇ °°Àº ¸Å°³º¯¼öÀÇ °¹¼ö°¡ µ¥ÀÌÅÍÇüÀº ´Þ¶ó¾ß ÇÑ´Ù.
+//	ì˜¤ë²„ë¡œë”©
+//	ê°™ì€ í´ëž˜ìŠ¤ì—ì„œ ë©”ì†Œë“œëª…ì´ ê°™ì€ ë©”ì†Œë“œê°€ ì—¬ëŸ¬ê°œ ì¡´ìž¬í•  ë•Œ ì˜¤ë²„ë¡œë”©ì´ë¼ê³  í•œë‹¤.
+//	ë©”ì†Œë“œëª…ê³¼ ë°˜í™˜í˜•ì˜ ê°™ì€ ë§¤ê°œë³€ìˆ˜ì˜ ê°¯ìˆ˜ê°€ ë°ì´í„°í˜•ì€ ë‹¬ë¼ì•¼ í•œë‹¤.
 	int totalResult() {
-//		1~100±îÁöÀÇ ÇÕÀ» ±¸ÇÑ´Ù.
+//		1~100ê¹Œì§€ì˜ í•©ì„ êµ¬í•œë‹¤.
 		int result = 0;
 		for(int i=1 ;i<=100 ;i++) {
 			result += i;
 		}
 		return result;
 	}
-//	1~max±îÁö ÇÕÀ» ±¸ÇÑ´Ù.
+//	1~maxê¹Œì§€ í•©ì„ êµ¬í•œë‹¤.
 	int totalResult(int max) {
 		int result =0;
 		for(int i=1; i<=max; i++) {
@@ -29,9 +29,9 @@ public class MethodOverroding {
 		// TODO Auto-generated method stub
 		MethodOverroding mo = new MethodOverroding();
 		
-		int r = mo.totalResult();//1~100±îÁö ÇÕ
+		int r = mo.totalResult();//1~100ê¹Œì§€ í•©
 		
-		int rr = mo.totalResult(200);//1~200±îÁö ÇÕ
+		int rr = mo.totalResult(200);//1~200ê¹Œì§€ í•©
 		System.out.println("r="+r);
 		System.out.println("rr="+rr);
 		

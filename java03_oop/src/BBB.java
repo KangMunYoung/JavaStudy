@@ -6,6 +6,6 @@ public class BBB extends AAA {
 		// TODO Auto-generated constructor stub
 	}
 	public void output() {
-		System.out.println("¹øÈ£="+num+", ¿¬¶ôÃ³="+tel+", ÀÌ¸§="+name);
+		System.out.println("ë²ˆí˜¸="+num+", ì—°ë½ì²˜="+tel+", ì´ë¦„="+name);
 	}
 }

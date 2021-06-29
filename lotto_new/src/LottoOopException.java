@@ -1,6 +1,6 @@
 public class LottoOopException extends Exception{
 	public LottoOopException() {
-		super("y È¤Àº n¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+		super("y í˜¹ì€ në¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”");
 	}
 	public LottoOopException(String message) {
 		super(message);

@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
 public class OOP_Ex02 {
-	int dan;//ÀÔ·Â¹ŞÀº ´ÜÀ» ÀúÀåÇÒ º¯¼ö=0
-	String gugu="";// ±¸±¸´ÜÀ» ÀúÀåÇÒ º¯¼ö
+	int dan;//ì…ë ¥ë°›ì€ ë‹¨ì„ ì €ì¥í•  ë³€ìˆ˜=0
+	String gugu="";// êµ¬êµ¬ë‹¨ì„ ì €ì¥í•  ë³€ìˆ˜
 	public OOP_Ex02() {
 	}
-	//´ÜÀÔ·Â¹Ş±â
+	//ë‹¨ì…ë ¥ë°›ê¸°
 	int danInput() {
 		Scanner scan = new Scanner(System.in);
-		System.out.print("´ÜÀÔ·Â=");
+		System.out.print("ë‹¨ì…ë ¥=");
 		return scan.nextInt();
 	}
 	
-	//±¸±¸´ÜÃâ·ÂÇÏ±â
+	//êµ¬êµ¬ë‹¨ì¶œë ¥í•˜ê¸°
 	void gugudan() {
 		for(int i=2; i<=9; i++) {
 			gugu += dan + "*" + i + "=" + dan*i + "\n";
@@ -26,12 +26,12 @@ public class OOP_Ex02 {
 		System.out.println(gugu);
 	}
 	public static void main(String[] args) {
-		OOP_Ex02 oop = new OOP_Ex02();//new ÇÏ¸é »ı¼ºÀÚ ¸Ş¼Òµå°¡ ½ÇÇàµÈ´Ù.
+		OOP_Ex02 oop = new OOP_Ex02();//new í•˜ë©´ ìƒì„±ì ë©”ì†Œë“œê°€ ì‹¤í–‰ëœë‹¤.
 		oop.start();
 //		System.out.print(oop.gugudan(oop.danInput()));
 		
 	}
 
 }
-//ÄÜ¼Ö¿¡¼­ ´ÜÀ» ÀÔ·Â¹Ş¾Æ ÀÔ·Â¹ŞÀº ±¸±¸´ÜÀ» Ãâ·ÂÇÏ¶ó.
+//ì½˜ì†”ì—ì„œ ë‹¨ì„ ì…ë ¥ë°›ì•„ ì…ë ¥ë°›ì€ êµ¬êµ¬ë‹¨ì„ ì¶œë ¥í•˜ë¼.
 //

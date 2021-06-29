@@ -1,40 +1,40 @@
 
 public class OuterClass {
-	int num = 100; // ¸â¹öº¯¼ö
-	String name = "´©±¸³Ä";
+	int num = 100; // ë©¤ë²„ë³€ìˆ˜
+	String name = "ëˆ„êµ¬ëƒ";
 	
 	public OuterClass() {
-		System.out.println("OuterClass»ı¼ºÀÚ ¸Ş¼Òµå ½ÇÇàµÊ");
+		System.out.println("OuterClassìƒì„±ì ë©”ì†Œë“œ ì‹¤í–‰ë¨");
 	}
 	public void print() {
 		System.out.println("num="+num);
 		System.out.println("name="+name);
-		//¿ÜºÎÅ¬·¡½º¿¡ ³»ºÎÅ¬·¡½ºÀÇ ¸â¹öº¯¼ö´Â Á¢±ÙºÒ°¡ÇÏ´Ù
+		//ì™¸ë¶€í´ë˜ìŠ¤ì— ë‚´ë¶€í´ë˜ìŠ¤ì˜ ë©¤ë²„ë³€ìˆ˜ëŠ” ì ‘ê·¼ë¶ˆê°€í•˜ë‹¤
 		//System.out.println("tel->"+tel);
 	}
 	
 	public void createInner() {
-		//Å¬·¡½º³»¿¡¼­ ³»ºÎÅ¬·¡½º °´Ã¼ »ı¼ºÇÏ±â
+		//í´ë˜ìŠ¤ë‚´ì—ì„œ ë‚´ë¶€í´ë˜ìŠ¤ ê°ì²´ ìƒì„±í•˜ê¸°
 		InnerClass cc = new InnerClass();
 		cc.tel = "010-9999-9999";
 		cc.output();
 		
 	}
 	
-	//³»ºÎÅ¬·¡½º
+	//ë‚´ë¶€í´ë˜ìŠ¤
 	class InnerClass{
-		//¸â¹öº¯¼ö
+		//ë©¤ë²„ë³€ìˆ˜
 		String tel = "010-4444-2222";
 		
-		//»ı¼ºÀÚ¸Ş¼Òµå
+		//ìƒì„±ìë©”ì†Œë“œ
 		InnerClass(){
-			System.out.println("InnerClass»ı¼ºÀÚ ¸Ş¼Òµå ½ÇÇà");
+			System.out.println("InnerClassìƒì„±ì ë©”ì†Œë“œ ì‹¤í–‰");
 		}
 		
-		//¸Ş¼Òµå
+		//ë©”ì†Œë“œ
 		public void output() {
 			System.out.println("tel="+tel);
-			//¿ÜºÎÅ¬·¡½ºÀÇ ¸â¹öº¯¼ö´Â ³»ºÎÅ¬·¡½º¿¡¼­ Á¢±Ù °¡´ÉÇÏ´Ù.
+			//ì™¸ë¶€í´ë˜ìŠ¤ì˜ ë©¤ë²„ë³€ìˆ˜ëŠ” ë‚´ë¶€í´ë˜ìŠ¤ì—ì„œ ì ‘ê·¼ ê°€ëŠ¥í•˜ë‹¤.
 			System.out.println("num=------->"+num);
 			System.out.println("name------->="+name);
 		}
@@ -44,8 +44,8 @@ public class OuterClass {
 		//OuterClass oc = new OuterClass();
 		//oc.print();
 		
-		//³»ºÎ Å¬·¡½º °´Ã¼ »ı¼ºÇÏ±â
-		//¿ÜºÎÅ¬·¡½º °´Ã¼ »ı¼º -> ³»ºÎÅ¬·¡½º °´Ã¼»ı¼º
+		//ë‚´ë¶€ í´ë˜ìŠ¤ ê°ì²´ ìƒì„±í•˜ê¸°
+		//ì™¸ë¶€í´ë˜ìŠ¤ ê°ì²´ ìƒì„± -> ë‚´ë¶€í´ë˜ìŠ¤ ê°ì²´ìƒì„±
 		
 		//1.
 		InnerClass ic = new OuterClass().new InnerClass();

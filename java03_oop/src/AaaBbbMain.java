@@ -8,7 +8,7 @@ public class AaaBbbMain {
 	public static void main(String[] args) {
 		BBB b = new BBB();
 		b.output();
-		//ÇÏÀ§Å¬·¡½º·Î °´Ã¼¸¦ »ı¼ºÇÏ°í »óÀ§Å¬·¡½º¿¡ ´ëÀÔµÈ´Ù.
+		//í•˜ìœ„í´ë˜ìŠ¤ë¡œ ê°ì²´ë¥¼ ìƒì„±í•˜ê³  ìƒìœ„í´ë˜ìŠ¤ì— ëŒ€ì…ëœë‹¤.
 		AAA a = new BBB();
 		a.output();
 		

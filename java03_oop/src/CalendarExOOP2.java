@@ -10,31 +10,31 @@ public class CalendarExOOP2 {
 	}
 	
 	public void calendarStart() {
-		/////³âµµ ¿ù
-		int year = getDate("³âµµ");
-		int month = getDate("¿ù");
+		/////ë…„ë„ ì›”
+		int year = getDate("ë…„ë„");
+		int month = getDate("ì›”");
 		
 		titlePrint(year, month);
 		
 		
 		date = Calendar.getInstance();
-		//ÀÔ·Â¹ŞÀº ³â¿ù, 1ÀÏÀ» ¼¼ÆÂÆÃ
+		//ì…ë ¥ë°›ì€ ë…„ì›”, 1ì¼ì„ ì„¸íŒƒíŒ…
 		
 		date.set(year,  month-1,1);
-		//¿äÀÏ±¸ÇÏ±â
+		//ìš”ì¼êµ¬í•˜ê¸°
 		
 		int week = date.get(Calendar.DAY_OF_WEEK);
 		
-		spacePrint(week-1);//¿äÀÏÁ¤º¸ ÀÌ¿ë °ø¹éÃâ·Â
+		spacePrint(week-1);//ìš”ì¼ì •ë³´ ì´ìš© ê³µë°±ì¶œë ¥
 		
-		//Çö³â¿ùÀÇ ¸¶Áö¸·³¯
+		//í˜„ë…„ì›”ì˜ ë§ˆì§€ë§‰ë‚ 
 		int lastDay = date.getActualMaximum(Calendar.DAY_OF_MONTH);
 		
-		//³¯Â¥ Ãâ·Â
+		//ë‚ ì§œ ì¶œë ¥
 		dayPrint(week-1, lastDay);
 	}
 	
-	//³¯Â¥Ãâ·Â
+	//ë‚ ì§œì¶œë ¥
 	public void dayPrint(int space, int lastDay) {
 		for(int day=1; day<=lastDay; day++) {
 			System.out.print(day+"\t");
@@ -52,8 +52,8 @@ public class CalendarExOOP2 {
 	
 	
 	public void titlePrint(int year, int month) {
-		System.out.println("\t\t"+year+"³â "+month+"¿ù");
-		System.out.println("ÀÏ\t¿ù\tÈ­\t¼ö\t¸ñ\t±İ\tÅä");
+		System.out.println("\t\t"+year+"ë…„ "+month+"ì›”");
+		System.out.println("ì¼\tì›”\tí™”\tìˆ˜\tëª©\tê¸ˆ\tí† ");
 	}
 	
 	
@@ -69,6 +69,6 @@ public class CalendarExOOP2 {
 
 }
 /*
- * ³â¿ùÀ» ÀÔ·Â¹Ş¾Æ ´Ş·ÂÃâ·Â
- * ¸â¹ö¿¡´Â Scanner Calendar Á¸ÀçÇÑ´Ù.
+ * ë…„ì›”ì„ ì…ë ¥ë°›ì•„ ë‹¬ë ¥ì¶œë ¥
+ * ë©¤ë²„ì—ëŠ” Scanner Calendar ì¡´ì¬í•œë‹¤.
  */

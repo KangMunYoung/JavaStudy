@@ -1,12 +1,12 @@
 
 public class ProtectedTest {
 	protected int num=1234;
-	String name = "¼¼Á¾´ë¿Õ";
+	String name = "ì„¸ì¢…ëŒ€ì™•";
 	protected ProtectedTest() {
-		System.out.println("°°Àº ÆĞÅ°ÁöÀÇ »ı¼ºÀÚ¸Ş¼Òµå");
+		System.out.println("ê°™ì€ íŒ¨í‚¤ì§€ì˜ ìƒì„±ìë©”ì†Œë“œ");
 	}
 	protected void print() {
-		System.out.println("ÀÌ¸§"+name);
+		System.out.println("ì´ë¦„"+name);
 		
 	}
 

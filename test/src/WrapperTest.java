@@ -2,26 +2,26 @@
 public class WrapperTest {
 
 	public WrapperTest() {
-		//WrapperÅ¬·¡½º´Â ±âº» µ¥ÀÌÅÍÇüÀÇ Á¤º¸¸¦ °´Ã¼·Î º¯°æ½ÃÅ°´Â Å¬·¡½ºÀÌ´Ù.
+		//Wrapperí´ë˜ìŠ¤ëŠ” ê¸°ë³¸ ë°ì´í„°í˜•ì˜ ì •ë³´ë¥¼ ê°ì²´ë¡œ ë³€ê²½ì‹œí‚¤ëŠ” í´ë˜ìŠ¤ì´ë‹¤.
 		//Byte, Short, Integer, Long
 		//Float, Double
 		//Boolean
 		//Character
 		
 		int a =1234;
-		Integer i= Integer.valueOf(a);//new Integer(a); //°´Ã¼È­
+		Integer i= Integer.valueOf(a);//new Integer(a); //ê°ì²´í™”
 		
-		System.out.println(a);//°´Ã¼°¡¾Æ´Ô
-		System.out.println(i);//°´Ã¼
+		System.out.println(a);//ê°ì²´ê°€ì•„ë‹˜
+		System.out.println(i);//ê°ì²´
 		
-		Object obj = a;	//¿ÀÅä¹Ú½Ì 1.5¹öÀü ÀÌÀü¿¡»ç¿ëÇÏ¸é¿À·ù³²
+		Object obj = a;	//ì˜¤í† ë°•ì‹± 1.5ë²„ì „ ì´ì „ì—ì‚¬ìš©í•˜ë©´ì˜¤ë¥˜ë‚¨
 		Object obj2 = i;
 		System.out.println(obj);
 		System.out.println(obj2);
 		
 //		1.1, 1.2 , 1.3, 1.4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
 	
-		int x = i;//¿ÀÅä¾ğ¹Ú½Ì
+		int x = i;//ì˜¤í† ì–¸ë°•ì‹±
 		System.out.println(x);
 	}
 
