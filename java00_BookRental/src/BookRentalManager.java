@@ -21,6 +21,7 @@ public class BookRentalManager {
 		ProfileDataSet.basicProfileSet();
 		BookDataSet.basicBookSet();
 		BookDataSet.rentalBookListSet();
+		
 		do {
 			firstMenu();
 			if(session.equals("admin")) {
@@ -34,6 +35,7 @@ public class BookRentalManager {
 			}
 		}while(true);
 	}
+	
 	public void firstMenu() {//로그인. 회원가입, 종료
 		boolean logResult = false;
 		Login log = new Login();
