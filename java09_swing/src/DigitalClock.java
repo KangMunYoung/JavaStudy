@@ -10,18 +10,6 @@ public class DigitalClock extends JFrame{
 	Calendar now;
 	JLabel lbl = new JLabel("00:00:00", JLabel.CENTER);
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public DigitalClock() {
 		super("시계"); //setTitle("시계");
 		add(lbl);
