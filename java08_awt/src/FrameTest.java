@@ -7,7 +7,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 
-// ì»¨í…Œì´ë„ˆ Frame ìƒì†ë°›ì•„ êµ¬í˜„í•˜ê¸°
+// ÄÁÅ×ÀÌ³Ê Frame »ó¼Ó¹Ş¾Æ ±¸ÇöÇÏ±â
 
 public class FrameTest extends Frame{
 
@@ -15,27 +15,27 @@ public class FrameTest extends Frame{
 	Dimension wh = new Dimension(500, 300);
 	Rectangle rect = new Rectangle(100, 100, 400, 400);
 	public FrameTest() {
-		//ì°½ì˜ ì œëª©
-		//setTitle("í”„ë ˆì„ìƒì„±ì—°ìŠµì¤‘");	//ë©”ì†Œë“œ ì‚¬ìš©í•˜ëŠ” ë°©ë²•
-		super("í•˜ìœ„ì—ì„œ ì œëª©ì„¤ì •");// Frame(í•˜ìœ„ì—ì„œ ì œëª©ì„¤ì •) ìƒì„±ì ë©”ì†Œë“œì‚¬ìš©
-		//ì°½ì˜ í¬ê¸°
+		//Ã¢ÀÇ Á¦¸ñ
+		//setTitle("ÇÁ·¹ÀÓ»ı¼º¿¬½ÀÁß");	//¸Ş¼Òµå »ç¿ëÇÏ´Â ¹æ¹ı
+		super("ÇÏÀ§¿¡¼­ Á¦¸ñ¼³Á¤");// Frame(ÇÏÀ§¿¡¼­ Á¦¸ñ¼³Á¤) »ı¼ºÀÚ ¸Ş¼Òµå»ç¿ë
+		//Ã¢ÀÇ Å©±â
 		//setSize(500, 400);
 //		setSize(wh);
 		// 			x	y	w	h
-		//setBounds(200, 200, 500, 400);//	->Rectangle	xì¢Œí‘œ, yì¢Œí‘œ, í­ê³¼ ë†’ì´
+		//setBounds(200, 200, 500, 400);//	->Rectangle	xÁÂÇ¥, yÁÂÇ¥, Æø°ú ³ôÀÌ
 		setBounds(rect);
-		//setSize(500,500);//w,h	->Dimension		í­ê³¼ ë†’ì´
-		//setLocation(300,300);//x,y	->Point		xì¢Œí‘œì™€ yì¢Œí‘œ
-		//ì°½ì„ ë³´ì—¬ì£¼ê¸°
+		//setSize(500,500);//w,h	->Dimension		Æø°ú ³ôÀÌ
+		//setLocation(300,300);//x,y	->Point		xÁÂÇ¥¿Í yÁÂÇ¥
+		//Ã¢À» º¸¿©ÁÖ±â
 		
-		//íƒ€ì´í‹€ë°”ì— ì´ë¯¸ì§€ ì•„ì´ì½˜ ì¶”ê°€í•˜ê¸°
+		//Å¸ÀÌÆ²¹Ù¿¡ ÀÌ¹ÌÁö ¾ÆÀÌÄÜ Ãß°¡ÇÏ±â
 //		Toolkit tk = Toolkit.getDefaultToolkit();
 //		Image icon = tk.getImage("img/test_img.jpg");
 		Image icon = Toolkit.getDefaultToolkit().getImage("img/test_img.jpg");
 		setIconImage(icon);
 		
-		//Button ì¶”ê°€
-		Button btn = new Button("ë²„íŠ¼");
+		//Button Ãß°¡
+		Button btn = new Button("¹öÆ°");
 		add(btn);
 		
 		Button btn1 = new Button("11111");
@@ -49,7 +49,7 @@ public class FrameTest extends Frame{
 		add(BorderLayout.WEST, btn4);
 		
 		
-		setVisible(true);//true ë³´ì—¬ì¤Œ, false ì•ˆë³´ì—¬ì¤Œ
+		setVisible(true);//true º¸¿©ÁÜ, false ¾Èº¸¿©ÁÜ
 		
 		
 	}

@@ -2,8 +2,8 @@ import java.awt.Button;
 import java.awt.Frame;
 
 public class FrameTest2 {
-	Frame frm = new Frame("ì œëª©");
-	Button btn = new Button("ê°ì²´ë¥¼ ì´ìš©í•œ ì»¨í…Œì´ë„ˆ ë§Œë“¤ê¸°");
+	Frame frm = new Frame("Á¦¸ñ");
+	Button btn = new Button("°´Ã¼¸¦ ÀÌ¿ëÇÑ ÄÁÅ×ÀÌ³Ê ¸¸µé±â");
 	public FrameTest2() {
 		frm.add(btn);
 		frm.setSize(500,300);
