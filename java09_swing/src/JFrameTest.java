@@ -18,36 +18,36 @@ public class JFrameTest extends JFrame{
 	ImageIcon icon2 = new ImageIcon("img/test_img3.png");
 	ImageIcon icon3 = new ImageIcon("img/test_img4.png");
 	public JFrameTest() {
-		//BorderLayoutì„ GridLayoutìœ¼ë¡œ ë³€ê²½í•˜ê¸°
+		//BorderLayoutÀ» GridLayoutÀ¸·Î º¯°æÇÏ±â
 		GridLayout layout = new GridLayout(3,2, 10, 10);
-//		setLayout(new GridLayout(3,2)); //ì¼ë°˜ì ìœ¼ë¡œ ì´ë ‡ê²Œ ì‚¬ìš©í•¨
+//		setLayout(new GridLayout(3,2)); //ÀÏ¹İÀûÀ¸·Î ÀÌ·¸°Ô »ç¿ëÇÔ
 		setLayout(layout);
 		
-		JButton btn1 = new JButton("ë²„íŠ¼1");
+		JButton btn1 = new JButton("¹öÆ°1");
 		add(btn1);
 		
 		JButton btn2 = new JButton(icon1);
 		add(btn2);
-		//ë§ˆìš°ìŠ¤ë¡œ ë²„íŠ¼ ëˆ„ë¥¼ë•Œ icon ë³€í™˜í•˜ê¸°
+		//¸¶¿ì½º·Î ¹öÆ° ´©¸¦¶§ icon º¯È¯ÇÏ±â
 		btn2.setPressedIcon(icon2);
 		btn2.setRolloverIcon(icon3);
 		
-		JButton btn3 = new JButton("ë¬´ë‹¹ë²Œë˜", icon1);
+		JButton btn3 = new JButton("¹«´ç¹ú·¡", icon1);
 		add(btn3);
-		//ë²„íŠ¼ì„ í™œì„±í™”(true) ë¹„í™œì„±í™”(false)
+		//¹öÆ°À» È°¼ºÈ­(true) ºñÈ°¼ºÈ­(false)
 		btn3.setEnabled(false);
 		
-		JButton btn4 = new JButton("ë„¤ë²ˆì§¸ë²„íŠ¼");
+		JButton btn4 = new JButton("³×¹øÂ°¹öÆ°");
 		add(btn4);
 		
 		
-		//ë¼ë””ì˜¤ ë²„íŠ¼
-		JPanel pane = new JPanel(new GridLayout(3,1)); // í…Œë‘ë¦¬ê°€ ì—†ëŠ” ì»¨í…Œì´ë„ˆ
+		//¶óµğ¿À ¹öÆ°
+		JPanel pane = new JPanel(new GridLayout(3,1)); // Å×µÎ¸®°¡ ¾ø´Â ÄÁÅ×ÀÌ³Ê
 		JRadioButton rBtn1 = new JRadioButton("ONE");
 		JRadioButton rBtn2 = new JRadioButton("TWO");
 		JRadioButton rBtn3 = new JRadioButton("THREE");
 		
-		//RadioVutton ê·¸ë£¹ ë§Œë“¤ê¸°
+		//RadioVutton ±×·ì ¸¸µé±â
 		ButtonGroup bg = new ButtonGroup();
 		bg.add(rBtn1); bg.add(rBtn2); bg.add(rBtn3);
 		
@@ -57,31 +57,31 @@ public class JFrameTest extends JFrame{
 		
 		add(pane);
 		
-		//í† ê¸€ë²„íŠ¼
-		JToggleButton toggleBtn = new JToggleButton("í† ê¸€",icon3);
+		//Åä±Û¹öÆ°
+		JToggleButton toggleBtn = new JToggleButton("Åä±Û",icon3);
 		toggleBtn.setRolloverIcon(icon1);
 		toggleBtn.setSelectedIcon(icon2);
 		add(toggleBtn);
 		
-		//ë¼ë²¨ë§Œë“¤ê¸°
-		JLabel lbl = new JLabel("ë¼ë²¨í‘œì‹œ", JLabel.CENTER);
+		//¶óº§¸¸µé±â
+		JLabel lbl = new JLabel("¶óº§Ç¥½Ã", JLabel.CENTER);
 		add(lbl);
 		
 		
-		//ë°°ê²½ìƒ‰ ì»¬ëŸ¬ì„¤ì •í•˜ê¸°
+		//¹è°æ»ö ÄÃ·¯¼³Á¤ÇÏ±â
 		btn1.setBackground(Color.ORANGE);
 		//				R:0~255, G:0~255, B:0~255
 		Color clr = new Color(100, 100, 200);
 		toggleBtn.setBackground(clr);
 		
 		btn1.setForeground(Color.WHITE);
-		//ë¼ë²¨ìƒ‰ ë„£ì–´ë³´ê¸°
-		//íˆ¬ëª…ì²˜ë¦¬í•´ì œ
+		//¶óº§»ö ³Ö¾îº¸±â
+		//Åõ¸íÃ³¸®ÇØÁ¦
 		lbl.setOpaque(true);
 		lbl.setBackground(new Color(200,100,100));
 		
-		//Font : ê¸€ê¼´(êµ´ë¦¼ì²´,ë‹ì›€ì²´,....) ê¸€ììœ í˜•(ê¸°ìš¸ì„, ì§„í•˜ê²Œ, ë³´í†µ) ê¸€ìí¬ê¸°ì„¤ì •(px)
-		Font fnt = new Font("êµ´ë¦¼ì²´", Font.ITALIC+Font.BOLD, 40);
+		//Font : ±Û²Ã(±¼¸²Ã¼,µ¸¿òÃ¼,....) ±ÛÀÚÀ¯Çü(±â¿ïÀÓ, ÁøÇÏ°Ô, º¸Åë) ±ÛÀÚÅ©±â¼³Á¤(px)
+		Font fnt = new Font("±¼¸²Ã¼", Font.ITALIC+Font.BOLD, 40);
 		lbl.setFont(fnt);
 		
 		
@@ -89,22 +89,22 @@ public class JFrameTest extends JFrame{
 		
 		setSize(1000,500);
 		setVisible(true);
-		//í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œë˜ë©´ ìì›í•´ì œ í•˜ê±°ë‚˜, í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí• ìˆ˜ ì—†ë„ë¡ ì„¤ì •....
-		// DISPOSE_NO_CLOSE : í”„ë¡œê·¸ë¨ì¢…ë£Œì‹œ ìì›ì„ í•´ì œí•˜ë¼.
-		// DO_NOTHING_ON_CLOSE : ë‹«ê¸°ê°€ ìˆ˜í–‰ë˜ì§€ ì•ŠëŠ”ë‹¤.
+		//ÇÁ·Î±×·¥ÀÌ Á¾·áµÇ¸é ÀÚ¿øÇØÁ¦ ÇÏ°Å³ª, ÇÁ·Î±×·¥À» Á¾·áÇÒ¼ö ¾øµµ·Ï ¼³Á¤....
+		// DISPOSE_NO_CLOSE : ÇÁ·Î±×·¥Á¾·á½Ã ÀÚ¿øÀ» ÇØÁ¦ÇÏ¶ó.
+		// DO_NOTHING_ON_CLOSE : ´İ±â°¡ ¼öÇàµÇÁö ¾Ê´Â´Ù.
 		
-		setDefaultCloseOperation(DISPOSE_ON_CLOSE);	// ìˆ«ìë¡œ ë„£ì–´ë„ ê¸°ëŠ¥ë™ì‘ok ì½”ë“œë¶„ì„ì„ ìœ„í•´ í…ìŠ¤íŠ¸ë¡œ ë„£ì–´ì¤Œ
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);	// ¼ıÀÚ·Î ³Ö¾îµµ ±â´Éµ¿ÀÛok ÄÚµåºĞ¼®À» À§ÇØ ÅØ½ºÆ®·Î ³Ö¾îÁÜ
 //		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		
-		//ë°€ë¦¬ì´ˆ ë§Œí¼ ì¼ì‹œì •ì§€ // Thread.sleepì€ ì˜ˆì™¸ì²˜ë¦¬ í•„ìš”
+		//¹Ğ¸®ÃÊ ¸¸Å­ ÀÏ½ÃÁ¤Áö // Thread.sleepÀº ¿¹¿ÜÃ³¸® ÇÊ¿ä
 		try {
 			Thread.sleep(5000);
 		}catch(InterruptedException e) {}
 		
 		
-		//ë²„íŠ¼ì˜ ë¼ë²¨, Labelì˜ ë¼ë²¨ì„ ë³€ê²½í•˜ê¸°
-		btn1.setText("ë³€ê²½ëœ ë²„íŠ¼ ë¼ë²¨");
-		lbl.setText("ë³€ê²½ëœ ë¼ë²¨");
+		//¹öÆ°ÀÇ ¶óº§, LabelÀÇ ¶óº§À» º¯°æÇÏ±â
+		btn1.setText("º¯°æµÈ ¹öÆ° ¶óº§");
+		lbl.setText("º¯°æµÈ ¶óº§");
 		
 		
 		

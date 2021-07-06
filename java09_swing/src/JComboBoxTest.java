@@ -15,7 +15,7 @@ public class JComboBoxTest extends JFrame implements ItemListener {
 	JComboBox<String> cb1 = new JComboBox<String>();
 	JComboBox<String> cb2, cb3, cb4;
 	
-	JLabel lbl = new JLabel("ì„ íƒê°’ í‘œì‹œë˜ëŠ” ê³³");
+	JLabel lbl = new JLabel("¼±ÅÃ°ª Ç¥½ÃµÇ´Â °÷");
 	Color clr[] = {Color.RED, Color.BLUE, Color.GREEN, Color.WHITE, Color.BLACK};
 	public JComboBoxTest() {
 		add(BorderLayout.NORTH, pane);
@@ -23,18 +23,18 @@ public class JComboBoxTest extends JFrame implements ItemListener {
 		
 		lbl.setOpaque(true);
 		add(lbl);
-		//ëª©ë¡ì¶”ê°€
-		cb1.addItem("ìë°”");
-		cb1.addItem("ìŠ¤í”„ë§");
+		//¸ñ·ÏÃß°¡
+		cb1.addItem("ÀÚ¹Ù");
+		cb1.addItem("½ºÇÁ¸µ");
 		cb1.addItem("JSP");
 		
-		//ë°°ì—´ì˜ ë°ì´í„°ë¥¼ ëª©ë¡ë§Œë“¤ê¸°
+		//¹è¿­ÀÇ µ¥ÀÌÅÍ¸¦ ¸ñ·Ï¸¸µé±â
 		String comboList[] = {"RED", "BLUE", "GREEN", "WHITE", "BLACK"};
 		cb2 = new JComboBox(comboList);
 		pane.add(cb2);
 		
 		
-		//ì»¬ë ‰ì…˜(vector)
+		//ÄÃ·º¼Ç(vector)
 		Vector<String> v = new Vector<String>();
 		v.add("AAAAAA");
 		v.add("BBBBBB");
@@ -44,11 +44,11 @@ public class JComboBoxTest extends JFrame implements ItemListener {
 		pane.add(cb3);
 		
 		
-		//ëª¨ë¸ì„ ì´ìš©í•œ ëª©ë¡ë§Œë“¤ê¸°
+		//¸ğµ¨À» ÀÌ¿ëÇÑ ¸ñ·Ï¸¸µé±â
 		DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>();
-		model.addElement("ì¥ë¯¸");
-		model.addElement("êµ­í™”");
-		model.addElement("íŠ¤ë¦½");
+		model.addElement("Àå¹Ì");
+		model.addElement("±¹È­");
+		model.addElement("Æ«¸³");
 		cb4 = new JComboBox<String>(model);
 		pane.add(cb4);
 		
@@ -58,7 +58,7 @@ public class JComboBoxTest extends JFrame implements ItemListener {
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		
-		//ì´ë²¤íŠ¸ ë“±ë¡
+		//ÀÌº¥Æ® µî·Ï
 		cb2.addItemListener(this);
 		cb4.addItemListener(this);
 	}
@@ -66,7 +66,7 @@ public class JComboBoxTest extends JFrame implements ItemListener {
 	public void itemStateChanged(ItemEvent ie) {
 		JComboBox event = (JComboBox)ie.getSource();
 		if(event.equals(cb2)) {
-			//ì„ íƒëª©ë¡ì˜ index ì–»ì–´ì˜¤ê¸°
+			//¼±ÅÃ¸ñ·ÏÀÇ index ¾ò¾î¿À±â
 			int idx = cb2.getSelectedIndex();
 			lbl.setBackground(clr[idx]);
 			

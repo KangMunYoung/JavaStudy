@@ -11,14 +11,14 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Calculator2 extends JFrame implements ActionListener{
-	Font fnt =new Font("êµ´ë¦¼ì²´", Font.BOLD,25);
+	Font fnt =new Font("±¼¸²Ã¼", Font.BOLD,25);
 	JTextField tf = new JTextField("0.0");
 	
 	JPanel allBtnPane = new JPanel(new BorderLayout());
 		JPanel northPane = new JPanel(new GridLayout(1,3));
 		JPanel centerPane = new JPanel(new GridLayout(4,4));
 	
-		//ë²„íŠ¼ëª©ë¡
+		//¹öÆ°¸ñ·Ï
 	String btnStr[] = {"BackSpace", "Clear", "End",
 						"7","8","9","+",
 						"4","5","6","-",
@@ -29,7 +29,7 @@ public class Calculator2 extends JFrame implements ActionListener{
 	String operator;//null
 	
 	public Calculator2() {
-		setTitle("ê³„ì‚°ê¸°");
+		setTitle("°è»ê±â");
 		add(BorderLayout.NORTH, tf);
 		tf.setHorizontalAlignment(JTextField.RIGHT);
 		tf.setFont(fnt);
@@ -48,7 +48,7 @@ public class Calculator2 extends JFrame implements ActionListener{
 			}else {
 				centerPane.add(btn);
 			}
-			//ë²„íŠ¼ë“¤ì„ ì´ë²¤íŠ¸ ë“±ë¡
+			//¹öÆ°µéÀ» ÀÌº¥Æ® µî·Ï
 			btn.addActionListener(this);
 		}
 		
@@ -64,7 +64,7 @@ public class Calculator2 extends JFrame implements ActionListener{
 		String btnLbl = event.getText();
 		
 		switch(btnLbl) {
-		case "End"://í”„ë¡œê·¸ë¨ì¢…ë£Œ
+		case "End"://ÇÁ·Î±×·¥Á¾·á
 			System.exit(0);
 			break;
 		case "0" : case "1": case "2" : case "3": case "4": 
@@ -87,32 +87,32 @@ public class Calculator2 extends JFrame implements ActionListener{
 			setClear();
 		}
 	}
-	//ì´ˆê¸°í™”
+	//ÃÊ±âÈ­
 	public void setClear() {
 		result = 0.0;
 		operator = null;
 		tf.setText("0.0");
 	}
 	
-	//= ì—°ì‚°ì ì„ íƒ result, operator, tfê°’ì„ ê³„ì‚°í•œë‹¤.
+	//= ¿¬»êÀÚ ¼±ÅÃ result, operator, tf°ªÀ» °è»êÇÑ´Ù.
 	public void setResult() {
 		double num2 = Double.parseDouble(tf.getText());
 		calcu(num2);
 		tf.setText(String.valueOf(result));
 		operator = null;
 	}
-	//+,-,*,/ ì—°ì‚°ì ì„ íƒí–ˆì„ë•Œ
+	//+,-,*,/ ¿¬»êÀÚ ¼±ÅÃÇßÀ»¶§
 	public void setResultOperator(String btnLbl) {
 		double second = Double.parseDouble(tf.getText());
-		if(operator == null) {//ì²˜ìŒì˜¤ë¡œ ì—°ì‚°ì ì„ íƒ
-			result = second;//tfì˜ ê°’ì„ ë³´ê´€
-			operator = btnLbl;//ì—°ì‚°ì ë³´ê´€
+		if(operator == null) {//Ã³À½¿À·Î ¿¬»êÀÚ ¼±ÅÃ
+			result = second;//tfÀÇ °ªÀ» º¸°ü
+			operator = btnLbl;//¿¬»êÀÚ º¸°ü
 		}else {
-			//ì´ë¯¸ ì—°ì‚°ìê°€ ìˆìœ¼ë©´ ë³´ê´€ëœ ê°’ê³¼ tfì˜ ê°’ì„ ê³„ì‚°í•˜ì—¬ resultì— ë³´ê´€
+			//ÀÌ¹Ì ¿¬»êÀÚ°¡ ÀÖÀ¸¸é º¸°üµÈ °ª°ú tfÀÇ °ªÀ» °è»êÇÏ¿© result¿¡ º¸°ü
 			calcu(second);
 		}
-		operator = btnLbl;//ì—°ì‚°ìë³´ê´€
-		tf.setText("");//tfê°’ì„ ì´ˆê¸°í™”í•œë‹¤.
+		operator = btnLbl;//¿¬»êÀÚº¸°ü
+		tf.setText("");//tf°ªÀ» ÃÊ±âÈ­ÇÑ´Ù.
 	}
 	public void calcu(double second) {
 		switch(operator) {
@@ -123,26 +123,26 @@ public class Calculator2 extends JFrame implements ActionListener{
 		}
 	}
 	
-	//ì†Œìˆ˜ì  ë²„íŠ¼ì´ ì„ íƒë˜ì—ˆì„ë•Œ
+	//¼Ò¼öÁ¡ ¹öÆ°ÀÌ ¼±ÅÃµÇ¾úÀ»¶§
 	public void setPoint() {
 		String str = tf.getText();
-		int idx = str.indexOf("."); // .ê°€ ìˆìœ¼ë©´ indexìœ„ì¹˜ë¥¼ êµ¬í•˜ê³  ì—†ìœ¼ë©´ -1ì„ ë¦¬í„´í•œë‹¤.
+		int idx = str.indexOf("."); // .°¡ ÀÖÀ¸¸é indexÀ§Ä¡¸¦ ±¸ÇÏ°í ¾øÀ¸¸é -1À» ¸®ÅÏÇÑ´Ù.
 		if(idx == -1) {
 			tf.setText(str+".");
 		}
 	}
-	//ë°±ìŠ¤í˜ì´ìŠ¤ ë²„íŠ¼ ì„ íƒì¼ë•Œ
+	//¹é½ºÆäÀÌ½º ¹öÆ° ¼±ÅÃÀÏ¶§
 	public void setBackSpace() {
 		String str = tf.getText();
 		int len = str.length();
 		String cutStr = str.substring(0, len-1);
 		tf.setText(cutStr);
 	}
-	//ìˆ«ìë²„íŠ¼ì´ ì„ íƒë˜ì—ˆì„ë•Œ
+	//¼ıÀÚ¹öÆ°ÀÌ ¼±ÅÃµÇ¾úÀ»¶§
 	public void inNumber(String btnLbl) {
 		String tfTxt = tf.getText();
 		
-		if(tfTxt.equals("0.0")) {	//ì´ˆê¸°ê°’ì´ 0.0ì¼ë–„ëŠ” ë°©ê¸ˆ ì´ë²¤íŠ¸ê°€ ë°œìƒí•œ ë²„íŠ¼ì˜ ê°’ì„ ì…‹íŒ…
+		if(tfTxt.equals("0.0")) {	//ÃÊ±â°ªÀÌ 0.0ÀÏ‹š´Â ¹æ±İ ÀÌº¥Æ®°¡ ¹ß»ıÇÑ ¹öÆ°ÀÇ °ªÀ» ¼ÂÆÃ
 			tf.setText(btnLbl);
 		}else {
 			tf.setText(tfTxt+btnLbl);

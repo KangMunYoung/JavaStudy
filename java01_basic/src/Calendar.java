@@ -3,22 +3,22 @@ class CalendarTest
 {
 	public static void main(String[] args) 
 	{
-		//ÄÄÇ»ÅÍÀÇ ³¯Â¥ ½Ã°£Á¤º¸ ¾ò¾î¿À±â
-		//	Calendar(³¯Â¥,½Ã°£), Date(³¯Â¥)
+		//ì»´í“¨í„°ì˜ ë‚ ì§œ ì‹œê°„ì •ë³´ ì–»ì–´ì˜¤ê¸°
+		//	Calendar(ë‚ ì§œ,ì‹œê°„), Date(ë‚ ì§œ)
 		//
-		Calendar now = Calendar.getInstance(); // getInstance() -> °´Ã¼¸¦ »ı¼ºÇØÁÖ´Â ¸Ş¼Òµå
+		Calendar now = Calendar.getInstance(); // getInstance() -> ê°ì²´ë¥¼ ìƒì„±í•´ì£¼ëŠ” ë©”ì†Œë“œ
 		
-		//³¯Â¥ º¯°æ : set()	--> ±âÁ¸Á¤º¸ º¯°æ
+		//ë‚ ì§œ ë³€ê²½ : set()	--> ê¸°ì¡´ì •ë³´ ë³€ê²½
 		now.set(2018, 6, 14);
 		
-		//³âµµ¸¸ º¯°æ
+		//ë…„ë„ë§Œ ë³€ê²½
 		now.set(Calendar.YEAR, 2022);
 		now.set(Calendar.MONTH, 10);
 
-		//	2021³â 6¿ù 4ÀÏ (±İ) 16:37
-		//	get() --> ³¯Â¥, ½Ã°£ °ü·ÃÁ¤º¸¸¦ ¾ò¾î¿Â´Ù.
+		//	2021ë…„ 6ì›” 4ì¼ (ê¸ˆ) 16:37
+		//	get() --> ë‚ ì§œ, ì‹œê°„ ê´€ë ¨ì •ë³´ë¥¼ ì–»ì–´ì˜¨ë‹¤.
 		int year = now.get(Calendar.YEAR);	//	2021
-		int month = now.get(Calendar.MONTH)+1;	// 6	-> java´Â 0ºÎÅÍ~11±îÁö (0 == 1¿ù)
+		int month = now.get(Calendar.MONTH)+1;	// 6	-> javaëŠ” 0ë¶€í„°~11ê¹Œì§€ (0 == 1ì›”)
 		int day = now.get(Calendar.DAY_OF_MONTH);	// 4
 		int week = now.get(Calendar.DAY_OF_WEEK);	//	6
 		int hour = now.get(Calendar.HOUR_OF_DAY);	//	16
@@ -26,16 +26,16 @@ class CalendarTest
 		
 		String weekStr = "";
 		switch(week){
-			case 1 : weekStr = "ÀÏ"; break;
-			case 2 : weekStr = "¿ù"; break;
-			case 3 : weekStr = "È­"; break;
-			case 4 : weekStr = "¼ö"; break;
-			case 5 : weekStr = "¸ñ"; break;
-			case 6 : weekStr = "±İ"; break;
-			case 7 : weekStr = "Åä"; break;
+			case 1 : weekStr = "ì¼"; break;
+			case 2 : weekStr = "ì›”"; break;
+			case 3 : weekStr = "í™”"; break;
+			case 4 : weekStr = "ìˆ˜"; break;
+			case 5 : weekStr = "ëª©"; break;
+			case 6 : weekStr = "ê¸ˆ"; break;
+			case 7 : weekStr = "í† "; break;
 		}
 
-		System.out.printf("%d³â %d¿ù %dÀÏ (%s) %d:%d\n", year, month, day, weekStr, hour,minute);
+		System.out.printf("%dë…„ %dì›” %dì¼ (%s) %d:%d\n", year, month, day, weekStr, hour,minute);
 
 
 //		System.out.println(now);
