@@ -3,13 +3,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
@@ -21,8 +18,8 @@ import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
-public class Memo extends JFrame implements ActionListener{
+															//현재클래스를 직렬화한다.
+public class Memo extends JFrame implements ActionListener, Serializable{
 	JMenuBar mb = new JMenuBar();
 		JMenu fileMenu = new JMenu("파일");
 			JMenuItem newMenuItem = new JMenuItem("새글");
@@ -54,27 +51,14 @@ public class Memo extends JFrame implements ActionListener{
 		
 		runMenu.add(chromeMenuItem);runMenu.add(editplusMenuItem);
 		
-		
-		File ff = new File("C://mypro/testFile/momoObject.txt");
-		if(ff.exists()) {//있으면 true 없으면 false
-			try {
-			FileInputStream fis = new FileInputStream(ff);
-			ObjectInputStream ois = new ObjectInputStream(fis);
-			sp = (JScrollPane)ois.readObject();
-			add(sp);
-			}catch(Exception e) {
-				
-			}
-		}else {
-			add(sp);
-		}
+		add(sp);
 		
 		//단축키 설정
 		setShortCut();
 		
 		
 		setSize(700,700);
-		setVisible(true);
+//		setVisible(true);
 		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		
 		newMenuItem.addActionListener(this);
@@ -92,9 +76,7 @@ public class Memo extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent ae) {
 		Object event = ae.getSource();
 		if(event == endMenuItem) {
-			fileWrite();
 			System.exit(0);
-			
 		}else if(event == newMenuItem) {
 			ta.setText("");
 		}else if(event==openMenuItem) {
@@ -114,20 +96,7 @@ public class Memo extends JFrame implements ActionListener{
 		}
 	}
 	
-	
-	
-	public void fileWrite() {
-		try {
-			File f = new File("C:\\mypro/testFile/memoObject.txt");
-			FileOutputStream fos = new FileOutputStream(f);
-			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			oos.writeObject(sp);
-			oos.close();
-			fos.close();
-		}catch(Exception e) {
-		}
-		
-	}
+
 	
 	//외부파일 실행하기
 	public void processStart(String url) {
@@ -241,12 +210,6 @@ public class Memo extends JFrame implements ActionListener{
 		openMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O,ActionEvent.CTRL_MASK));
 		
 		
-	}
-	
-	
-
-	public static void main(String[] args) {
-		new Memo();
 	}
 
 }
