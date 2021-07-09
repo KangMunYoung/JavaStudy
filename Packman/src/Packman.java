@@ -1,5 +1,6 @@
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -11,14 +12,14 @@ import javax.swing.JPanel;
 
 
 public class Packman extends JFrame implements KeyListener{
-	
+	Dimension dim;
 	Image img;
 	MyCanvas mc = new MyCanvas();
-	int x = 200;
-	int y = 200;
+	int x; 
+	int y ;
+		
 	int imgX1 = 0;
-	int imgX2 = 1+imgX1;
-	
+
 	public Packman() {
 		setBackground(Color.WHITE);
 		setSize(500,500);
@@ -27,8 +28,11 @@ public class Packman extends JFrame implements KeyListener{
 		addKeyListener(this);
 		update(getGraphics());
 		add(mc);
+		dim = mc.getSize();
+		x = (int)(dim.getWidth()/2-25);
+		y = (int)(dim.getHeight()/2-25);
+		System.out.println((int)(dim.getWidth()));
 		while(true) {
-//			mc.repaint();
 			try {
 				if(imgX1==1 || imgX1 ==0) {
 					do {
@@ -38,6 +42,10 @@ public class Packman extends JFrame implements KeyListener{
 							imgX1 =0;
 						}else if(imgX1==0) {
 							imgX1 =1;
+						}
+						
+						if(x == -50) {
+							x = (int)(dim.getWidth());
 						}
 						Thread.sleep(100);
 					}while(imgX1==1 || imgX1 ==0);
@@ -50,6 +58,9 @@ public class Packman extends JFrame implements KeyListener{
 							imgX1 =3;
 						}else if(imgX1==3) {
 							imgX1 =2;
+						}
+						if(x == (int)(dim.getWidth())) {
+							x = -50;
 						}
 						Thread.sleep(100);
 					}while(imgX1==2 || imgX1==3);
@@ -98,43 +109,13 @@ public class Packman extends JFrame implements KeyListener{
 		int key = e.getKeyCode();
 		do {
 			if(key == KeyEvent.VK_LEFT) {
-				if(imgX1 == 0) {
-					imgX1 = 1;
-				}else if(imgX1 == 1) {
-					imgX1 = 0;
-				}else {
-					imgX1=0;
-				}
-				break;
+				imgX1 = 0;
 			}else if(key == KeyEvent.VK_RIGHT) {
-				if(imgX1 == 2) {
-					imgX1 = 3;
-				}else if(imgX1 == 3) {
-					imgX1 = 2;
-				}else {
-					imgX1 = 2;
-				}
-				break;
-				
+				imgX1 = 2;				
 			}else if(key == KeyEvent.VK_UP) {
-				if(imgX1 == 4) {
-					imgX1 = 5;
-				}else if(imgX1 == 5) {
-					imgX1 = 4;
-				}else {
-					imgX1 = 4;
-				}
-				break;
-				
+				imgX1 = 4;				
 			}else if(key == KeyEvent.VK_DOWN) {
-				if(imgX1 == 6) {
-					imgX1 = 7;
-				}else if(imgX1 == 7) {
-					imgX1 = 6;
-				}else {
-					imgX1 = 6;
-				}
-				break;
+				imgX1 = 6;
 			}
 			
 		}while(true);

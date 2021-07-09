@@ -11,7 +11,7 @@ public class DigitalClock extends JFrame{
 	JLabel lbl = new JLabel("00:00:00", JLabel.CENTER);
 
 	public DigitalClock() {
-		super("시계"); //setTitle("시계");
+		super("시계"); //setTitle("�떆怨�");
 		add(lbl);
 		lbl.setFont(fnt);
 		
@@ -22,10 +22,10 @@ public class DigitalClock extends JFrame{
 		
 	}
 	
-	//시간변경
+	//�떆媛꾨�寃�
 	public void startClock() {
 		do {
-			//시간변경
+			//�떆媛꾨�寃�
 			lbl.setText(getTimer());
 			try {
 				Thread.sleep(1000);
@@ -34,7 +34,7 @@ public class DigitalClock extends JFrame{
 			}
 		}while(true);
 	}
-	//현재시간(시분초) 00:00:00
+	//�쁽�옱�떆媛�(�떆遺꾩큹) 00:00:00
 	public String getTimer() {
 		now = Calendar.getInstance();
 		SimpleDateFormat fmt = new SimpleDateFormat("HH:mm:ss");
