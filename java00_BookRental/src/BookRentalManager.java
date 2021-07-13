@@ -25,10 +25,10 @@ public class BookRentalManager {
 		do {
 			firstMenu();
 			if(session.equals("admin")) {
-				System.out.println("ê´€ë¦¬ìë¡œê·¸ì¸");
+				System.out.println("°ü¸®ÀÚ·Î±×ÀÎ");
 				adminMenu();
 			}else if(session.equals("user")) {
-				System.out.println("ë¡œê·¸ì¸ ë˜ì—ˆìŠµë‹ˆë‹¤.");
+				System.out.println("·Î±×ÀÎ µÇ¾ú½À´Ï´Ù.");
 				memberName = ProfileDataSet.profileList.get(id).getName();
 		
 				memberMenu();
@@ -36,46 +36,46 @@ public class BookRentalManager {
 		}while(true);
 	}
 	
-	public void firstMenu() {//ë¡œê·¸ì¸. íšŒì›ê°€ì…, ì¢…ë£Œ
+	public void firstMenu() {//·Î±×ÀÎ. È¸¿ø°¡ÀÔ, Á¾·á
 		boolean logResult = false;
 		Login log = new Login();
 		do {
-			String menu = inData("ë©”ë‰´[1.ë¡œê·¸ì¸, 2.íšŒì›ê°€ì…, 3.ì¢…ë£Œ]");
-			if(menu.equals("1")) {//ë¡œê·¸ì¸
-				id = inData("ì•„ì´ë””");
-				String pwd = inData("ë¹„ë°€ë²ˆí˜¸");
+			String menu = inData("¸Ş´º[1.·Î±×ÀÎ, 2.È¸¿ø°¡ÀÔ, 3.Á¾·á]");
+			if(menu.equals("1")) {//·Î±×ÀÎ
+				id = inData("¾ÆÀÌµğ");
+				String pwd = inData("ºñ¹Ğ¹øÈ£");
 				logResult = log.loginCheck(id, pwd);
-			}else if(menu.equals("2")) {//íšŒì›ê°€ì…
+			}else if(menu.equals("2")) {//È¸¿ø°¡ÀÔ
 				logResult = signUp();
-			}else if(menu.equals("3")) {//ì¢…ë£Œ
+			}else if(menu.equals("3")) {//Á¾·á
 				programExit();
 			}else {
-				System.out.println("1~3ë²ˆì¤‘ì—ì„œ ê³¨ë¼ì£¼ì„¸ìš”");
+				System.out.println("1~3¹øÁß¿¡¼­ °ñ¶óÁÖ¼¼¿ä");
 			}
 		}while(!logResult);
 	}
 
-	//ë‹¬ë ¥==============================================================
-	public String nowDate() {	//ë‹¬ë ¥
+	//´Ş·Â==============================================================
+	public String nowDate() {	//´Ş·Â
 		Calendar now = Calendar.getInstance();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
 		return sdf.format(now.getTime());
 	}
-	//íšŒì›ê°€ì…=======================================================
-	public boolean signUp() {	//íšŒì›ê°€ì…
+	//È¸¿ø°¡ÀÔ=======================================================
+	public boolean signUp() {	//È¸¿ø°¡ÀÔ
 		allProfileList();
 		ProfileVO vo = new ProfileVO();
-		vo.setMemberId(inData("ì•„ì´ë””"));
-		vo.setMemberPwd(inData("ë¹„ë°€ë²ˆí˜¸"));
-		vo.setName(inData("ì´ë¦„"));
-		vo.setTel(inData("ì „í™”ë²ˆí˜¸"));
+		vo.setMemberId(inData("¾ÆÀÌµğ"));
+		vo.setMemberPwd(inData("ºñ¹Ğ¹øÈ£"));
+		vo.setName(inData("ÀÌ¸§"));
+		vo.setTel(inData("ÀüÈ­¹øÈ£"));
 		vo.setSince(nowDate());
 		do {
 			boolean flag = true;
 			try {
-				vo.setMoney(Integer.parseInt(inData("ì„ ê¸ˆ")));
+				vo.setMoney(Integer.parseInt(inData("¼±±İ")));
 			}catch(NumberFormatException nfe) {
-				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ëˆë‹¨ìœ„ë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”");
+				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. µ·´ÜÀ§·Î ÀÔ·ÂÇØÁÖ¼¼¿ä");
 				flag = false;
 			}
 			if(flag) break;
@@ -85,77 +85,77 @@ public class BookRentalManager {
 		return true;
 	}
 	
-	//íšŒì›ë©”ë‰´
+	//È¸¿ø¸Ş´º
 	public void memberMenu() {
-		String memberTitle = "ë©”ë‰´[1.ì±…ëŒ€ì—¬, 2.ì±…ë°˜ë‚©, 3.ì„ ê¸ˆë„£ê¸°, 4.ë¡œê·¸ì•„ì›ƒ, 5.ì¢…ë£Œ]";
+		String memberTitle = "¸Ş´º[1.Ã¥´ë¿©, 2.Ã¥¹İ³³, 3.¼±±İ³Ö±â, 4.·Î±×¾Æ¿ô, 5.Á¾·á]";
 		do {
 			try {
 				allBookList();
 				rentalList();
 				int money = ProfileDataSet.profileList.get(id).getMoney();
 				int cnt = ProfileDataSet.profileList.get(id).getRentalCnt();
-				System.out.println("ì´ë¦„: ["+memberName+"] ì ë¦½ê¸ˆ->["+money+"] ëŒ€ì—¬ê¶Œìˆ˜->["+cnt+"]");
+				System.out.println("ÀÌ¸§: ["+memberName+"] Àû¸³±İ->["+money+"] ´ë¿©±Ç¼ö->["+cnt+"]");
 				int menu = Integer.parseInt(inData(memberTitle));
-				if(menu == 1) {		//ì±… ëŒ€ì—¬
+				if(menu == 1) {		//Ã¥ ´ë¿©
 					rental(menu);
-				}else if(menu == 2) {	// ì±… ë°˜ë‚© 
+				}else if(menu == 2) {	// Ã¥ ¹İ³³ 
 					rental(menu);	
-				}else if(menu == 3) {	//ì„ ê¸ˆ 
+				}else if(menu == 3) {	//¼±±İ 
 					memMoney();
-				}else if(menu == 4) {	//ë¡œê·¸ì•„ì›ƒ 
+				}else if(menu == 4) {	//·Î±×¾Æ¿ô 
 					logout();
-				}else if(menu == 5) {	//ì¢…ë£Œ 
+				}else if(menu == 5) {	//Á¾·á 
 					programExit();
 				}
 			}catch(NumberFormatException nfe) {
-				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
+				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
 			}
 		}while(session.equals("user"));
 	}
-	//ì„ ê¸ˆì¶”ê°€
+	//¼±±İÃß°¡
 	public void memMoney() {
 		ProfileVO vo = ProfileDataSet.profileList.get(id);
 		do {
 			boolean flag = true;
 			try {
-				vo.setMoney(vo.getMoney()+Integer.parseInt(inData("ì–¼ë§ˆë¥¼ ì¶”ê°€í•˜ì‹œê² ìŠµë‹ˆê¹Œ?")));
+				vo.setMoney(vo.getMoney()+Integer.parseInt(inData("¾ó¸¶¸¦ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î?")));
 			}catch(NumberFormatException nfe) {
 				flag = false;
-				System.out.println("ê¸ˆì•¡ì„ ìˆ«ìë¡œ ì…ë ¥í•´ ì£¼ì„¸ìš”.");
+				System.out.println("±İ¾×À» ¼ıÀÚ·Î ÀÔ·ÂÇØ ÁÖ¼¼¿ä.");
 			}
 			if(flag) break;
 		}while(true);
 	}
 	
-	//ëŒ€ì—¬ & ë°˜ë‚©
-	public void rental(int menu) { // ëŒ€ì—¬ & ë°˜ë‚©
-		String pick = inData("ì±… ì œëª©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”");
+	//´ë¿© & ¹İ³³
+	public void rental(int menu) { // ´ë¿© & ¹İ³³
+		String pick = inData("Ã¥ Á¦¸ñÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä");
 		if(BookDataSet.bookList.containsKey(pick) || BookDataSet.rentalBookList.containsKey(pick)) {
 			BookVO vo = BookDataSet.bookList.get(pick);
 			ProfileVO pvo = ProfileDataSet.profileList.get(id);
 			
-			if(menu == 1 && vo.getBookStatus().equals("ë³´ìœ ì¤‘")) {	//ëŒ€ì—¬
+			if(menu == 1 && vo.getBookStatus().equals("º¸À¯Áß")) {	//´ë¿©
 				statusUpdate(pick, menu);
 				BookDataSet.rentalBookList.put(vo.getBookName(), vo);
 				pvo.setMoney(pvo.getMoney() - vo.getRentalFee());
 				pvo.setRentalCnt(pvo.getRentalCnt()+1);
-			}else if(menu == 2) {	//ë°˜ë‚©
+			}else if(menu == 2) {	//¹İ³³
 				statusUpdate(pick, menu);
 				BookDataSet.bookList.put(vo.getBookName(), vo);
 				BookDataSet.rentalBookList.remove(pick);
 			}else {
-				System.out.println("ëŒ€ì—¬í• ìˆ˜ ì—†ëŠ” ì±…ì…ë‹ˆë‹¤.");
+				System.out.println("´ë¿©ÇÒ¼ö ¾ø´Â Ã¥ÀÔ´Ï´Ù.");
 			}
 		}else {
-			System.out.println("ëª©ë¡ì— ì—†ëŠ” ì±…ì…ë‹ˆë‹¤.");
+			System.out.println("¸ñ·Ï¿¡ ¾ø´Â Ã¥ÀÔ´Ï´Ù.");
 		}
 	}
-	//ëŒ€ì—¬ì¤‘ ëª©ë¡
+	//´ë¿©Áß ¸ñ·Ï
 	public void rentalList() {
 		Collection<BookVO> rentalList = BookDataSet.rentalBookList.values();
 		Iterator<BookVO> ii = rentalList.iterator();
 		System.out.println("--------------------------------------------------------------------------------");
-		System.out.println("ì•„ë˜ëŠ” ëŒ€ì—¬ì¤‘ì¸ í•­ëª©ì…ë‹ˆë‹¤.-----------------------------------------------------");
+		System.out.println("¾Æ·¡´Â ´ë¿©ÁßÀÎ Ç×¸ñÀÔ´Ï´Ù.-----------------------------------------------------");
 		BookVO.bookTitlePrint();
 		while(ii.hasNext()) {
 			BookVO vo = ii.next();
@@ -167,54 +167,54 @@ public class BookRentalManager {
 		}
 	}
 	
-	//ê´€ë¦¬ì ë©”ë‰´==================================================================
+	//°ü¸®ÀÚ ¸Ş´º==================================================================
 	public void adminMenu() {
-		String adminTitle = "ê´€ë¦¬ì ë©”ë‰´[1.ì±…ë“±ë¡, 2.ì±…ì‚­ì œ, 3.ì±…ëª©ë¡, 4.íšŒì›ë“±ë¡, 5.íšŒì›ëª©ë¡, 6.íšŒì›ì‚­ì œ, 7.íšŒì›ì •ë³´ ìˆ˜ì • 8.ì±…ì •ë³´ ìˆ˜ì • 9.ë¡œê·¸ì•„ì›ƒ, 10.ì¢…ë£Œ]";
+		String adminTitle = "°ü¸®ÀÚ ¸Ş´º[1.Ã¥µî·Ï, 2.Ã¥»èÁ¦, 3.Ã¥¸ñ·Ï, 4.È¸¿øµî·Ï, 5.È¸¿ø¸ñ·Ï, 6.È¸¿ø»èÁ¦, 7.È¸¿øÁ¤º¸ ¼öÁ¤ 8.Ã¥Á¤º¸ ¼öÁ¤ 9.·Î±×¾Æ¿ô, 10.Á¾·á]";
 		
 		do {
 			try {
 				int menu = Integer.parseInt(inData(adminTitle));
-				if(menu == 1) {	//ì±…ë“±ë¡
+				if(menu == 1) {	//Ã¥µî·Ï
 					addBook(); 
-				}else if(menu == 2) {	//ì±…ì‚­ì œ
+				}else if(menu == 2) {	//Ã¥»èÁ¦
 					delBook(); 
-				}else if(menu == 3) {	//ì±…ëª©ë¡
+				}else if(menu == 3) {	//Ã¥¸ñ·Ï
 					allBookList(); rentalList();
-				}else if(menu == 4) {	//íšŒì›ë“±ë¡
+				}else if(menu == 4) {	//È¸¿øµî·Ï
 					signUp(); 
-				}else if(menu == 5) {	//íšŒì›ëª©ë¡
+				}else if(menu == 5) {	//È¸¿ø¸ñ·Ï
 					allProfileList();
-				}else if(menu == 6) {	//íšŒì›ì‚­ì œ
+				}else if(menu == 6) {	//È¸¿ø»èÁ¦
 					delProfile(); 
-				}else if(menu == 7) {	//íšŒì›ì •ë³´ ìˆ˜ì •
+				}else if(menu == 7) {	//È¸¿øÁ¤º¸ ¼öÁ¤
 					profileUpdate();
-				}else if(menu == 8) {	//ì±… ì •ë³´ ìˆ˜ì •
+				}else if(menu == 8) {	//Ã¥ Á¤º¸ ¼öÁ¤
 					bookUpdate();
-				}else if(menu == 9) {	//ë¡œê·¸ì•„ì›ƒ
+				}else if(menu == 9) {	//·Î±×¾Æ¿ô
 					logout();
-				}else if(menu == 10) {	//ì¢…ë£Œ
+				}else if(menu == 10) {	//Á¾·á
 					programExit();
 				}
 				
 			}catch(NumberFormatException nfe) {
-				System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. 1~8ì¤‘ì—ì„œ ì„ íƒí•´ì£¼ì„¸ìš”.");
+				System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. 1~8Áß¿¡¼­ ¼±ÅÃÇØÁÖ¼¼¿ä.");
 			}
 		}while(session.equals("admin"));
 	}
-	//ì±… ì¶”ê°€===========================================================
+	//Ã¥ Ãß°¡===========================================================
 	public void addBook() {
 		allBookList();
 		BookVO vo = new BookVO();
-		vo.setBookName(inData("ì œëª©"));
-		vo.setGenre(inData("ì¥ë¥´"));
+		vo.setBookName(inData("Á¦¸ñ"));
+		vo.setGenre(inData("Àå¸£"));
 		do {
 			boolean flag = true;
 			try {
-				vo.setRentalFee(Integer.parseInt(inData("ëŒ€ì—¬ë¹„")));
-				vo.setRentalDate(Integer.parseInt(inData("ëŒ€ì—¬ì¼")));
+				vo.setRentalFee(Integer.parseInt(inData("´ë¿©ºñ")));
+				vo.setRentalDate(Integer.parseInt(inData("´ë¿©ÀÏ")));
 			}catch(NumberFormatException nfe) {
 				flag = false;
-				System.out.println("ì˜ëª»ì…ë ¥ í•˜ì…¨ìŠµë‹ˆë‹¤. ìˆ«ìë¡œ ì…ë ¥í•˜ì„¸ìš”");
+				System.out.println("Àß¸øÀÔ·Â ÇÏ¼Ì½À´Ï´Ù. ¼ıÀÚ·Î ÀÔ·ÂÇÏ¼¼¿ä");
 			}
 			if(flag) break;
 		}while(true);
@@ -222,14 +222,14 @@ public class BookRentalManager {
 		allBookList(); 
 	}
 	
-	//ì±… ì‚­ì œ============================================================
+	//Ã¥ »èÁ¦============================================================
 	public void delBook() {
 		allBookList();
-		BookDataSet.bookList.remove(inData("ì‚­ì œí•  ì±…ì œëª©"));
+		BookDataSet.bookList.remove(inData("»èÁ¦ÇÒ Ã¥Á¦¸ñ"));
 		allBookList();
 	}
 	
-	//íšŒì› ëª©ë¡====================================================
+	//È¸¿ø ¸ñ·Ï====================================================
 	public void allProfileList() {
 		Collection<ProfileVO> list = ProfileDataSet.profileList.values();
 		Iterator<ProfileVO> ii = list.iterator();
@@ -239,30 +239,30 @@ public class BookRentalManager {
 			vo.profilePrint();
 		}
 	}
-	//íšŒì›ì‚­ì œ=============================================================
+	//È¸¿ø»èÁ¦=============================================================
 	public void delProfile() {
 		allProfileList();
-		String delName = inData("ì‚­ì œí•  ì•„ì´ë””");
+		String delName = inData("»èÁ¦ÇÒ ¾ÆÀÌµğ");
 		ProfileDataSet.profileList.remove(delName);
-		System.out.println(delName+" ì‚­ì œë¨");
+		System.out.println(delName+" »èÁ¦µÊ");
 		allProfileList();
 	}
 	
-	//ë¡œê·¸ì•„ì›ƒ & ì¢…ë£Œ & ì…ë ¥ë°›ê¸°===============================================
-	public void logout() {//ë¡œê·¸ì•„ì›ƒ
+	//·Î±×¾Æ¿ô & Á¾·á & ÀÔ·Â¹Ş±â===============================================
+	public void logout() {//·Î±×¾Æ¿ô
 		session = "logout";
-		System.out.println("ë¡œê·¸ì•„ì›ƒ ë˜ì—ˆìŠµë‹ˆë‹¤..");
+		System.out.println("·Î±×¾Æ¿ô µÇ¾ú½À´Ï´Ù..");
 	}
-	public void programExit() {	//ì¢…ë£Œ
-		System.out.println("í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤..");
+	public void programExit() {	//Á¾·á
+		System.out.println("ÇÁ·Î±×·¥ÀÌ Á¾·áµÇ¾ú½À´Ï´Ù..");
 		System.exit(0);
 	}
 	
-	public String inData(String msg) {	//ì…ë ¥
+	public String inData(String msg) {	//ÀÔ·Â
 		System.out.print(msg+"->");
 		return scan.nextLine();
 	}
-	//ì±…ëª©ë¡ ì¶œë ¥=============================================
+	//Ã¥¸ñ·Ï Ãâ·Â=============================================
 	public void allBookList() {
 		Collection<BookVO> bookList = BookDataSet.bookList.values();
 		Iterator<BookVO> ii = bookList.iterator();
@@ -273,85 +273,85 @@ public class BookRentalManager {
 		}
 	}
 	
-	//ì •ë³´ìˆ˜ì •===========================================================
-	public void statusUpdate(String pic, int menu) {//ìƒíƒœìˆ˜ì •
-		if(menu == 1) { // ëŒ€ì—¬
+	//Á¤º¸¼öÁ¤===========================================================
+	public void statusUpdate(String pic, int menu) {//»óÅÂ¼öÁ¤
+		if(menu == 1) { // ´ë¿©
 			BookVO vo = BookDataSet.bookList.get(pic);
 			vo.setBookStatus(memberName);
-		}else if(menu == 2) { //ë°˜ë‚©
+		}else if(menu == 2) { //¹İ³³
 			BookVO vo = BookDataSet.rentalBookList.get(pic);
-			vo.setBookStatus("ë³´ìœ ì¤‘");
+			vo.setBookStatus("º¸À¯Áß");
 		}
 	}
 	
-	//íšŒì›ì •ë³´ ìˆ˜ì •
+	//È¸¿øÁ¤º¸ ¼öÁ¤
 	public void profileUpdate() {
-		String profileUpdateTitle = "[1.ë¹„ë°€ë²ˆí˜¸, 2.ì´ë¦„, 3.ì „í™”ë²ˆí˜¸, 4.ê°€ì…ì¼, 5.ëŒ€ì—¬ê¶Œìˆ˜, 6.ì„ ë¶ˆê¸ˆì•¡, 7.ì™„ë£Œ]";
+		String profileUpdateTitle = "[1.ºñ¹Ğ¹øÈ£, 2.ÀÌ¸§, 3.ÀüÈ­¹øÈ£, 4.°¡ÀÔÀÏ, 5.´ë¿©±Ç¼ö, 6.¼±ºÒ±İ¾×, 7.¿Ï·á]";
 		boolean flag = true;
 		do {
 			allProfileList();
-			String pic = inData("ìˆ˜ì •í•  íšŒì› ì•„ì´ë””");
+			String pic = inData("¼öÁ¤ÇÒ È¸¿ø ¾ÆÀÌµğ");
 			if(ProfileDataSet.profileList.containsKey(pic)) {
 				ProfileVO vo = ProfileDataSet.profileList.get(pic);
 				do {
 					try {
 						int menu = Integer.parseInt(inData(profileUpdateTitle));
-						if(menu == 1) {//ë¹„ë°€ë²ˆí˜¸ ìˆ˜ì •
-							vo.setMemberPwd(inData("ìˆ˜ì •í•  ë¹„ë°€ë²ˆí˜¸"));
-						}else if(menu == 2) {//ì´ë¦„ ìˆ˜ì •
-							vo.setName(inData("ìˆ˜ì •í•  ì´ë¦„"));					
-						}else if(menu == 3) {//ì „í™”ë²ˆí˜¸ ìˆ˜ì •
-							vo.setTel(inData("ìˆ˜ì •í•  ì „í™”ë²ˆí˜¸"));
-						}else if(menu == 4) { //ê°€ì…ë‚ ì§œ ìˆ˜ì •
-							vo.setSince(inData("ìˆ˜ì •í•  ê°€ì…ì¼"));
-						}else if(menu == 5) {//ëŒ€ì—¬ê¶Œìˆ˜ ìˆ˜ì •
-							vo.setRentalCnt(Integer.parseInt(inData("ìˆ˜ì •í•  ëŒ€ì—¬ê¶Œìˆ˜")));
-						}else if(menu == 6) {//ì„ ê¸ˆ ìˆ˜ì •
-							vo.setMoney(Integer.parseInt(inData("ìˆ˜ì •í•  ì„ ë¶ˆê¸ˆì•¡")));
+						if(menu == 1) {//ºñ¹Ğ¹øÈ£ ¼öÁ¤
+							vo.setMemberPwd(inData("¼öÁ¤ÇÒ ºñ¹Ğ¹øÈ£"));
+						}else if(menu == 2) {//ÀÌ¸§ ¼öÁ¤
+							vo.setName(inData("¼öÁ¤ÇÒ ÀÌ¸§"));					
+						}else if(menu == 3) {//ÀüÈ­¹øÈ£ ¼öÁ¤
+							vo.setTel(inData("¼öÁ¤ÇÒ ÀüÈ­¹øÈ£"));
+						}else if(menu == 4) { //°¡ÀÔ³¯Â¥ ¼öÁ¤
+							vo.setSince(inData("¼öÁ¤ÇÒ °¡ÀÔÀÏ"));
+						}else if(menu == 5) {//´ë¿©±Ç¼ö ¼öÁ¤
+							vo.setRentalCnt(Integer.parseInt(inData("¼öÁ¤ÇÒ ´ë¿©±Ç¼ö")));
+						}else if(menu == 6) {//¼±±İ ¼öÁ¤
+							vo.setMoney(Integer.parseInt(inData("¼öÁ¤ÇÒ ¼±ºÒ±İ¾×")));
 						}else if(menu == 7) {
-							System.out.println("ìˆ˜ì •ì™„ë£Œ");
+							System.out.println("¼öÁ¤¿Ï·á");
 							flag = false;
 						}	
 						allProfileList();
 					}catch(NumberFormatException nfe) {
-						System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ìˆ«ìë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+						System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¼ıÀÚ·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.");
 					}
 				}while(flag);
 			}else {
-				System.out.println("ì—†ëŠ” ì•„ì´ë”” ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”");
+				System.out.println("¾ø´Â ¾ÆÀÌµğ ÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");
 			}
 		}while(flag);
 	}
 	
-	//ì±…ì •ë³´ ìˆ˜ì •
+	//Ã¥Á¤º¸ ¼öÁ¤
 	public void bookUpdate() {
-		String bookUpdateTitle = "[1.ìƒíƒœ, 2.ëŒ€ì—¬ë¹„, 3.ëŒ€ì—¬ì¼, 4.ìˆ˜ì •ì™„ë£Œ]";
+		String bookUpdateTitle = "[1.»óÅÂ, 2.´ë¿©ºñ, 3.´ë¿©ÀÏ, 4.¼öÁ¤¿Ï·á]";
 		boolean flag = true;
 		do {
 			allBookList();
-			String pic = inData("ìˆ˜ì •í•  ì±… ì œëª©");
+			String pic = inData("¼öÁ¤ÇÒ Ã¥ Á¦¸ñ");
 			if(BookDataSet.bookList.containsKey(pic)) {
 				BookVO vo = BookDataSet.bookList.get(pic);
 				do {
 					try {
 						int menu = Integer.parseInt(inData(bookUpdateTitle));
-						if(menu == 1) {//ìƒíƒœ
-							vo.setBookStatus(inData("ìˆ˜ì •í•  ì±… ìƒíƒœ"));
-						}else if(menu == 2) {//ëŒ€ì—¬ë¹„
-							vo.setRentalFee(Integer.parseInt(inData("ìˆ˜ì •í•  ì±… ëŒ€ì—¬ë¹„")));					
-						}else if(menu == 3) {//ëŒ€ì—¬ì¼
-							vo.setRentalDate(Integer.parseInt(inData("ìˆ˜ì •í•  ì±… ëŒ€ì—¬ì¼")));
-						}else if(menu == 4) {//ìˆ˜ì •ì™„ë£Œ
-							System.out.println("ìˆ˜ì •ì™„ë£Œ");
+						if(menu == 1) {//»óÅÂ
+							vo.setBookStatus(inData("¼öÁ¤ÇÒ Ã¥ »óÅÂ"));
+						}else if(menu == 2) {//´ë¿©ºñ
+							vo.setRentalFee(Integer.parseInt(inData("¼öÁ¤ÇÒ Ã¥ ´ë¿©ºñ")));					
+						}else if(menu == 3) {//´ë¿©ÀÏ
+							vo.setRentalDate(Integer.parseInt(inData("¼öÁ¤ÇÒ Ã¥ ´ë¿©ÀÏ")));
+						}else if(menu == 4) {//¼öÁ¤¿Ï·á
+							System.out.println("¼öÁ¤¿Ï·á");
 							flag = false;
 						}	
 						allBookList();
 					}catch(NumberFormatException nfe) {
-						System.out.println("ì˜ëª»ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ìˆ«ìë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+						System.out.println("Àß¸øÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¼ıÀÚ·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.");
 					}
 				}while(flag);
 			}else {
-				System.out.println("ëª©ë¡ì— ì—†ëŠ” ì±…ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”");
+				System.out.println("¸ñ·Ï¿¡ ¾ø´Â Ã¥ÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");
 			}
 		}while(flag);
 	}

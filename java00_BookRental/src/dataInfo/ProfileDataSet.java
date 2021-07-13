@@ -7,11 +7,11 @@ public class ProfileDataSet {
 	public ProfileDataSet() {}
 	
 	public static void basicProfileSet() {
-		profileList.put("sunsin", new ProfileVO("sunsin", "1234","Ïù¥ÏàúÏã†","010-1111-2222","2021-01-05", 3, 50000 ));
-		profileList.put("abcd", new ProfileVO("abcd", "qwer","Í∞ïÍ∞êÏ∞¨","010-2424-5555","2020-05-11", 10, 150000 ));
-		profileList.put("zzxx", new ProfileVO("zzxx", "aaaa","Ïú†Ïû¨ÏÑù","010-9999-2877","2017-02-04", 40, 20000 ));
-		profileList.put("nugu", new ProfileVO("nugu", "4444","ÍπÄÍ∏∏Îèô","010-4244-5353","2020-05-02", 24, 10000 ));
-		profileList.put("qqqccc", new ProfileVO("qqqccc", "1111","ÌôçÍ∏∏Îèô","010-2321-1122","2019-10-25", 22, 90000 ));
+		profileList.put("sunsin", new ProfileVO("sunsin", "1234","¿Ãº¯Ω≈","010-1111-2222","2021-01-05", 3, 50000 ));
+		profileList.put("abcd", new ProfileVO("abcd", "qwer","∞≠∞®¬˘","010-2424-5555","2020-05-11", 10, 150000 ));
+		profileList.put("zzxx", new ProfileVO("zzxx", "aaaa","¿Ø¿ÁºÆ","010-9999-2877","2017-02-04", 40, 20000 ));
+		profileList.put("nugu", new ProfileVO("nugu", "4444","±Ë±Êµø","010-4244-5353","2020-05-02", 24, 10000 ));
+		profileList.put("qqqccc", new ProfileVO("qqqccc", "1111","»´±Êµø","010-2321-1122","2019-10-25", 22, 90000 ));
 	}
 }
 

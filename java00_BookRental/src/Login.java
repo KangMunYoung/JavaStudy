@@ -13,20 +13,20 @@ public class Login  {
 		ProfileVO vo = ProfileDataSet.profileList.get(id);
 		
 		if(id.equals(ROOTID) && pwd.equals(ROOTPWD)) {
-			BookRentalManager.session = id;	//ê´€ë¦¬ì ë¡œê·¸ì¸
+			BookRentalManager.session = id;	//°ü¸®ÀÚ ·Î±×ÀÎ
 			return true;
 			
 		}else if(ProfileDataSet.profileList.containsKey(id)) {
 			String memberPwd = vo.getMemberPwd();
 			if(memberPwd.equals(pwd)) {
-				BookRentalManager.session = "user";	//íšŒì› ë¡œê·¸ì¸
+				BookRentalManager.session = "user";	//È¸¿ø ·Î±×ÀÎ
 				return true;
 			}
-			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í›„ ë‹¤ì‹œì…ë ¥í•´ ì£¼ì„¸ìš”");
+			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÈÄ ´Ù½ÃÀÔ·ÂÇØ ÁÖ¼¼¿ä");
 			return false;
 			
 		}else {
-			System.out.println("ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í›„ ë‹¤ì‹œì…ë ¥í•´ ì£¼ì„¸ìš”");
+			System.out.println("Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. ¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÈÄ ´Ù½ÃÀÔ·ÂÇØ ÁÖ¼¼¿ä");
 			return false;
 		}
 	}

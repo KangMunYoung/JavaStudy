@@ -1,13 +1,13 @@
 package dataInfo;
 
 public class ProfileVO {
-	private String memberId;	//ìœ ì €ì•„ì´ë””
-	private String memberPwd;	//ìœ ì €ë¹„ë°€ë²ˆí˜¸
-	private String name;		//ì´ë¦„
-	private String tel;			//ì „í™”ë²ˆí˜¸
-	private String since;	//ê°€ì…ì¼
-	private int rentalCnt = 0;	//ëŒ€ì—¬ê¶Œìˆ˜
-	private int money = 0;			//ê°€ì§„ëˆ
+	private String memberId;	//À¯Àú¾ÆÀÌµğ
+	private String memberPwd;	//À¯Àúºñ¹Ğ¹øÈ£
+	private String name;		//ÀÌ¸§
+	private String tel;			//ÀüÈ­¹øÈ£
+	private String since;	//°¡ÀÔÀÏ
+	private int rentalCnt = 0;	//´ë¿©±Ç¼ö
+	private int money = 0;			//°¡Áøµ·
 	
 	public ProfileVO() {
 	}
@@ -23,11 +23,11 @@ public class ProfileVO {
 	
 	public static void profileTitlePrint() {
 		System.out.println("================================================================================================");
-		System.out.printf("%-7s %-8s %-10s %-15s %-12s %-9s %-20s\n", "ì•„ì´ë””", "ë¹„ë°€ë²ˆí˜¸", "ì´ë¦„", "ì „í™”ë²ˆí˜¸", "ê°€ì…ì¼", "ëŒ€ì—¬ê¶Œìˆ˜", "ì„ ë¶ˆê¸ˆì•¡");
+		System.out.printf("%-7s %-8s %-10s %-15s %-12s %-9s %-20s\n", "¾ÆÀÌµğ", "ºñ¹Ğ¹øÈ£", "ÀÌ¸§", "ÀüÈ­¹øÈ£", "°¡ÀÔÀÏ", "´ë¿©±Ç¼ö", "¼±ºÒ±İ¾×");
 		System.out.println("================================================================================================");
 	}
 	public void profilePrint() {
-		System.out.printf("%-10s %-12s %-9s %-19s %-15s %-13s %-20dì›\n", memberId, memberPwd, name, tel, since, rentalCnt, money);
+		System.out.printf("%-10s %-12s %-9s %-19s %-15s %-13s %-20d¿ø\n", memberId, memberPwd, name, tel, since, rentalCnt, money);
 	}
 	
 	public int getRentalCnt() {
