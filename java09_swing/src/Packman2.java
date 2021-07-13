@@ -33,7 +33,11 @@ public class Packman2 extends JPanel implements KeyListener, Runnable{
       x = (int)(dim.getWidth()/2 - 25);
       y = (int)(dim.getHeight()/2 -25);
    }
-   
+   public void packmanStart(Packman2 p) {
+	   setCanvasSize();
+	   Thread t = new Thread(p);
+	   t.start();
+   }
    public void run() {
 	   while(true) {
 	         mc.repaint();
