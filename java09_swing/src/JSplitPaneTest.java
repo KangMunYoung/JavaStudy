@@ -15,6 +15,7 @@ public class JSplitPaneTest extends JFrame{
 		
 		//수직나누기
 		sp2 = new JSplitPane(JSplitPane.VERTICAL_SPLIT, cal, calendar);
+		
 		//수평나누기
 		sp1 = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, sp2, sp);
 		
