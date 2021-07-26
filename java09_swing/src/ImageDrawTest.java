@@ -61,7 +61,9 @@ public class ImageDrawTest extends JFrame implements ActionListener{
 
 	public class MyCanvas extends Canvas {
 		public MyCanvas() {
-			img = Toolkit.getDefaultToolkit().getImage("img/test_Img5.png");
+			String imgAddr = "img/test_Img5.png";
+			img = Toolkit.getDefaultToolkit().getImage(imgAddr);
+//			img = Toolkit.getDefaultToolkit().getImage("img/test_Img5.png");
 		}
 		
 		public void paint(Graphics g) {

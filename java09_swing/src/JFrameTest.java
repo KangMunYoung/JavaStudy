@@ -17,6 +17,8 @@ public class JFrameTest extends JFrame{
 	ImageIcon icon1 = new ImageIcon("img/test_img2.png");
 	ImageIcon icon2 = new ImageIcon("img/test_img3.png");
 	ImageIcon icon3 = new ImageIcon("img/test_img4.png");
+	
+	ImageIcon[] icon;
 	public JFrameTest() {
 		//BorderLayout을 GridLayout으로 변경하기
 		GridLayout layout = new GridLayout(3,2, 10, 10);
