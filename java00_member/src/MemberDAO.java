@@ -36,6 +36,12 @@ public class MemberDAO extends DBCON {
 		}
 		return list;
 	}
+	
+	
+	
+	
+	
+	////////////////////////////////////////////////////////////////////
 	// 회원추가
 	public int insertRecord(MemberVO vo) {
 		int cnt=0;

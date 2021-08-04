@@ -7,109 +7,109 @@ import EmpInfor.EmpVO;
 
 public class EmpManager {
 	Scanner scan = new Scanner(System.in);
-	String menuTitle = "ë©”ë‰´[1.ì‚¬ì›ì „ì²´ëª©ë¡, 2.ì‚¬ì›ì¶”ê°€, 3.ì‚¬ì›ìˆ˜ì •, 4.ì‚¬ì›ì‚­ì œ, 5.ì¢…ë£Œ]";
+	String menuTitle = "¸Ş´º[1.»ç¿øÀüÃ¼¸ñ·Ï, 2.»ç¿øÃß°¡, 3.»ç¿ø¼öÁ¤, 4.»ç¿ø»èÁ¦, 5.Á¾·á]";
 	public EmpManager() {
 
 	}
-	public void employeeStart() {	//ì‹œì‘ ë©”ì†Œë“œ
+	public void employeeStart() {	//½ÃÀÛ ¸Ş¼Òµå
 		boolean logResult=false;
 		do {
-			//ë¡œê·¸ì¸
-			String userid = inData("ì•„ì´ë””");
-			String userpwd = inData("ë¹„ë°€ë²ˆí˜¸");
+			//·Î±×ÀÎ
+			String userid = inData("¾ÆÀÌµğ");
+			String userpwd = inData("ºñ¹Ğ¹øÈ£");
 			Login log = new Login();
 			logResult = log.loginCheck(userid, userpwd);
 		}while(!logResult);
 		
-		//ë¡œê·¸ì¸ ì„±ê³µí•˜ë©´ ì˜¤ëŠ” ê³³.
-		//ì‚¬ì›ì˜ ê¸°ë³¸ ì •ë³´ ìƒì„±
+		//·Î±×ÀÎ ¼º°øÇÏ¸é ¿À´Â °÷.
+		//»ç¿øÀÇ ±âº» Á¤º¸ »ı¼º
 		EmpDataSet.basicEmpSet();
-//		System.out.println("ë¡œê·¸ì¸ì„±ê³µ");
+//		System.out.println("·Î±×ÀÎ¼º°ø");
 		allEmpList();
 		EmpProcessStart();
 	}
 	public void EmpProcessStart() {
 		do {
-			//ë©”ë‰´ì…ë ¥
+			//¸Ş´ºÀÔ·Â
 			String menu = inData(menuTitle);
-			if(menu.equals("1")) { //ì „ì²´ì‚¬ì›ëª©ë¡
+			if(menu.equals("1")) { //ÀüÃ¼»ç¿ø¸ñ·Ï
 				allEmpList();
-			}else if(menu.equals("2")) { //ì‚¬ì›ì¶”ê°€
+			}else if(menu.equals("2")) { //»ç¿øÃß°¡
 				empInsert();
 				allEmpList();
-			}else if(menu.equals("3")) {//ì‚¬ì›ìˆ˜ì •(ì—°ë½ì²˜ì™€ ê¸‰ì—¬ë§Œ ìˆ˜ì •)
+			}else if(menu.equals("3")) {//»ç¿ø¼öÁ¤(¿¬¶ôÃ³¿Í ±Ş¿©¸¸ ¼öÁ¤)
 				empUpdate();
 				allEmpList();
-			}else if(menu.equals("4")) {//ì‚¬ì›ì‚­ì œ
+			}else if(menu.equals("4")) {//»ç¿ø»èÁ¦
 				empDelete();
 				allEmpList();
-			}else if(menu.equals("5")) {//í”„ë¡œê·¸ë¨ì¢…ë£Œ
-				System.out.println("í”„ë¡œê·¸ë¨ì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.");
+			}else if(menu.equals("5")) {//ÇÁ·Î±×·¥Á¾·á
+				System.out.println("ÇÁ·Î±×·¥ÀÌ Á¾·áµÇ¾ú½À´Ï´Ù.");
 				System.exit(0);
 			}else {
-				System.out.println("ë©”ë‰´ë¥¼ ì˜ëª»ì„íƒí•˜ì˜€ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
+				System.out.println("¸Ş´º¸¦ Àß¸ø¼®ÅÃÇÏ¿´½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
 			}
 		}while(true);
 	}
-	//ì‚¬ì›ì‚­ì œ
+	//»ç¿ø»èÁ¦
 	public void empDelete() {
-		String delName = inData("ì‚­ì œí•  ì‚¬ì›ëª…");
+		String delName = inData("»èÁ¦ÇÒ »ç¿ø¸í");
 		EmpDataSet.empList.remove(delName);
 	}
-	//ì‚¬ì›ìˆ˜ì •
+	//»ç¿ø¼öÁ¤
 	public void empUpdate() {
-		//ë³€ê²½í•  ì •ë³´ë¥¼ í™•ì¸
-		String editName = inData("ìˆ˜ì •í•  ì‚¬ì›ëª…ì…ë ¥");
+		//º¯°æÇÒ Á¤º¸¸¦ È®ÀÎ
+		String editName = inData("¼öÁ¤ÇÒ »ç¿ø¸íÀÔ·Â");
 		
-		String editMenu = inData("ìˆ˜ì •í•  í•„ë“œì„ íƒ[1.ì—°ë½ì²˜, 2.ê¸‰ì—¬]");
-		if(editMenu.equals("1")) {//ì—°ë½ì²˜ ìˆ˜ì •
+		String editMenu = inData("¼öÁ¤ÇÒ ÇÊµå¼±ÅÃ[1.¿¬¶ôÃ³, 2.±Ş¿©]");
+		if(editMenu.equals("1")) {//¿¬¶ôÃ³ ¼öÁ¤
 			telUpdate(editName);
 		}else if(editMenu.equals("2")) {
 			salUpdate(editName);
 		}else {
-			System.out.println("ë©”ë‰´ë¥¼ ì˜ëª»ì„ íƒí•˜ì˜€ìŠµë‹ˆë‹¤.");
+			System.out.println("¸Ş´º¸¦ Àß¸ø¼±ÅÃÇÏ¿´½À´Ï´Ù.");
 		}
 		////
 	}
-	//ì—°ë½ì²˜ìˆ˜ì •
+	//¿¬¶ôÃ³¼öÁ¤
 	public void telUpdate(String username) {
-		String tel = inData("ìˆ˜ì •í•  ì—°ë½ì²˜ì…ë ¥");
+		String tel = inData("¼öÁ¤ÇÒ ¿¬¶ôÃ³ÀÔ·Â");
 		EmpVO vo = EmpDataSet.empList.get(username);
 		vo.setTel(tel);
 	}
-	//ê¸‰ì—¬ìˆ˜ì •
+	//±Ş¿©¼öÁ¤
 	public void salUpdate(String username) {
-		int sal = Integer.parseInt(inData("ìˆ˜ì •í•  ê¸‰ì—¬ ì…ë ¥"));
+		int sal = Integer.parseInt(inData("¼öÁ¤ÇÒ ±Ş¿© ÀÔ·Â"));
 		EmpVO vo = EmpDataSet.empList.get(username);
 		vo.setSal(sal);
 	}
-	//ì‚¬ì›ì¶”ê°€
+	//»ç¿øÃß°¡
 	public void empInsert() {
-		//1ëª…ì˜ ì‚¬ì›ì •ë³´ë¥¼ ì €ì¥í•  VOê°ì²´ ìƒì„±í•˜ê¸°
+		//1¸íÀÇ »ç¿øÁ¤º¸¸¦ ÀúÀåÇÒ VO°´Ã¼ »ı¼ºÇÏ±â
 		EmpVO vo = new EmpVO();
 		
-		//ì‚¬ì›ë²ˆí˜¸
-		vo.setEmpNo(inData("ì‚¬ì›ë²ˆí˜¸"));
-		vo.setEmpName(inData("ì‚¬ì›ëª…"));
-		vo.setTel(inData("ì—°ë½ì²˜"));
+		//»ç¿ø¹øÈ£
+		vo.setEmpNo(inData("»ç¿ø¹øÈ£"));
+		vo.setEmpName(inData("»ç¿ø¸í"));
+		vo.setTel(inData("¿¬¶ôÃ³"));
 		
 		do {
 			boolean flag = true;
 			try {	
-				vo.setSal(Integer.parseInt(inData("ê¸‰ì—¬")));//----ì˜ˆì™¸ì²˜ë¦¬í•„ìš”
+				vo.setSal(Integer.parseInt(inData("±Ş¿©")));//----¿¹¿ÜÃ³¸®ÇÊ¿ä
 			}catch(NumberFormatException nfe) {
 				flag = false;
-				System.out.println("ê¸‰ì—¬ëŠ” ìˆ«ìë¡œ ì…ë ¥í•˜ì„¸ìš”....");
+				System.out.println("±Ş¿©´Â ¼ıÀÚ·Î ÀÔ·ÂÇÏ¼¼¿ä....");
 			}
 			if(flag) break;
 		}while(true);
-		vo.setHiredate(inData("ì…ì‚¬ì¼"));
+		vo.setHiredate(inData("ÀÔ»çÀÏ"));
 		
 		EmpDataSet.empList.put(vo.getEmpName(), vo);
 	}
-	//ì‚¬ì›ì „ì²´ëª©ë¡ ì¶œë ¥í•˜ê¸°
+	//»ç¿øÀüÃ¼¸ñ·Ï Ãâ·ÂÇÏ±â
 	public void allEmpList() {
-		//ì œëª©ì¶œë ¥
+		//Á¦¸ñÃâ·Â
 		EmpVO.titlePrint();
 		Collection<EmpVO> list =EmpDataSet.empList.values();
 		Iterator<EmpVO> ii = list.iterator();
@@ -118,7 +118,7 @@ public class EmpManager {
 			vo.empPrint();
 		}
 	}
-	//ì½˜ì†”ì—ì„œ ë¬¸ìì…ë ¥ë°›ëŠ” ë©”ì†Œë“œ
+	//ÄÜ¼Ö¿¡¼­ ¹®ÀÚÀÔ·Â¹Ş´Â ¸Ş¼Òµå
 	public String inData(String msg) {
 		System.out.print(msg+"->");
 		return scan.nextLine();
